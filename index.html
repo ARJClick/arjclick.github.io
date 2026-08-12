@@ -261,7 +261,22 @@ nav a:hover{
 /* MOBILE */
 
 @media(max-width:700px){
+} /* SERVICES SCROLL ANIMATION */
 
+.card{
+    opacity:0;
+    transform:translateY(50px);
+    transition:
+        opacity .7s ease,
+        transform .7s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+.card.show{
+    opacity:1;
+    transform:translateY(0);
+} </style>
     .hero{
         min-height:82vh;
         padding:65px 18px;
@@ -449,7 +464,46 @@ footer{
 </style>
 </head>
 
-<body>
+<body></footer>
+
+
+<script>
+
+const cards = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("show");
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+
+cards.forEach((card, index) => {
+
+    card.style.transitionDelay = `${index * 0.15}s`;
+
+    observer.observe(card);
+
+});
+
+</script>
+
+
+</body>
+</html>
 
 <!-- NAVBAR -->
 
@@ -500,148 +554,3 @@ Let's Talk
 </a>
 
 </div>
-
-</div>
-
-</div>
-
-
-<!-- SERVICES -->
-
-<section id="services">
-
-<div class="section-title">
-
-<h2>What We Do</h2>
-
-<p>Creative solutions for modern businesses.</p>
-
-</div>
-
-<div class="services">
-
-<div class="card">
-
-<div class="icon">🌐</div>
-
-<h3>Website Development</h3>
-
-<p>
-Modern, responsive and mobile-friendly websites
-for businesses and individuals.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">🎨</div>
-
-<h3>Creative Design</h3>
-
-<p>
-Professional graphics, branding and digital
-design solutions.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">📱</div>
-
-<h3>Digital Solutions</h3>
-
-<p>
-Smart digital solutions designed to help
-businesses grow online.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">🚀</div>
-
-<h3>Business Growth</h3>
-
-<p>
-Build your online presence and reach more
-customers with modern technology.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section id="about">
-
-<div class="about">
-
-<div class="section-title">
-
-<h2>About <span class="gradient">ARJClick</span></h2>
-
-</div>
-
-<p>
-ARJClick is a modern digital creative studio.
-Our goal is to combine technology, creativity and
-simple design to create useful digital experiences.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<div class="cta" id="contact">
-
-<h2>Have an idea?</h2>
-
-<p>
-Let's turn your idea into something amazing.
-</p>
-
-<div class="buttons">
-
-<a href="https://wa.me/91XXXXXXXXXX"
-class="btn primary">
-💬 Contact on WhatsApp
-</a>
-
-</div>
-
-</div>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-<div class="social">
-
-<a href="#">Instagram</a>
-<a href="#">Facebook</a>
-<a href="#">X</a>
-
-</div>
-
-<p>
-© 2026 ARJClick. All Rights Reserved.
-</p>
-
-</footer>
-
-</body>
-</html>
