@@ -1,1 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ARJClick | Digital Creative Studio</title>
+
+<style>
+
+/* =========================
+   BASIC
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f8fbff;
+    color:#182033;
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 7%;
+
+    background:rgba(255,255,255,.88);
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid #e8edf5;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:800;
+
+    background:linear-gradient(
+        90deg,
+        #087cff,
+        #7c3aed,
+        #ec4899
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+nav a{
+    color:#465066;
+    text-decoration:none;
+    margin-left:24px;
+    font-size:14px;
+    font-weight:600;
+
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#6d3df5;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:88vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:80px 20px;
+
+    position:relative;
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 25%,
+            rgba(0,220,255,.14),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(168,85,247,.14),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f4f8ff 100%
+        );
+}
+
+
+/* Background Glow */
+
+.glow{
+    position:absolute;
+
+    width:320px;
+    height:320px;
+
+    border-radius:50%;
+
+    filter:blur(80px);
+
+    opacity:.25;
+
+    animation:
+        glowMove 6s ease-in-out infinite alternate,
+        glowPulse 4s ease-in-out infinite;
+}
+
+.glow.one{
+    background:#38d9ff;
+
+    top:-100px;
+    left:-100px;
+}
+
+.glow.two{
+    background:#b56cff;
+
+    right:-100px;
+    bottom:-100px;
+
+    animation-delay:2s;
+}
+
+@keyframes glowMove{
+
+    0%{
+        transform:translate(0,0) scale(1);
+    }
+
+    50%{
+        transform:translate(35px,-25px) scale(1.15);
+    }
+
+    100%{
+        transform:translate(-20px,30px) scale(.95);
+    }
+
+}
+
+@keyframes glowPulse{
+
+    0%,100%{
+        opacity:.18;
+    }
+
+    50%{
+        opacity:.35;
+    }
+
+}
+
+
+/* Hero Content */
+
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    max-width:900px;
+}
+
+
+/* Badge */
+
+.badge{
+    position:relative;
+
+    display:inline-flex;
+
+    align-items:center;
+    gap:8px;
+
+    padding:10px 20px;
+
+    border-radius:40px;
+
+    background:rgba(255,255,255,.85);
+
+    border:1px solid #dfe7f5;
+
+    box-shadow:
+        0 8px 25px rgba(50,70,110,.08);
+
+    color:#6546e8;
+
+    font-size:13px;
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+    margin-bottom:28px;
+
+    overflow:hidden;
+}
+
+
+/* Badge Shine */
+
+.badge::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:60%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.9),
+            transparent
+        );
+
+    transform:skewX(-20deg);
+
+    animation:badgeShine 3.5s infinite;
+}
+
+@keyframes badgeShine{
+
+    0%{
+        left:-100%;
+    }
+
+    45%,100%{
+        left:150%;
+    }
+
+}
+
+
+/* Heading */
+
+.hero h1{
+
+    font-size:clamp(
+        48px,
+        9vw,
+        92px
+    );
+
+    line-height:1;
+
+    letter-spacing:-3px;
+
+    margin-bottom:25px;
+
+    color:#111827;
+}
+
+
+/* Animated Gradient */
+
+.gradient{
+
+    background:
+        linear-gradient(
+            90deg,
+            #087cff,
+            #7c3aed,
+            #ec4899,
+            #087cff
+        );
+
+    background-size:300% auto;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+    animation:textGradient 4s linear infinite;
+}
+
+@keyframes textGradient{
+
+    0%{
+        background-position:0% center;
+    }
+
+    100%{
+        background-position:300% center;
+    }
+
+}
+
+
+/* Hero Paragraph */
+
+.hero p{
+
+    color:#69748a;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    max-width:680px;
+
+    margin:auto;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons{
+    margin-top:38px;
+}
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:15px 28px;
+
+    margin:7px;
+
+    border-radius:14px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:.35s ease;
+}
+
+.primary{
+
+    color:white;
+
+    background:
+        linear-gradient(
+            100deg,
+            #087cff,
+            #7048e8,
+            #e747a8
+        );
+
+    background-size:200% 200%;
+
+    box-shadow:
+        0 12px 30px rgba(82,75,220,.25);
+
+    animation:
+        buttonGradient 5s ease infinite,
+        buttonFloat 3s ease-in-out infinite;
+}
+
+@keyframes buttonGradient{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+@keyframes buttonFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-3px);
+    }
+
+}
+
+.secondary{
+
+    color:#4d3be8;
+
+    background:
+        rgba(255,255,255,.85);
+
+    border:1px solid #dce4f2;
+
+    box-shadow:
+        0 8px 20px rgba(40,50,90,.06);
+}
+
+.btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(40,50,90,.16);
+}
+
+
+/* =========================
+   FLOATING HERO CARDS
+========================= */
+
+.hero-card{
+
+    position:absolute;
+
+    z-index:3;
+
+    background:
+        rgba(255,255,255,.82);
+
+    backdrop-filter:blur(15px);
+
+    border:
+        1px solid rgba(255,255,255,.8);
+
+    border-radius:18px;
+
+    padding:15px 20px;
+
+    box-shadow:
+        0 15px 40px rgba(40,60,100,.12);
+
+    font-size:13px;
+
+    font-weight:700;
+
+    color:#343d52;
+
+    animation:
+        cardFloat 4s ease-in-out infinite;
+}
+
+.card-one{
+
+    left:8%;
+    top:30%;
+
+    animation-delay:0s;
+}
+
+.card-two{
+
+    right:8%;
+    top:25%;
+
+    animation-delay:1.2s;
+}
+
+.card-three{
+
+    right:13%;
+    bottom:18%;
+
+    animation-delay:2.2s;
+}
+
+@keyframes cardFloat{
+
+    0%,100%{
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50%{
+        transform:
+            translateY(-18px)
+            rotate(1deg);
+    }
+
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    padding:90px 7%;
+}
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:50px;
+}
+
+.section-title h2{
+
+    font-size:40px;
+
+    color:#182033;
+
+    margin-bottom:12px;
+}
+
+.section-title p{
+
+    color:#788197;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(220px,1fr)
+        );
+
+    gap:24px;
+
+    max-width:1100px;
+
+    margin:auto;
+}
+
+
+/* Service Card */
+
+.card{
+
+    padding:32px;
+
+    border-radius:22px;
+
+    background:
+        rgba(255,255,255,.95);
+
+    border:
+        1px solid #e4eaf4;
+
+    box-shadow:
+        0 12px 35px rgba(45,62,95,.08);
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+
+/* When Visible */
+
+.card.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+
+/* Hover */
+
+.card:hover{
+
+    transform:
+        translateY(-8px);
+
+    border-color:#b9a9ff;
+
+    box-shadow:
+        0 20px 45px rgba(75,60,150,.14);
+}
+
+
+/* Icon */
+
+.icon{
+
+    width:58px;
+    height:58px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef7ff,
+            #f5edff
+        );
+
+    font-size:29px;
+
+    margin-bottom:20px;
+
+    transition:.35s;
+}
+
+.card:hover .icon{
+
+    transform:
+        rotate(-6deg)
+        scale(1.08);
+}
+
+
+/* Card Text */
+
+.card h3{
+
+    margin-bottom:12px;
+
+    color:#20283b;
+}
+
+.card p{
+
+    color:#788197;
+
+    line-height:1.7;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+
+    max-width:850px;
+
+    margin:auto;
+
+    text-align:center;
+}
+
+.about p{
+
+    color:#687187;
+
+    line-height:1.9;
+
+    font-size:17px;
+}
+
+
+/* =========================
+   CONTACT CTA
+========================= */
+
+.cta{
+
+    text-align:center;
+
+    padding:80px 20px;
+
+    margin:30px 7%;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #edf7ff,
+            #f7efff,
+            #fff1f8
+        );
+
+    border:
+        1px solid #e2e7f2;
+}
+
+.cta h2{
+
+    font-size:36px;
+
+    margin-bottom:15px;
+
+    color:#1c2335;
+}
+
+.cta p{
+
+    color:#70798d;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    text-align:center;
+
+    padding:35px;
+
+    background:#101525;
+
+    color:#aeb7ca;
+}
+
+.social{
+
+    margin-bottom:15px;
+}
+
+.social a{
+
+    color:#c7cede;
+
+    text-decoration:none;
+
+    margin:0 9px;
+
+    transition:.3s;
+}
+
+.social a:hover{
+
+    color:#7ddcff;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    nav{
+
+        padding:
+            16px 5%;
+    }
+
+    nav a{
+
+        margin-left:9px;
+
+        font-size:11px;
+    }
+
+
+    .hero{
+
+        min-height:82vh;
+
+        padding:
+            65px 18px;
+    }
+
+
+    .hero h1{
+
+        font-size:48px;
+
+        letter-spacing:-2px;
+    }
+
+
+    .hero p{
+
+        font-size:16px;
+
+        line-height:1.7;
+    }
+
+
+    .hero-card{
+
+        display:block;
+
+        padding:
+            10px 13px;
+
+        font-size:11px;
+    }
+
+
+    .card-one{
+
+        left:3%;
+        top:18%;
+    }
+
+
+    .card-two{
+
+        right:3%;
+        top:20%;
+    }
+
+
+    .card-three{
+
+        right:5%;
+        bottom:12%;
+    }
+
+
+    .btn{
+
+        width:90%;
+
+        max-width:280px;
+    }
+
+
+    section{
+
+        padding:
+            70px 5%;
+    }
+
+
+    .section-title h2{
+
+        font-size:32px;
+    }
+
+
+    .cta{
+
+        margin:
+            20px 5%;
+    }
+
+}
+
+
+/* Small phone */
+
+@media(max-width:380px){
+
+    .hero-card{
+
+        display:none;
+    }
+
+    .hero h1{
+
+        font-size:42px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav>
+
+    <div class="logo">
+        ARJClick
+    </div>
+
+    <div>
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#services">
+            Services
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<div class="hero" id="home">
+
+    <div class="glow one"></div>
+
+    <div class="glow two"></div>
+
+
+    <div class="hero-card card-one">
+        ⚡ Modern Design
+    </div>
+
+    <div class="hero-card card-two">
+        🌐 Web Solutions
+    </div>
+
+    <div class="hero-card card-three">
+        🚀 Grow Online
+    </div>
+
+
+    <div class="hero-content">
+
+        <div class="badge">
+            ✦ DIGITAL CREATIVE STUDIO
+        </div>
+
+
+        <h1>
+
+            Build Something
+
+            <span class="gradient">
+                Amazing.
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            Welcome to ARJClick — where creative ideas,
+            modern technology and smart digital solutions
+            come together to build something remarkable.
+
+        </p>
+
+
+        <div class="buttons">
+
+            <a
+                href="#services"
+                class="btn primary"
+            >
+                🚀 Explore Services
+            </a>
+
+
+            <a
+                href="#contact"
+                class="btn secondary"
+            >
+                ✦ Let's Talk
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section id="services">
+
+    <div class="section-title">
+
+        <h2>
+            What We Do
+        </h2>
+
+        <p>
+            Creative solutions for modern businesses.
+        </p>
+
+    </div>
+
+
+    <div class="services">
+
+
+        <div class="card">
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h3>
+                Website Development
+            </h3>
+
+            <p>
+                Modern, responsive and mobile-friendly
+                websites for businesses and individuals.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🎨
+            </div>
+
+            <h3>
+                Creative Design
+            </h3>
+
+            <p>
+                Professional graphics, branding and
+                digital design solutions.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                📱
+            </div>
+
+            <h3>
+                Digital Solutions
+            </h3>
+
+            <p>
+                Smart digital solutions designed to help
+                businesses grow online.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🚀
+            </div>
+
+            <h3>
+                Business Growth
+            </h3>
+
+            <p>
+                Build your online presence and reach
+                more customers with modern technology.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <div class="about">
+
+        <div class="section-title">
+
+            <h2>
+
+                About
+
+                <span class="gradient">
+                    ARJClick
+                </span>
+
+            </h2>
+
+        </div>
+
+
+        <p>
+
+            ARJClick is a modern digital creative studio.
+            Our goal is to combine technology, creativity
+            and simple design to create useful digital
+            experiences.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<div
+    class="cta"
+    id="contact"
+>
+
+    <h2>
+        Have an idea?
+    </h2>
+
+
+    <p>
+        Let's turn your idea into something amazing.
+    </p>
+
+
+    <div class="buttons">
+
+        <a
+            href="https://wa.me/91XXXXXXXXXX"
+            class="btn primary"
+        >
+
+            💬 Contact on WhatsApp
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="social">
+
+        <a href="#">
+            Instagram
+        </a>
+
+        <a href="#">
+            Facebook
+        </a>
+
+        <a href="#">
+            X
+        </a>
+
+    </div>
+
+
+    <p>
+        © 2026 ARJClick. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+     SERVICES SCROLL ANIMATION
+========================= -->
+
+<script>
+
+const cards =
+    document.querySelectorAll(".card");
+
+
+const observer =
+    new IntersectionObserver(
+
+        (entries) => {
+
+            entries.forEach(
+
+                (entry) => {
+
+                    if(
+                        entry.isIntersecting
+                    ){
+
+                        entry.target
+                            .classList
+                            .add("show");
+
+                    }
+
+                }
+
+            );
+
+        },
+
+        {
+            threshold:0.15
+        }
+
+    );
+
+
+cards.forEach(
+
+    (card,index) => {
+
+        card.style.transitionDelay =
+            `${index * 0.15}s`;
+
+        observer.observe(card);
+
+    }
+
+);
+
+</script>
+
+
+</body>
+
+</html>
