@@ -1,1 +1,2447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>ARJClick | Photography & Videography</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#fff;
+    color:#182033;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+}
+
+
+/* =========================
+   NAV
+========================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:20px 6%;
+
+    background:rgba(255,255,255,.78);
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(220,225,235,.7);
+}
+
+.logo{
+    font-size:27px;
+    font-weight:900;
+
+    background:
+        linear-gradient(
+            90deg,
+            #087cff,
+            #7048e8,
+            #ec4899
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    color:#4b5568;
+    font-size:13px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#7048e8;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(0,210,255,.15),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(190,90,255,.15),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #fff,
+            #f4f8ff
+        );
+}
+
+.hero-content{
+    position:relative;
+    z-index:5;
+
+    max-width:900px;
+
+    padding:100px 20px 70px;
+}
+
+.hero-small{
+    display:inline-block;
+
+    margin-bottom:22px;
+
+    padding:9px 17px;
+
+    border-radius:30px;
+
+    background:#fff;
+
+    border:1px solid #e2e8f2;
+
+    box-shadow:
+        0 8px 25px rgba(50,70,110,.08);
+
+    color:#7048e8;
+
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1.5px;
+}
+
+.hero h1{
+    font-size:
+        clamp(
+            55px,
+            10vw,
+            110px
+        );
+
+    line-height:.95;
+
+    letter-spacing:-5px;
+
+    color:#111827;
+
+    margin-bottom:28px;
+}
+
+.gradient{
+    background:
+        linear-gradient(
+            90deg,
+            #087cff,
+            #7048e8,
+            #ec4899,
+            #087cff
+        );
+
+    background-size:300% auto;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+    animation:
+        gradientMove 5s linear infinite;
+}
+
+@keyframes gradientMove{
+
+    0%{
+        background-position:0% center;
+    }
+
+    100%{
+        background-position:300% center;
+    }
+
+}
+
+.hero-text{
+    max-width:620px;
+
+    margin:auto;
+
+    color:#69748a;
+
+    font-size:17px;
+
+    line-height:1.8;
+}
+
+.hero-services{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:28px;
+}
+
+.hero-services span{
+
+    padding:9px 15px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.8);
+
+    border:1px solid #e1e7f1;
+
+    color:#596276;
+
+    font-size:11px;
+
+    font-weight:800;
+}
+
+.hero-services span:first-child,
+.hero-services span:nth-child(2){
+
+    color:#7048e8;
+
+    border-color:#cfc5ff;
+
+}
+
+
+/* Scroll */
+
+.scroll-down{
+
+    position:absolute;
+
+    bottom:28px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:#788197;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    animation:
+        scrollFloat 2s infinite;
+}
+
+@keyframes scrollFloat{
+
+    0%,100%{
+        transform:translate(-50%,0);
+    }
+
+    50%{
+        transform:translate(-50%,8px);
+    }
+
+}
+
+
+/* =========================
+   CINEMATIC FEATURE SECTIONS
+========================= */
+
+.story{
+    min-height:88vh;
+
+    padding:70px 6%;
+
+    display:flex;
+    align-items:center;
+
+    background:#fff;
+}
+
+.story-inner{
+
+    width:100%;
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1.5fr .7fr;
+
+    gap:35px;
+
+    align-items:center;
+}
+
+.story-image{
+
+    min-height:650px;
+
+    border-radius:30px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:
+        0 25px 70px rgba(40,55,90,.12);
+
+    transition:.5s;
+}
+
+.story-image:hover{
+    transform:scale(.99);
+}
+
+.model-image{
+
+    background:
+        linear-gradient(
+            135deg,
+            #dff7ff,
+            #e7dcff
+        );
+}
+
+.pre-image{
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe3ee,
+            #e8ddff
+        );
+}
+
+.placeholder{
+
+    text-align:center;
+
+    color:#7048e8;
+
+    font-size:70px;
+}
+
+.placeholder span{
+
+    display:block;
+
+    margin-top:15px;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    color:#737c8e;
+}
+
+.story-info{
+
+    padding:20px;
+}
+
+.story-number{
+
+    color:#7048e8;
+
+    font-size:12px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+}
+
+.story-info h2{
+
+    font-size:
+        clamp(
+            42px,
+            6vw,
+            70px
+        );
+
+    line-height:1;
+
+    letter-spacing:-3px;
+
+    margin:18px 0;
+
+    color:#182033;
+}
+
+.story-info p{
+
+    color:#69748a;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+    margin-bottom:25px;
+}
+
+.story-button{
+
+    display:inline-block;
+
+    padding:13px 20px;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            100deg,
+            #087cff,
+            #7048e8
+        );
+
+    color:white;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    transition:.3s;
+}
+
+.story-button:hover{
+    transform:translateX(5px);
+}
+
+
+/* =========================
+   SERVICES SLIDER
+========================= */
+
+.services{
+
+    padding:100px 0;
+
+    background:#f7faff;
+}
+
+.section-head{
+
+    text-align:center;
+
+    padding:0 20px;
+
+    margin-bottom:45px;
+}
+
+.section-head small{
+
+    color:#7048e8;
+
+    font-size:11px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+}
+
+.section-head h2{
+
+    font-size:
+        clamp(
+            38px,
+            6vw,
+            60px
+        );
+
+    letter-spacing:-3px;
+
+    margin:12px 0;
+
+    color:#182033;
+}
+
+.section-head p{
+
+    color:#788197;
+
+    line-height:1.7;
+}
+
+
+/* Slider */
+
+.slider{
+
+    max-width:1150px;
+
+    margin:auto;
+
+    padding:0 20px;
+}
+
+.slider-track{
+
+    display:flex;
+
+    overflow-x:auto;
+
+    scroll-snap-type:x mandatory;
+
+    scrollbar-width:none;
+
+    scroll-behavior:smooth;
+
+    border-radius:28px;
+}
+
+.slider-track::-webkit-scrollbar{
+    display:none;
+}
+
+.service{
+
+    min-width:100%;
+
+    scroll-snap-align:start;
+
+    display:grid;
+
+    grid-template-columns:
+        1.4fr .6fr;
+
+    min-height:500px;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    background:#fff;
+
+    border:1px solid #e2e8f2;
+
+    box-shadow:
+        0 20px 60px rgba(40,55,90,.09);
+}
+
+.service-photo{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-height:500px;
+}
+
+.service-photo.model{
+    background:
+        linear-gradient(
+            135deg,
+            #dff7ff,
+            #e7dcff
+        );
+}
+
+.service-photo.pre{
+    background:
+        linear-gradient(
+            135deg,
+            #ffe3ee,
+            #e8ddff
+        );
+}
+
+.service-photo.anniversary{
+    background:
+        linear-gradient(
+            135deg,
+            #ffe7ec,
+            #fff1d8
+        );
+}
+
+.service-photo.birthday{
+    background:
+        linear-gradient(
+            135deg,
+            #fff0d5,
+            #e3f5ff
+        );
+}
+
+.service-photo.wedding{
+    background:
+        linear-gradient(
+            135deg,
+            #eee5ff,
+            #fff0f6
+        );
+}
+
+.service-photo.event{
+    background:
+        linear-gradient(
+            135deg,
+            #e2f7ff,
+            #e9e3ff
+        );
+}
+
+.service-photo div{
+
+    font-size:60px;
+
+    text-align:center;
+
+    color:#7048e8;
+}
+
+.service-photo span{
+
+    display:block;
+
+    margin-top:10px;
+
+    font-size:12px;
+
+    color:#727b8e;
+
+    font-weight:800;
+}
+
+.service-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    padding:45px;
+}
+
+.service-info small{
+
+    color:#7048e8;
+
+    font-weight:900;
+
+    letter-spacing:1.5px;
+}
+
+.service-info h3{
+
+    font-size:38px;
+
+    margin:15px 0;
+
+    color:#182033;
+}
+
+.service-info p{
+
+    color:#6e778a;
+
+    line-height:1.8;
+
+    font-size:15px;
+
+    margin-bottom:25px;
+}
+
+.service-book{
+
+    width:max-content;
+
+    padding:12px 18px;
+
+    border-radius:11px;
+
+    background:#182033;
+
+    color:#fff;
+
+    font-size:12px;
+
+    font-weight:800;
+}
+
+
+/* Controls */
+
+.controls{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-top:25px;
+}
+
+.arrow{
+
+    width:44px;
+    height:44px;
+
+    border-radius:50%;
+
+    border:1px solid #dce3ef;
+
+    background:white;
+
+    color:#7048e8;
+
+    font-size:19px;
+
+    cursor:pointer;
+}
+
+.progress{
+
+    color:#70798c;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    min-width:50px;
+
+    text-align:center;
+}
+
+
+/* =========================
+   PORTFOLIO
+========================= */
+
+.portfolio{
+
+    padding:100px 6%;
+
+    background:#fff;
+}
+
+.gallery{
+
+    max-width:1150px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    grid-auto-rows:220px;
+
+    gap:14px;
+}
+
+.gallery-item{
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf7ff,
+            #f5edff
+        );
+
+    border:1px solid #e2e8f2;
+
+    color:#7048e8;
+
+    transition:.4s;
+}
+
+.gallery-item:hover{
+
+    transform:scale(1.02);
+
+    box-shadow:
+        0 15px 35px rgba(40,55,90,.12);
+}
+
+.gallery-item.big{
+    grid-column:span 2;
+    grid-row:span 2;
+}
+
+.gallery-item.tall{
+    grid-row:span 2;
+}
+
+.gallery-placeholder{
+
+    text-align:center;
+
+    font-size:38px;
+}
+
+.gallery-placeholder span{
+
+    display:block;
+
+    margin-top:8px;
+
+    font-size:11px;
+
+    color:#788197;
+
+    font-weight:800;
+}
+
+
+/* =========================
+   EXPERIENCE
+========================= */
+
+.experience{
+
+    padding:100px 6%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eff9ff,
+            #f8f0ff
+        );
+}
+
+.stats{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+}
+
+.stat{
+
+    text-align:center;
+
+    padding:35px 10px;
+
+    background:
+        rgba(255,255,255,.7);
+
+    border:1px solid rgba(255,255,255,.8);
+
+    border-radius:22px;
+}
+
+.stat strong{
+
+    display:block;
+
+    font-size:32px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #087cff,
+            #7048e8,
+            #ec4899
+        );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+}
+
+.stat span{
+
+    display:block;
+
+    margin-top:8px;
+
+    color:#687187;
+
+    font-size:12px;
+
+    font-weight:800;
+}
+
+
+/* =========================
+   VIDEO REVIEWS
+========================= */
+
+.reviews{
+
+    padding:100px 6%;
+
+    background:#fff;
+}
+
+.video-row{
+
+    max-width:1150px;
+
+    margin:auto;
+
+    display:flex;
+
+    gap:20px;
+
+    overflow-x:auto;
+
+    scroll-snap-type:x mandatory;
+
+    scrollbar-width:none;
+}
+
+.video-row::-webkit-scrollbar{
+    display:none;
+}
+
+.video-card{
+
+    min-width:340px;
+
+    scroll-snap-align:start;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    background:#f7faff;
+
+    border:1px solid #e2e8f2;
+
+    padding:12px;
+}
+
+.video-box{
+
+    height:430px;
+
+    border-radius:17px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dff3ff,
+            #e9ddff
+        );
+
+    color:#7048e8;
+
+    font-size:50px;
+}
+
+.video-card-info{
+
+    padding:15px 8px 8px;
+}
+
+.video-card-info h3{
+
+    font-size:16px;
+
+    margin-bottom:5px;
+}
+
+.video-card-info p{
+
+    color:#788197;
+
+    font-size:12px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+
+    padding:100px 7%;
+
+    text-align:center;
+
+    background:#f8fbff;
+}
+
+.about-content{
+
+    max-width:800px;
+
+    margin:auto;
+}
+
+.about-content p{
+
+    color:#69748a;
+
+    line-height:1.9;
+
+    font-size:17px;
+}
+
+
+/* =========================
+   FINAL CTA
+========================= */
+
+.cta{
+
+    padding:120px 20px;
+
+    text-align:center;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(0,220,255,.13),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(190,90,255,.13),
+            transparent 30%
+        ),
+        #fff;
+}
+
+.cta h2{
+
+    font-size:
+        clamp(
+            42px,
+            7vw,
+            75px
+        );
+
+    letter-spacing:-3px;
+
+    margin-bottom:15px;
+}
+
+.cta p{
+
+    color:#70798c;
+
+    margin-bottom:25px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    padding:35px 20px;
+
+    text-align:center;
+
+    background:#101525;
+
+    color:#aeb7ca;
+}
+
+.footer-logo{
+
+    font-size:23px;
+
+    font-weight:900;
+
+    color:#fff;
+
+    margin-bottom:12px;
+}
+
+.social{
+
+    margin-bottom:15px;
+}
+
+.social a{
+
+    margin:0 8px;
+
+    color:#c8cfdd;
+
+    font-size:12px;
+}
+
+footer p{
+
+    font-size:11px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:750px){
+
+    nav{
+
+        padding:16px 5%;
+    }
+
+    .nav-links{
+
+        gap:10px;
+    }
+
+    .nav-links a{
+
+        font-size:10px;
+    }
+
+
+    .hero{
+
+        min-height:100svh;
+    }
+
+    .hero-content{
+
+        padding:
+            110px 15px 80px;
+    }
+
+    .hero h1{
+
+        font-size:53px;
+
+        letter-spacing:-3px;
+    }
+
+    .hero-text{
+
+        font-size:15px;
+    }
+
+    .hero-services{
+
+        gap:6px;
+    }
+
+    .hero-services span{
+
+        font-size:9px;
+
+        padding:7px 10px;
+    }
+
+
+    .story{
+
+        min-height:auto;
+
+        padding:
+            35px 5% 70px;
+    }
+
+    .story-inner{
+
+        display:flex;
+
+        flex-direction:column;
+    }
+
+    .story-image{
+
+        width:100%;
+
+        min-height:470px;
+    }
+
+    .story-info{
+
+        padding:20px 5px;
+    }
+
+    .story-info h2{
+
+        font-size:48px;
+    }
+
+
+    .service{
+
+        display:block;
+    }
+
+    .service-photo{
+
+        min-height:330px;
+
+        height:330px;
+    }
+
+    .service-info{
+
+        padding:35px 25px 40px;
+    }
+
+    .service-info h3{
+
+        font-size:32px;
+    }
+
+
+    .gallery{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        grid-auto-rows:180px;
+    }
+
+    .gallery-item.big{
+
+        grid-column:span 2;
+
+        grid-row:span 2;
+    }
+
+
+    .stats{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+
+    .video-card{
+
+        min-width:280px;
+    }
+
+    .video-box{
+
+        height:390px;
+    }
+
+
+    .about{
+
+        padding:
+            80px 6%;
+    }
+
+}
+
+
+@media(max-width:400px){
+
+    .nav-links a:nth-child(3){
+
+        display:none;
+    }
+
+    .hero h1{
+
+        font-size:45px;
+    }
+
+    .hero-services span{
+
+        font-size:8px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <div class="logo">
+        ARJClick
+    </div>
+
+    <div class="nav-links">
+
+        <a href="#home">Home</a>
+
+        <a href="#services">Services</a>
+
+        <a href="#portfolio">Work</a>
+
+        <a href="#reviews">Reviews</a>
+
+        <a href="#contact">Book</a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+    <div class="hero-content">
+
+        <span class="hero-small">
+            ✦ PHOTOGRAPHY • VIDEOGRAPHY
+        </span>
+
+        <h1>
+            Your Moments.
+            <br>
+            <span class="gradient">
+                Our Vision.
+            </span>
+        </h1>
+
+        <p class="hero-text">
+
+            We capture your style, your love,
+            your celebrations and the moments
+            you never want to forget.
+
+        </p>
+
+
+        <div class="hero-services">
+
+            <span>
+                MODEL SHOOTING
+            </span>
+
+            <span>
+                PRE-WEDDING
+            </span>
+
+            <span>
+                WEDDING
+            </span>
+
+            <span>
+                ANNIVERSARY
+            </span>
+
+            <span>
+                BIRTHDAY
+            </span>
+
+            <span>
+                EVENT
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="scroll-down">
+        SCROLL ↓
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MODEL SHOOTING
+========================= -->
+
+<section class="story">
+
+    <div class="story-inner">
+
+        <div class="story-image model-image">
+
+            <div class="placeholder">
+
+                👠
+
+                <span>
+                    MODEL SHOOTING PHOTO
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="story-info">
+
+            <span class="story-number">
+                01 — FEATURED
+            </span>
+
+            <h2>
+                Model
+                <span class="gradient">
+                    Shooting.
+                </span>
+            </h2>
+
+            <p>
+
+                Fashion, portfolio and creative
+                photography designed to bring
+                personality and confidence into
+                every frame.
+
+            </p>
+
+            <a
+                href="#contact"
+                class="story-button"
+            >
+                Book Model Shoot →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRE-WEDDING
+========================= -->
+
+<section class="story">
+
+    <div class="story-inner">
+
+        <div class="story-image pre-image">
+
+            <div class="placeholder">
+
+                💕
+
+                <span>
+                    PRE-WEDDING PHOTO
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="story-info">
+
+            <span class="story-number">
+                02 — FEATURED
+            </span>
+
+            <h2>
+                Pre-
+                <span class="gradient">
+                    Wedding.
+                </span>
+            </h2>
+
+            <p>
+
+                Romantic and cinematic storytelling
+                created around your connection,
+                emotions and unforgettable moments.
+
+            </p>
+
+            <a
+                href="#contact"
+                class="story-button"
+            >
+                Book Pre-Wedding →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section
+    class="services"
+    id="services"
+>
+
+    <div class="section-head">
+
+        <small>
+            ✦ OUR SERVICES
+        </small>
+
+        <h2>
+            Choose Your
+            <span class="gradient">
+                Story.
+            </span>
+        </h2>
+
+        <p>
+            Swipe left or right to explore.
+        </p>
+
+    </div>
+
+
+    <div class="slider">
+
+        <div
+            class="slider-track"
+            id="sliderTrack"
+        >
+
+
+            <!-- 01 -->
+
+            <div class="service">
+
+                <div class="service-photo model">
+
+                    <div>
+
+                        👠
+
+                        <span>
+                            MODEL SHOOTING
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="service-info">
+
+                    <small>
+                        01 / 06
+                    </small>
+
+                    <h3>
+                        Model Shooting
+                    </h3>
+
+                    <p>
+                        Fashion, portfolio and
+                        creative model photography.
+                    </p>
+
+                    <a
+                        href="#contact"
+                        class="service-book"
+                    >
+                        Book →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- 02 -->
+
+            <div class="service">
+
+                <div class="service-photo pre">
+
+                    <div>
+
+                        💕
+
+                        <span>
+                            PRE-WEDDING
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="service-info">
+
+                    <small>
+                        02 / 06
+                    </small>
+
+                    <h3>
+                        Pre-Wedding
+                    </h3>
+
+                    <p>
+                        Romantic, cinematic and
+                        emotional couple stories.
+                    </p>
+
+                    <a
+                        href="#contact"
+                        class="service-book"
+                    >
+                        Book →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- 03 -->
+
+            <div class="service">
+
+                <div class="service-photo anniversary">
+
+                    <div>
+
+                        ❤️
+
+                        <span>
+                            ANNIVERSARY
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="service-info">
+
+                    <small>
+                        03 / 06
+                    </small>
+
+                    <h3>
+                        Anniversary
+                    </h3>
+
+                    <p>
+                        Capture the love and memories
+                        of your special day.
+                    </p>
+
+                    <a
+                        href="#contact"
+                        class="service-book"
+                    >
+                        Book →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- 04 -->
+
+            <div class="service">
+
+                <div class="service-photo birthday">
+
+                    <div>
+
+                        🎂
+
+                        <span>
+                            BIRTHDAY
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="service-info">
+
+                    <small>
+                        04 / 06
+                    </small>
+
+                    <h3>
+                        Birthday
+                    </h3>
+
+                    <p>
+                        Smiles, celebrations and
+                        unforgettable moments.
+                    </p>
+
+                    <a
+                        href="#contact"
+                        class="service-book"
+                    >
+                        Book →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- 05 -->
+
+            <div class="service">
+
+                <div class="service-photo wedding">
+
+                    <div>
+
+                        💍
+
+                        <span>
+                            WEDDING
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="service-info">
+
+                    <small>
+                        05 / 06
+                    </small>
+
+                    <h3>
+                        Wedding
+                    </h3>
+
+                    <p>
+                        Every emotion, detail and
+                        beautiful wedding moment.
+                    </p>
+
+                    <a
+                        href="#contact"
+                        class="service-book"
+                    >
+                        Book →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- 06 -->
+
+            <div class="service">
+
+                <div class="service-photo event">
+
+                    <div>
+
+                        🎉
+
+                        <span>
+                            EVENT
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="service-info">
+
+                    <small>
+                        06 / 06
+                    </small>
+
+                    <h3>
+                        Event
+                    </h3>
+
+                    <p>
+                        Professional coverage for
+                        functions and celebrations.
+                    </p>
+
+                    <a
+                        href="#contact"
+                        class="service-book"
+                    >
+                        Book →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="controls">
+
+            <button
+                class="arrow"
+                id="prev"
+            >
+                ←
+            </button>
+
+            <div
+                class="progress"
+                id="progress"
+            >
+                01 / 06
+            </div>
+
+            <button
+                class="arrow"
+                id="next"
+            >
+                →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PORTFOLIO
+========================= -->
+
+<section
+    class="portfolio"
+    id="portfolio"
+>
+
+    <div class="section-head">
+
+        <small>
+            ✦ OUR WORK
+        </small>
+
+        <h2>
+            Selected
+            <span class="gradient">
+                Moments.
+            </span>
+        </h2>
+
+        <p>
+            Real work will appear here.
+        </p>
+
+    </div>
+
+
+    <div class="gallery">
+
+
+        <div class="gallery-item big">
+
+            <div class="gallery-placeholder">
+
+                👠
+
+                <span>
+                    MODEL SHOOTING
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <div class="gallery-placeholder">
+
+                💕
+
+                <span>
+                    PRE-WEDDING
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-item tall">
+
+            <div class="gallery-placeholder">
+
+                💍
+
+                <span>
+                    WEDDING
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <div class="gallery-placeholder">
+
+                ❤️
+
+                <span>
+                    ANNIVERSARY
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <div class="gallery-placeholder">
+
+                🎂
+
+                <span>
+                    BIRTHDAY
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-item big">
+
+            <div class="gallery-placeholder">
+
+                🎉
+
+                <span>
+                    EVENT
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
+
+<section class="experience">
+
+    <div class="section-head">
+
+        <small>
+            ✦ EXPERIENCE
+        </small>
+
+        <h2>
+            Behind Every Frame
+            <span class="gradient">
+                Is Experience.
+            </span>
+        </h2>
+
+        <p>
+            Real numbers will be added after
+            we receive the photographer's details.
+        </p>
+
+    </div>
+
+
+    <div class="stats">
+
+        <div class="stat">
+
+            <strong>
+                10+
+            </strong>
+
+            <span>
+                YEARS EXPERIENCE
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                500+
+            </strong>
+
+            <span>
+                SHOOTS
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                300+
+            </strong>
+
+            <span>
+                HAPPY CLIENTS
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                100%
+            </strong>
+
+            <span>
+                PASSION
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     VIDEO REVIEWS
+========================= -->
+
+<section
+    class="reviews"
+    id="reviews"
+>
+
+    <div class="section-head">
+
+        <small>
+            ✦ CLIENT STORIES
+        </small>
+
+        <h2>
+            Don't Take Our Word.
+            <span class="gradient">
+                Hear Them.
+            </span>
+        </h2>
+
+        <p>
+            Real client video reviews will be
+            added here.
+        </p>
+
+    </div>
+
+
+    <div class="video-row">
+
+
+        <div class="video-card">
+
+            <div class="video-box">
+                ▶
+            </div>
+
+            <div class="video-card-info">
+
+                <h3>
+                    Client Review
+                </h3>
+
+                <p>
+                    Model Shooting
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="video-card">
+
+            <div class="video-box">
+                ▶
+            </div>
+
+            <div class="video-card-info">
+
+                <h3>
+                    Client Review
+                </h3>
+
+                <p>
+                    Pre-Wedding
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="video-card">
+
+            <div class="video-box">
+                ▶
+            </div>
+
+            <div class="video-card-info">
+
+                <h3>
+                    Client Review
+                </h3>
+
+                <p>
+                    Wedding / Event
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about">
+
+    <div class="about-content">
+
+        <div class="section-head">
+
+            <small>
+                ✦ ABOUT ARJCLICK
+            </small>
+
+            <h2>
+                We Capture
+                <span class="gradient">
+                    Feelings.
+                </span>
+            </h2>
+
+        </div>
+
+
+        <p>
+
+            ARJClick is a photography and videography
+            brand focused on creating beautiful visual
+            stories — from model portfolios and
+            pre-wedding moments to weddings,
+            birthdays and special events.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FINAL CTA
+========================= -->
+
+<section
+    class="cta"
+    id="contact"
+>
+
+    <h2>
+        Let's Create
+        <span class="gradient">
+            Something Beautiful.
+        </span>
+    </h2>
+
+    <p>
+        Ready to plan your next shoot?
+    </p>
+
+
+    <a
+        href="https://wa.me/91XXXXXXXXXX"
+        class="btn btn-primary"
+    >
+        💬 Book Your Shoot
+    </a>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        ARJClick
+    </div>
+
+
+    <div class="social">
+
+        <a href="#">
+            Instagram
+        </a>
+
+        <a href="#">
+            Facebook
+        </a>
+
+        <a href="#">
+            YouTube
+        </a>
+
+    </div>
+
+
+    <p>
+        © 2026 ARJClick • Photography & Videography
+    </p>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+const track =
+    document.getElementById(
+        "sliderTrack"
+    );
+
+const slides =
+    document.querySelectorAll(
+        ".service"
+    );
+
+const progress =
+    document.getElementById(
+        "progress"
+    );
+
+const next =
+    document.getElementById(
+        "next"
+    );
+
+const prev =
+    document.getElementById(
+        "prev"
+    );
+
+let current = 0;
+
+
+function updateSlider(){
+
+    const width =
+        track.clientWidth;
+
+    track.scrollTo({
+
+        left:
+            current * width,
+
+        behavior:
+            "smooth"
+
+    });
+
+    progress.textContent =
+        String(current + 1)
+        .padStart(2,"0")
+        + " / 06";
+
+}
+
+
+next.addEventListener(
+    "click",
+    function(){
+
+        current++;
+
+        if(
+            current >=
+            slides.length
+        ){
+            current = 0;
+        }
+
+        updateSlider();
+
+    }
+);
+
+
+prev.addEventListener(
+    "click",
+    function(){
+
+        current--;
+
+        if(current < 0){
+
+            current =
+                slides.length - 1;
+
+        }
+
+        updateSlider();
+
+    }
+);
+
+
+/* Mobile swipe tracking */
+
+track.addEventListener(
+    "scroll",
+    function(){
+
+        const width =
+            track.clientWidth;
+
+        if(width <= 0){
+            return;
+        }
+
+        const index =
+            Math.round(
+                track.scrollLeft /
+                width
+            );
+
+        if(
+            index >= 0 &&
+            index < slides.length
+        ){
+
+            current = index;
+
+            progress.textContent =
+                String(current + 1)
+                .padStart(2,"0")
+                + " / 06";
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+</html>
