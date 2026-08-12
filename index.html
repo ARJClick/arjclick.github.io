@@ -58,235 +58,269 @@ nav a{
 nav a:hover{
     color:#6d3df5;
 }
-/* HERO */
+/* =========================
+   VIP HERO ANIMATIONS
+========================= */
 
 .hero{
-    min-height:88vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:80px 20px;
     position:relative;
-    overflow:hidden;
-    background:
-        radial-gradient(circle at 15% 25%,rgba(0,220,255,.14),transparent 30%),
-        radial-gradient(circle at 85% 70%,rgba(168,85,247,.14),transparent 30%),
-        linear-gradient(180deg,#ffffff 0%,#f4f8ff 100%);
 }
 
-/* Floating glow */
+/* Animated background glow */
 
 .glow{
-    position:absolute;
-    width:320px;
-    height:320px;
-    border-radius:50%;
-    filter:blur(80px);
-    opacity:.25;
-    animation:floatGlow 7s ease-in-out infinite alternate;
+    animation:
+        glowMove 6s ease-in-out infinite alternate,
+        glowPulse 4s ease-in-out infinite;
 }
 
-.glow.one{
-    background:#38d9ff;
-    top:-100px;
-    left:-100px;
-}
-
-.glow.two{
-    background:#b56cff;
-    right:-100px;
-    bottom:-100px;
-    animation-delay:2s;
-}
-
-@keyframes floatGlow{
-    from{
+@keyframes glowMove{
+    0%{
         transform:translate(0,0) scale(1);
     }
-    to{
-        transform:translate(30px,-25px) scale(1.15);
+    50%{
+        transform:translate(35px,-25px) scale(1.15);
+    }
+    100%{
+        transform:translate(-20px,30px) scale(.95);
     }
 }
 
-.hero-content{
-    position:relative;
-    z-index:2;
-    max-width:900px;
+@keyframes glowPulse{
+    0%,100%{
+        opacity:.18;
+    }
+    50%{
+        opacity:.35;
+    }
 }
 
-/* Premium badge */
 
-.badge{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    padding:10px 20px;
-    border-radius:40px;
-    background:rgba(255,255,255,.8);
-    border:1px solid #dfe7f5;
-    box-shadow:0 8px 25px rgba(50,70,110,.08);
-    color:#6546e8;
-    font-size:13px;
-    font-weight:700;
-    letter-spacing:.5px;
-    margin-bottom:28px;
-}
-
-/* Main heading */
-
-.hero h1{
-    font-size:clamp(48px,9vw,92px);
-    line-height:1;
-    letter-spacing:-3px;
-    margin-bottom:25px;
-    color:#111827;
-}
+/* Animated gradient text */
 
 .gradient{
     background:linear-gradient(
         90deg,
         #087cff,
-        #7048e8,
-        #e747a8
+        #7c3aed,
+        #ec4899,
+        #087cff
     );
+
+    background-size:300% auto;
+
     -webkit-background-clip:text;
     background-clip:text;
     color:transparent;
+
+    animation:textGradient 4s linear infinite;
 }
 
-/* Description */
+@keyframes textGradient{
+    0%{
+        background-position:0% center;
+    }
 
-.hero p{
-    color:#69748a;
-    font-size:18px;
-    line-height:1.8;
-    max-width:680px;
-    margin:auto;
+    100%{
+        background-position:300% center;
+    }
 }
 
-/* Buttons */
 
-.buttons{
-    margin-top:38px;
-}
-
-.btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:15px 28px;
-    margin:7px;
-    border-radius:14px;
-    text-decoration:none;
-    font-weight:700;
-    transition:.35s ease;
-}
-
-.primary{
-    color:white;
-    background:linear-gradient(
-        100deg,
-        #087cff,
-        #7048e8,
-        #e747a8
-    );
-    background-size:200% 200%;
-    box-shadow:
-        0 12px 30px rgba(82,75,220,.25);
-    animation:gradientMove 5s ease infinite;
-}
-
-@keyframes gradientMove{
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-
-.secondary{
-    color:#4d3be8;
-    background:rgba(255,255,255,.85);
-    border:1px solid #dce4f2;
-    box-shadow:0 8px 20px rgba(40,50,90,.06);
-}
-
-.btn:hover{
-    transform:translateY(-5px);
-    box-shadow:0 15px 35px rgba(40,50,90,.16);
-}
-
-/* Floating mini cards */
+/* Floating cards */
 
 .hero-card{
-    position:absolute;
-    z-index:3;
-    background:rgba(255,255,255,.82);
-    backdrop-filter:blur(15px);
-    border:1px solid rgba(255,255,255,.8);
-    border-radius:18px;
-    padding:15px 20px;
-    box-shadow:0 15px 40px rgba(40,60,100,.12);
-    font-size:13px;
-    font-weight:700;
-    color:#343d52;
+    animation:floatCard 4s ease-in-out infinite;
 }
 
 .card-one{
-    left:8%;
-    top:30%;
-    animation:cardFloat 5s ease-in-out infinite;
+    animation-delay:0s;
 }
 
 .card-two{
-    right:8%;
-    top:25%;
-    animation:cardFloat 6s ease-in-out infinite reverse;
+    animation-delay:1.2s;
 }
 
 .card-three{
-    right:13%;
-    bottom:18%;
-    animation:cardFloat 5.5s ease-in-out infinite;
+    animation-delay:2.2s;
 }
 
-@keyframes cardFloat{
+@keyframes floatCard{
+
+    0%,100%{
+        transform:translateY(0) rotate(0deg);
+    }
+
+    50%{
+        transform:translateY(-18px) rotate(1deg);
+    }
+}
+
+
+/* Badge shine */
+
+.badge{
+    position:relative;
+    overflow:hidden;
+}
+
+.badge::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:60%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.8),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+
+    animation:badgeShine 3.5s infinite;
+}
+
+@keyframes badgeShine{
+
+    0%{
+        left:-100%;
+    }
+
+    45%,100%{
+        left:150%;
+    }
+}
+
+
+/* Button breathing animation */
+
+.primary{
+    animation:
+        buttonGradient 5s ease infinite,
+        buttonFloat 3s ease-in-out infinite;
+}
+
+@keyframes buttonGradient{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+@keyframes buttonFloat{
+
     0%,100%{
         transform:translateY(0);
     }
+
     50%{
-        transform:translateY(-12px);
+        transform:translateY(-3px);
     }
 }
 
-/* MOBILE */
+
+/* Small floating particles */
+
+.hero::before,
+.hero::after{
+    content:"";
+    position:absolute;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#7c3aed;
+    opacity:.45;
+    animation:particleMove 7s linear infinite;
+}
+
+.hero::before{
+    left:18%;
+    bottom:20%;
+}
+
+.hero::after{
+    right:20%;
+    top:18%;
+    background:#087cff;
+    animation-delay:2s;
+}
+
+@keyframes particleMove{
+
+    0%{
+        transform:translateY(30px);
+        opacity:0;
+    }
+
+    30%{
+        opacity:.6;
+    }
+
+    70%{
+        opacity:.6;
+    }
+
+    100%{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+}
+
+
+/* Mobile animation */
 
 @media(max-width:700px){
 
-    .hero{
-        min-height:82vh;
-        padding:65px 18px;
+    .hero-card{
+        display:block;
+        padding:10px 13px;
+        font-size:11px;
+    }
+
+    .card-one{
+        left:3%;
+        top:18%;
+    }
+
+    .card-two{
+        right:3%;
+        top:20%;
+    }
+
+    .card-three{
+        right:5%;
+        bottom:12%;
     }
 
     .hero h1{
-        font-size:48px;
-        letter-spacing:-2px;
+        animation:heroText 1s ease-out;
     }
 
-    .hero p{
-        font-size:16px;
-        line-height:1.7;
-    }
+    @keyframes heroText{
 
-    .hero-card{
-        display:none;
-    }
+        from{
+            opacity:0;
+            transform:translateY(25px);
+        }
 
-    .btn{
-        width:90%;
-        max-width:280px;
+        to{
+            opacity:1;
+            transform:translateY(0);
+        }
     }
-}
-
+        }
 /*SECTIONS*/
     sections{ pending: 90px 7%; }
 .section-title{
