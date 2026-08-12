@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ARJClick | Digital Studio</title>
+<title>ARJClick | Digital Creative Studio</title>
 
 <style>
 *{
@@ -13,10 +13,14 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:Arial, sans-serif;
-    background:#080812;
-    color:white;
+    background:#f8fbff;
+    color:#182033;
     overflow-x:hidden;
 }
 
@@ -25,67 +29,70 @@ body{
 nav{
     position:sticky;
     top:0;
-    z-index:100;
+    z-index:1000;
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:18px 7%;
-    background:rgba(8,8,18,.85);
+    background:rgba(255,255,255,.88);
     backdrop-filter:blur(15px);
-    border-bottom:1px solid rgba(255,255,255,.08);
+    border-bottom:1px solid #e8edf5;
 }
 
 .logo{
-    font-size:25px;
-    font-weight:bold;
-    background:linear-gradient(90deg,#00eaff,#a855f7,#ff3cac);
+    font-size:26px;
+    font-weight:800;
+    background:linear-gradient(90deg,#087cff,#7c3aed,#ec4899);
     -webkit-background-clip:text;
     color:transparent;
 }
 
 nav a{
-    color:#ddd;
+    color:#465066;
     text-decoration:none;
-    margin-left:22px;
+    margin-left:24px;
     font-size:14px;
+    font-weight:600;
 }
 
 nav a:hover{
-    color:#00eaff;
+    color:#6d3df5;
 }
 
 /* HERO */
 
 .hero{
-    min-height:90vh;
+    min-height:88vh;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    padding:60px 20px;
+    padding:70px 20px;
     position:relative;
     overflow:hidden;
+    background:
+        linear-gradient(180deg,#ffffff 0%,#f4f8ff 100%);
 }
 
 .glow{
     position:absolute;
-    width:300px;
-    height:300px;
-    background:#7c3aed;
-    filter:blur(130px);
-    opacity:.35;
+    width:280px;
+    height:280px;
     border-radius:50%;
+    filter:blur(80px);
+    opacity:.28;
 }
 
 .glow.one{
-    top:10%;
-    left:5%;
+    background:#5ee7ff;
+    top:5%;
+    left:-80px;
 }
 
 .glow.two{
+    background:#c084fc;
+    right:-70px;
     bottom:5%;
-    right:5%;
-    background:#00eaff;
 }
 
 .hero-content{
@@ -97,33 +104,37 @@ nav a:hover{
 .badge{
     display:inline-block;
     padding:9px 18px;
-    border:1px solid rgba(255,255,255,.15);
     border-radius:30px;
-    background:rgba(255,255,255,.06);
-    color:#00eaff;
+    background:#eef5ff;
+    color:#5b3df5;
+    border:1px solid #dce8ff;
     font-size:13px;
+    font-weight:bold;
     margin-bottom:25px;
 }
 
 .hero h1{
-    font-size:clamp(45px,9vw,90px);
-    line-height:1;
+    font-size:clamp(45px,9vw,86px);
+    line-height:1.05;
     margin-bottom:25px;
+    color:#151b2d;
 }
 
 .gradient{
-    background:linear-gradient(90deg,#00eaff,#a855f7,#ff3cac);
+    background:linear-gradient(90deg,#087cff,#7c3aed,#ec4899);
     -webkit-background-clip:text;
     color:transparent;
 }
 
 .hero p{
-    color:#aaa;
+    color:#687187;
     font-size:18px;
     line-height:1.7;
     max-width:650px;
     margin:auto;
 }
+
+/* BUTTONS */
 
 .buttons{
     margin-top:35px;
@@ -131,7 +142,7 @@ nav a:hover{
 
 .btn{
     display:inline-block;
-    padding:14px 25px;
+    padding:14px 27px;
     margin:7px;
     border-radius:30px;
     text-decoration:none;
@@ -141,21 +152,22 @@ nav a:hover{
 
 .primary{
     color:white;
-    background:linear-gradient(90deg,#7c3aed,#ec4899);
-    box-shadow:0 0 25px rgba(168,85,247,.35);
+    background:linear-gradient(90deg,#087cff,#7c3aed);
+    box-shadow:0 10px 25px rgba(87,74,240,.25);
 }
 
 .secondary{
-    color:white;
-    border:1px solid rgba(255,255,255,.2);
-    background:rgba(255,255,255,.05);
+    color:#4d3be8;
+    background:white;
+    border:1px solid #dfe5f2;
 }
 
 .btn:hover{
     transform:translateY(-4px);
+    box-shadow:0 12px 28px rgba(40,50,90,.15);
 }
 
-/* SECTION */
+/* SECTIONS */
 
 section{
     padding:90px 7%;
@@ -168,11 +180,12 @@ section{
 
 .section-title h2{
     font-size:40px;
+    color:#182033;
     margin-bottom:12px;
 }
 
 .section-title p{
-    color:#999;
+    color:#788197;
 }
 
 /* SERVICES */
@@ -180,55 +193,59 @@ section{
 .services{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:22px;
+    gap:24px;
     max-width:1100px;
     margin:auto;
 }
 
 .card{
-    padding:30px;
-    border-radius:20px;
-    background:linear-gradient(
-        145deg,
-        rgba(255,255,255,.08),
-        rgba(255,255,255,.025)
-    );
-    border:1px solid rgba(255,255,255,.1);
-    backdrop-filter:blur(10px);
+    padding:32px;
+    border-radius:22px;
+    background:rgba(255,255,255,.9);
+    border:1px solid #e4eaf4;
+    box-shadow:0 12px 35px rgba(45,62,95,.08);
     transition:.4s;
 }
 
 .card:hover{
     transform:translateY(-8px);
-    border-color:#a855f7;
-    box-shadow:0 15px 40px rgba(0,0,0,.35);
+    border-color:#b9a9ff;
+    box-shadow:0 20px 45px rgba(75,60,150,.14);
 }
 
 .icon{
-    font-size:35px;
+    width:58px;
+    height:58px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:16px;
+    background:linear-gradient(135deg,#eef7ff,#f5edff);
+    font-size:29px;
     margin-bottom:20px;
 }
 
 .card h3{
     margin-bottom:12px;
+    color:#20283b;
 }
 
 .card p{
-    color:#999;
-    line-height:1.6;
+    color:#788197;
+    line-height:1.7;
 }
 
 /* ABOUT */
 
 .about{
-    max-width:900px;
+    max-width:850px;
     margin:auto;
     text-align:center;
 }
 
 .about p{
-    color:#aaa;
-    line-height:1.8;
+    color:#687187;
+    line-height:1.9;
     font-size:17px;
 }
 
@@ -239,30 +256,27 @@ section{
     padding:80px 20px;
     margin:30px 7%;
     border-radius:30px;
-    background:linear-gradient(
-        120deg,
-        rgba(124,58,237,.25),
-        rgba(0,234,255,.12)
-    );
-    border:1px solid rgba(255,255,255,.1);
+    background:linear-gradient(120deg,#edf7ff,#f7efff,#fff1f8);
+    border:1px solid #e2e7f2;
 }
 
 .cta h2{
-    font-size:35px;
+    font-size:36px;
     margin-bottom:15px;
+    color:#1c2335;
 }
 
 .cta p{
-    color:#aaa;
+    color:#70798d;
 }
 
 /* FOOTER */
 
 footer{
     text-align:center;
-    padding:30px;
-    color:#777;
-    border-top:1px solid rgba(255,255,255,.08);
+    padding:35px;
+    background:#101525;
+    color:#aeb7ca;
 }
 
 .social{
@@ -270,30 +284,39 @@ footer{
 }
 
 .social a{
-    color:#aaa;
+    color:#c7cede;
     text-decoration:none;
-    margin:0 8px;
+    margin:0 9px;
 }
 
 .social a:hover{
-    color:#00eaff;
+    color:#7ddcff;
 }
 
 /* MOBILE */
 
-@media(max-width:600px){
+@media(max-width:650px){
 
     nav{
         padding:16px 5%;
     }
 
     nav a{
-        margin-left:10px;
-        font-size:12px;
+        margin-left:9px;
+        font-size:11px;
     }
 
     .hero{
-        min-height:80vh;
+        min-height:82vh;
+        padding:60px 18px;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero p{
+        font-size:16px;
     }
 
     section{
@@ -348,7 +371,7 @@ Build Something <span class="gradient">Amazing.</span>
 
 <p>
 Welcome to ARJClick — a modern digital studio focused on
-creative design, websites and digital solutions.
+creative design, websites and smart digital solutions.
 </p>
 
 <div class="buttons">
@@ -379,7 +402,6 @@ Let's Talk
 <p>Creative solutions for modern businesses.</p>
 
 </div>
-
 
 <div class="services">
 
@@ -466,7 +488,7 @@ simple design to create useful digital experiences.
 </section>
 
 
-<!-- CTA -->
+<!-- CONTACT -->
 
 <div class="cta" id="contact">
 
@@ -505,7 +527,6 @@ class="btn primary">
 </p>
 
 </footer>
-
 
 </body>
 </html>
