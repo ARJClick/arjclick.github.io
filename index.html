@@ -1,1 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ARJClick | Photography & Films</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#ffffff;
+    color:#182033;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:18px 6%;
+
+    background:rgba(255,255,255,.82);
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(225,230,240,.7);
+}
+
+.logo{
+    font-size:27px;
+    font-weight:900;
+
+    background:
+        linear-gradient(
+            90deg,
+            #087cff,
+            #7048e8,
+            #ec4899
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    color:#4d566a;
+    font-size:13px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#7048e8;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+    overflow:hidden;
+
+    text-align:center;
+
+    padding:120px 20px 80px;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(0,210,255,.16),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 75%,
+            rgba(190,90,255,.15),
+            transparent 32%
+        ),
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f4f8ff 100%
+        );
+}
+
+
+/* Moving glow */
+
+.hero::before,
+.hero::after{
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    filter:blur(80px);
+
+    opacity:.22;
+
+    pointer-events:none;
+}
+
+.hero::before{
+    background:#38d9ff;
+
+    top:-120px;
+    left:-100px;
+
+    animation:
+        heroGlow1 7s ease-in-out infinite alternate;
+}
+
+.hero::after{
+    background:#b56cff;
+
+    right:-100px;
+    bottom:-120px;
+
+    animation:
+        heroGlow2 7s ease-in-out infinite alternate;
+}
+
+@keyframes heroGlow1{
+
+    from{
+        transform:translate(0,0) scale(1);
+    }
+
+    to{
+        transform:translate(60px,40px) scale(1.15);
+    }
+
+}
+
+@keyframes heroGlow2{
+
+    from{
+        transform:translate(0,0) scale(1);
+    }
+
+    to{
+        transform:translate(-50px,-40px) scale(1.15);
+    }
+
+}
+
+
+/* Hero content */
+
+.hero-content{
+    position:relative;
+    z-index:5;
+
+    max-width:900px;
+}
+
+
+/* Small label */
+
+.hero-label{
+
+    display:inline-block;
+
+    padding:10px 18px;
+
+    margin-bottom:25px;
+
+    border-radius:40px;
+
+    background:rgba(255,255,255,.85);
+
+    border:1px solid #dfe6f2;
+
+    box-shadow:
+        0 10px 30px rgba(40,60,100,.08);
+
+    color:#7048e8;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    letter-spacing:1.5px;
+
+    animation:
+        labelFloat 3s ease-in-out infinite;
+}
+
+@keyframes labelFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-5px);
+    }
+
+}
+
+
+/* Hero heading */
+
+.hero h1{
+
+    font-size:
+        clamp(
+            52px,
+            10vw,
+            105px
+        );
+
+    line-height:.95;
+
+    letter-spacing:-5px;
+
+    color:#111827;
+
+    margin-bottom:28px;
+}
+
+
+/* Gradient text */
+
+.gradient{
+
+    background:
+        linear-gradient(
+            90deg,
+            #087cff,
+            #7048e8,
+            #ec4899,
+            #087cff
+        );
+
+    background-size:300% auto;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+    animation:
+        gradientMove 5s linear infinite;
+}
+
+@keyframes gradientMove{
+
+    0%{
+        background-position:0% center;
+    }
+
+    100%{
+        background-position:300% center;
+    }
+
+}
+
+
+/* Hero text */
+
+.hero p{
+
+    max-width:650px;
+
+    margin:auto;
+
+    color:#69748a;
+
+    font-size:17px;
+
+    line-height:1.8;
+}
+
+
+/* Main focus */
+
+.focus-services{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:9px;
+
+    margin-top:28px;
+}
+
+.focus-services span{
+
+    padding:9px 15px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.8);
+
+    border:1px solid #dfe6f1;
+
+    color:#596276;
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:.5px;
+}
+
+.focus-services span.main{
+
+    color:#7048e8;
+
+    border-color:#cfc5ff;
+
+    box-shadow:
+        0 5px 18px rgba(112,72,232,.08);
+}
+
+
+/* Hero button */
+
+.hero-button{
+
+    display:inline-flex;
+
+    margin-top:32px;
+
+    padding:15px 25px;
+
+    border-radius:14px;
+
+    color:#ffffff;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    background:
+        linear-gradient(
+            100deg,
+            #087cff,
+            #7048e8,
+            #ec4899
+        );
+
+    background-size:200% 200%;
+
+    box-shadow:
+        0 12px 30px rgba(82,75,220,.22);
+
+    animation:
+        buttonGradient 5s ease infinite;
+
+    transition:.35s;
+}
+
+@keyframes buttonGradient{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+.hero-button:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 18px 40px rgba(82,75,220,.25);
+}
+
+
+/* Scroll indicator */
+
+.scroll-indicator{
+
+    position:absolute;
+
+    bottom:25px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:#7b8495;
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:1.5px;
+
+    animation:
+        scrollFloat 2s ease-in-out infinite;
+}
+
+@keyframes scrollFloat{
+
+    0%,100%{
+        transform:translate(-50%,0);
+    }
+
+    50%{
+        transform:translate(-50%,8px);
+    }
+
+}
+
+
+/* =========================
+   FEATURED STORY
+========================= */
+
+.story{
+
+    padding:80px 6%;
+
+    background:#ffffff;
+}
+
+.story-container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1.55fr .7fr;
+
+    gap:35px;
+
+    align-items:center;
+}
+
+
+/* Image area */
+
+.story-image{
+
+    min-height:620px;
+
+    border-radius:30px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 25px 70px rgba(35,50,85,.12);
+
+    transition:.5s;
+}
+
+.story-image:hover{
+    transform:scale(.99);
+}
+
+
+/* Model */
+
+.model-image{
+
+    background:
+        linear-gradient(
+            135deg,
+            #dff7ff,
+            #e8ddff
+        );
+}
+
+
+/* Pre-wedding */
+
+.prewedding-image{
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe3ee,
+            #e9ddff
+        );
+}
+
+
+/* Baby */
+
+.baby-image{
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0d8,
+            #dff5ff
+        );
+}
+
+
+/* Placeholder */
+
+.image-placeholder{
+
+    width:75%;
+    height:75%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:25px;
+
+    background:
+        rgba(255,255,255,.48);
+
+    border:
+        2px dashed rgba(112,72,232,.25);
+
+    color:#7048e8;
+
+    font-size:65px;
+
+    text-align:center;
+}
+
+.image-placeholder span{
+
+    margin-top:12px;
+
+    color:#737c8e;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:.5px;
+}
+
+
+/* Story content */
+
+.story-content{
+
+    padding:20px;
+}
+
+.story-number{
+
+    color:#7048e8;
+
+    font-size:11px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+}
+
+.story-content h2{
+
+    margin:18px 0;
+
+    font-size:
+        clamp(
+            42px,
+            6vw,
+            68px
+        );
+
+    line-height:.98;
+
+    letter-spacing:-3px;
+
+    color:#182033;
+}
+
+.story-content p{
+
+    color:#69748a;
+
+    line-height:1.8;
+
+    font-size:15px;
+
+    margin-bottom:25px;
+}
+
+.story-button{
+
+    display:inline-flex;
+
+    padding:13px 20px;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            100deg,
+            #087cff,
+            #7048e8
+        );
+
+    color:#ffffff;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    transition:.35s;
+}
+
+.story-button:hover{
+
+    transform:translateX(5px);
+
+    box-shadow:
+        0 10px 25px rgba(82,75,220,.2);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:750px){
+
+    .navbar{
+
+        padding:16px 5%;
+    }
+
+    .nav-links{
+
+        gap:10px;
+    }
+
+    .nav-links a{
+
+        font-size:10px;
+    }
+
+
+    .hero{
+
+        min-height:100svh;
+
+        padding:
+            110px 18px 75px;
+    }
+
+    .hero h1{
+
+        font-size:53px;
+
+        letter-spacing:-3px;
+    }
+
+    .hero p{
+
+        font-size:15px;
+    }
+
+    .focus-services{
+
+        gap:6px;
+    }
+
+    .focus-services span{
+
+        padding:7px 10px;
+
+        font-size:8px;
+    }
+
+
+    .story{
+
+        padding:
+            35px 5% 70px;
+    }
+
+    .story-container{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:20px;
+    }
+
+    .story-image{
+
+        width:100%;
+
+        min-height:470px;
+
+        height:470px;
+    }
+
+    .story-content{
+
+        padding:
+            10px 5px;
+    }
+
+    .story-content h2{
+
+        font-size:48px;
+    }
+
+    .story-content p{
+
+        font-size:14px;
+    }
+
+    .story-button{
+
+        width:100%;
+
+        justify-content:center;
+    }
+
+}
+
+
+@media(max-width:400px){
+
+    .nav-links a:nth-child(3){
+
+        display:none;
+    }
+
+    .hero h1{
+
+        font-size:45px;
+    }
+
+    .hero-label{
+
+        font-size:9px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        ARJClick
+    </div>
+
+
+    <nav class="nav-links">
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#services">
+            Services
+        </a>
+
+        <a href="#portfolio">
+            Work
+        </a>
+
+        <a href="#contact">
+            Book
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+    <div class="hero-content">
+
+        <span class="hero-label">
+            ✦ PHOTOGRAPHY • VIDEOGRAPHY
+        </span>
+
+
+        <h1>
+
+            Your Moments.
+
+            <br>
+
+            <span class="gradient">
+                Our Vision.
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            We turn your moments, emotions and
+            stories into beautiful photographs
+            and films you'll want to remember.
+
+        </p>
+
+
+        <div class="focus-services">
+
+            <span class="main">
+                📸 MODEL SHOOTING
+            </span>
+
+            <span class="main">
+                💕 PRE-WEDDING
+            </span>
+
+            <span class="main">
+                👶 BABY SHOOTING
+            </span>
+
+        </div>
+
+
+        <a
+            href="#model"
+            class="hero-button"
+        >
+            Explore Our Work ↓
+        </a>
+
+    </div>
+
+
+    <div class="scroll-indicator">
+        SCROLL
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MODEL SHOOTING
+========================= -->
+
+<section
+    class="story"
+    id="model"
+>
+
+    <div class="story-container">
+
+
+        <div class="story-image model-image">
+
+            <!-- Photographer-এর Model photo এখানে বসবে -->
+
+            <div class="image-placeholder">
+
+                📸
+
+                <span>
+                    MODEL SHOOTING
+                    <br>
+                    PHOTO WILL BE ADDED
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="story-content">
+
+            <span class="story-number">
+                01 — MAIN FOCUS
+            </span>
+
+
+            <h2>
+
+                Model
+
+                <span class="gradient">
+                    Shooting.
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Fashion, portfolio and creative
+                model photography focused on
+                confidence, personality and style.
+
+            </p>
+
+
+            <a
+                href="#portfolio"
+                class="story-button"
+            >
+                View Model Work →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRE-WEDDING
+========================= -->
+
+<section class="story">
+
+    <div class="story-container">
+
+
+        <div class="story-image prewedding-image">
+
+            <!-- Photographer-এর Pre-Wedding photo এখানে বসবে -->
+
+            <div class="image-placeholder">
+
+                💕
+
+                <span>
+                    PRE-WEDDING
+                    <br>
+                    PHOTO WILL BE ADDED
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="story-content">
+
+            <span class="story-number">
+                02 — MAIN FOCUS
+            </span>
+
+
+            <h2>
+
+                Pre-
+
+                <span class="gradient">
+                    Wedding.
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Romantic and cinematic
+                storytelling created around
+                your love, connection and
+                unforgettable moments.
+
+            </p>
+
+
+            <a
+                href="#portfolio"
+                class="story-button"
+            >
+                View Pre-Wedding Work →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     BABY SHOOTING
+========================= -->
+
+<section class="story">
+
+    <div class="story-container">
+
+
+        <div class="story-image baby-image">
+
+            <!-- Photographer-এর Baby photo এখানে বসবে -->
+
+            <div class="image-placeholder">
+
+                👶
+
+                <span>
+                    BABY SHOOTING
+                    <br>
+                    PHOTO WILL BE ADDED
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="story-content">
+
+            <span class="story-number">
+                03 — MAIN FOCUS
+            </span>
+
+
+            <h2>
+
+                Baby
+
+                <span class="gradient">
+                    Shooting.
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Beautiful, natural and precious
+                moments captured with care,
+                creativity and warmth.
+
+            </p>
+
+
+            <a
+                href="#portfolio"
+                class="story-button"
+            >
+                View Baby Work →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     NEXT SECTIONS
+========================= -->
+
+<section
+    id="services"
+    style="
+        min-height:300px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+        background:#f7faff;
+    "
+>
+
+    <div>
+
+        <p
+            style="
+                color:#7048e8;
+                font-size:11px;
+                font-weight:800;
+                letter-spacing:2px;
+                margin-bottom:10px;
+            "
+        >
+            NEXT SECTION
+        </p>
+
+        <h2
+            style="
+                font-size:36px;
+                color:#182033;
+            "
+        >
+            All Services — Swipe
+        </h2>
+
+        <p
+            style="
+                margin-top:10px;
+                color:#788197;
+            "
+        >
+            Coming in the next build.
+        </p>
+
+    </div>
+
+</section>
+
+
+</body>
+</html>
