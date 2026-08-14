@@ -3326,7 +3326,97 @@ function moveServices(direction){
     });
 
 }
+/* ================================
+   WEDDING SLIDER
+================================ */
 
+const weddingSlides = document.querySelectorAll(".wedding-slide");
+const weddingDots = document.querySelectorAll(".wedding-dot");
+
+let weddingIndex = 0;
+
+function showWedding(index) {
+
+    if (!weddingSlides.length) return;
+
+    weddingIndex =
+        (index + weddingSlides.length) %
+        weddingSlides.length;
+
+    weddingSlides.forEach((slide, i) => {
+        slide.classList.toggle(
+            "active",
+            i === weddingIndex
+        );
+    });
+
+    weddingDots.forEach((dot, i) => {
+        dot.classList.toggle(
+            "active",
+            i === weddingIndex
+        );
+    });
+}
+
+function weddingChange(direction) {
+    showWedding(weddingIndex + direction);
+}
+
+function weddingGoTo(index) {
+    showWedding(index);
+}
+
+/* Auto slide */
+
+setInterval(() => {
+    weddingChange(1);
+}, 5000);
+
+
+/* Mobile swipe */
+
+const weddingFrame =
+    document.querySelector(".wedding-frame");
+
+let weddingStartX = 0;
+
+if (weddingFrame) {
+
+    weddingFrame.addEventListener(
+        "touchstart",
+        function(e) {
+
+            weddingStartX =
+                e.changedTouches[0].screenX;
+
+        },
+        { passive: true }
+    );
+
+    weddingFrame.addEventListener(
+        "touchend",
+        function(e) {
+
+            const endX =
+                e.changedTouches[0].screenX;
+
+            const distance =
+                endX - weddingStartX;
+
+            if (Math.abs(distance) > 50) {
+
+                if (distance < 0) {
+                    weddingChange(1);
+                } else {
+                    weddingChange(-1);
+                }
+
+            }
+
+        },
+        { passive: true }
+    );
+    }
 </script>
 
 </body>
