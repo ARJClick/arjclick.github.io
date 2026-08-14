@@ -1,1 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>ARJClick | Complete Gallery</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+
+<style>
+
+/* =========================
+   BASIC
+========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+background:#030303;
+scroll-behavior:smooth;
+}
+
+body{
+background:#030303;
+color:#d4af37;
+font-family:Montserrat,Arial,sans-serif;
+overflow-x:hidden;
+}
+
+button{
+font-family:inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+position:sticky;
+top:0;
+z-index:1000;
+height:75px;
+background:rgba(3,3,3,.96);
+border-bottom:1px solid rgba(212,175,55,.35);
+backdrop-filter:blur(12px);
+}
+
+.nav{
+height:100%;
+max-width:1200px;
+margin:auto;
+padding:0 18px;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+
+/* LOGO */
+
+.logo{
+display:flex;
+align-items:center;
+}
+
+.logo-stack{
+display:flex;
+flex-direction:column;
+align-items:center;
+line-height:1;
+}
+
+.camera{
+width:32px;
+height:23px;
+border:3px solid #d4af37;
+border-radius:5px;
+position:relative;
+margin-bottom:4px;
+}
+
+.camera:before{
+content:"";
+position:absolute;
+
+width:11px;
+height:6px;
+
+left:5px;
+top:-9px;
+
+border:3px solid #d4af37;
+border-bottom:0;
+
+border-radius:4px 4px 0 0;
+}
+
+.camera:after{
+content:"";
+position:absolute;
+
+width:10px;
+height:10px;
+
+left:8px;
+top:4px;
+
+border:3px solid #d4af37;
+border-radius:50%;
+}
+
+.logo-name{
+font-family:Cinzel,serif;
+font-size:23px;
+font-weight:700;
+letter-spacing:1px;
+}
+
+.logo-name span{
+color:#c71920;
+}
+
+.logo-sub{
+font-size:6px;
+letter-spacing:2px;
+color:#d4af37;
+margin-top:4px;
+}
+
+
+/* BACK */
+
+.back{
+border:1px solid #d4af37;
+padding:10px 15px;
+
+background:#050505;
+
+color:#d4af37;
+
+font-size:9px;
+letter-spacing:1.5px;
+
+text-decoration:none;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.heading{
+text-align:center;
+padding:55px 15px 35px;
+}
+
+.kicker{
+font-size:9px;
+letter-spacing:4px;
+color:#d4af37;
+margin-bottom:12px;
+}
+
+.heading h1{
+font-family:Cinzel,serif;
+
+font-size:
+clamp(27px,5vw,48px);
+
+font-weight:400;
+
+color:#e8c96a;
+
+letter-spacing:1px;
+}
+
+.line{
+width:85px;
+height:1px;
+
+background:#d4af37;
+
+margin:17px auto;
+}
+
+.heading p{
+color:#fff;
+
+font-size:11px;
+
+line-height:1.8;
+
+max-width:600px;
+
+margin:auto;
+}
+
+
+/* =========================
+   FILTER BUTTONS
+========================= */
+
+.filters{
+display:flex;
+justify-content:center;
+gap:8px;
+
+padding:0 15px 30px;
+
+flex-wrap:wrap;
+}
+
+.filter{
+border:1px solid rgba(212,175,55,.5);
+
+background:#050505;
+
+color:#d4af37;
+
+padding:9px 13px;
+
+font-size:8px;
+
+letter-spacing:1px;
+
+cursor:pointer;
+
+transition:.3s;
+}
+
+.filter.active,
+.filter:hover{
+background:#d4af37;
+color:#050505;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery{
+max-width:1200px;
+
+margin:auto;
+
+padding:
+0 15px
+70px;
+
+display:grid;
+
+grid-template-columns:
+repeat(4,1fr);
+
+gap:10px;
+}
+
+.photo{
+position:relative;
+
+aspect-ratio:4/3;
+
+overflow:hidden;
+
+background:#050505;
+
+border:1px solid rgba(212,175,55,.25);
+
+cursor:pointer;
+}
+
+.photo img{
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+display:block;
+
+transition:
+transform .55s ease,
+opacity .35s ease;
+}
+
+.photo:hover img{
+transform:scale(1.05);
+opacity:.9;
+}
+
+
+/* =========================
+   CATEGORY LABEL
+========================= */
+
+.category{
+position:absolute;
+
+left:8px;
+bottom:8px;
+
+padding:5px 8px;
+
+background:rgba(0,0,0,.65);
+
+border:1px solid rgba(212,175,55,.45);
+
+color:#d4af37;
+
+font-size:7px;
+
+letter-spacing:1px;
+
+z-index:2;
+}
+
+
+/* =========================
+   VIEWER
+========================= */
+
+.viewer{
+position:fixed;
+
+inset:0;
+
+z-index:5000;
+
+display:none;
+
+background:rgba(0,0,0,.97);
+
+padding:15px;
+}
+
+.viewer.open{
+display:block;
+}
+
+.viewer-close{
+position:absolute;
+
+right:18px;
+top:15px;
+
+width:42px;
+height:42px;
+
+border:1px solid #d4af37;
+
+background:#050505;
+
+color:#d4af37;
+
+font-size:25px;
+
+z-index:10;
+
+cursor:pointer;
+}
+
+.viewer-content{
+height:100%;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+
+gap:15px;
+}
+
+.viewer-content img{
+max-width:95vw;
+
+max-height:78vh;
+
+object-fit:contain;
+
+border:1px solid rgba(212,175,55,.5);
+}
+
+.download{
+display:inline-flex;
+
+align-items:center;
+justify-content:center;
+
+padding:12px 20px;
+
+background:#d4af37;
+
+color:#050505;
+
+font-size:9px;
+
+font-weight:700;
+
+letter-spacing:1.5px;
+
+text-decoration:none;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+border-top:1px solid rgba(212,175,55,.3);
+
+text-align:center;
+
+padding:30px 15px;
+}
+
+footer strong{
+font-family:Cinzel,serif;
+
+font-size:20px;
+
+color:#e8c96a;
+}
+
+footer p{
+margin-top:7px;
+
+color:#fff;
+
+font-size:7px;
+
+letter-spacing:2px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+.header{
+height:68px;
+}
+
+.gallery{
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:7px;
+
+padding:
+0 8px
+55px;
+}
+
+.photo{
+aspect-ratio:
+3/4;
+}
+
+.heading{
+padding:
+45px 12px 28px;
+}
+
+.heading h1{
+font-size:29px;
+}
+
+.filters{
+gap:6px;
+}
+
+.filter{
+padding:
+8px 10px;
+
+font-size:7px;
+}
+
+.viewer{
+padding:8px;
+}
+
+.viewer-content img{
+max-width:96vw;
+
+max-height:75vh;
+}
+
+.back{
+padding:
+9px 11px;
+
+font-size:8px;
+}
+
+.logo-name{
+font-size:20px;
+}
+
+}
+
+
+/* =========================
+   SMALL PHONE
+========================= */
+
+@media(max-width:380px){
+
+.gallery{
+gap:5px;
+}
+
+.heading h1{
+font-size:26px;
+}
+
+.logo-name{
+font-size:18px;
+}
+
+.camera{
+transform:scale(.9);
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="header">
+
+<nav class="nav">
+
+
+<a href="index.html"
+class="logo">
+
+<div class="logo-stack">
+
+<div class="camera"></div>
+
+<div class="logo-name">
+
+<span>ARJ</span>Click
+
+</div>
+
+<div class="logo-sub">
+
+PHOTOGRAPHY & FILMS
+
+</div>
+
+</div>
+
+</a>
+
+
+<a href="index.html"
+class="back">
+
+← BACK TO ARJCLICK
+
+</a>
+
+
+</nav>
+
+</header>
+
+
+
+<!-- =========================
+     TITLE
+========================= -->
+
+<section class="heading">
+
+<div class="kicker">
+ARJCLICK PORTFOLIO
+</div>
+
+<h1>
+EXPLORE MORE
+</h1>
+
+<div class="line"></div>
+
+<p>
+
+A collection of our Model,
+Pre-Wedding, Baby and Wedding
+photography.
+
+</p>
+
+</section>
+
+
+
+<!-- =========================
+     FILTERS
+========================= -->
+
+<div class="filters">
+
+<button
+class="filter active"
+data-filter="all">
+
+ALL
+
+</button>
+
+
+<button
+class="filter"
+data-filter="model">
+
+MODEL
+
+</button>
+
+
+<button
+class="filter"
+data-filter="prewedding">
+
+PRE-WEDDING
+
+</button>
+
+
+<button
+class="filter"
+data-filter="baby">
+
+BABY
+
+</button>
+
+
+<button
+class="filter"
+data-filter="wedding">
+
+WEDDING
+
+</button>
+
+</div>
+
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+
+<main
+class="gallery"
+id="gallery">
+
+</main>
+
+
+
+<!-- =========================
+     VIEWER
+========================= -->
+
+<div
+class="viewer"
+id="viewer">
+
+
+<button
+class="viewer-close"
+id="viewerClose">
+
+×
+
+</button>
+
+
+<div class="viewer-content">
+
+
+<img
+id="viewerImage"
+src=""
+alt="ARJClick Photography">
+
+
+<a
+id="downloadButton"
+class="download"
+href="#"
+download>
+
+↓ DOWNLOAD PHOTO
+
+</a>
+
+
+</div>
+
+</div>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<strong>
+ARJClick
+</strong>
+
+<p>
+PHOTOGRAPHY & FILMS • © 2026
+</p>
+
+</footer>
+
+
+
+<script>
+
+/* =========================
+   PHOTO DATABASE
+========================= */
+
+
+/*
+IMPORTANT:
+
+আপনার existing folders:
+
+images/model/
+images/prewedding/
+images/baby/
+images/wedding/
+
+প্রতিটি folder-এ
+1.jpg থেকে 50.jpg পর্যন্ত
+যতগুলো ছবি থাকবে,
+সেগুলো gallery-তে automatically
+দেখানোর চেষ্টা করবে।
+
+*/
+
+const photos=[];
+
+
+/* MODEL */
+
+for(let i=1;i<=50;i++){
+
+photos.push({
+
+src:
+"images/model/"+i+".jpg",
+
+category:
+"model",
+
+label:
+"MODEL"
+
+});
+
+}
+
+
+/* PRE-WEDDING */
+
+for(let i=1;i<=50;i++){
+
+photos.push({
+
+src:
+"images/prewedding/"+i+".jpg",
+
+category:
+"prewedding",
+
+label:
+"PRE-WEDDING"
+
+});
+
+}
+
+
+/* BABY */
+
+for(let i=1;i<=50;i++){
+
+photos.push({
+
+src:
+"images/baby/"+i+".jpg",
+
+category:
+"baby",
+
+label:
+"BABY"
+
+});
+
+}
+
+
+/* WEDDING */
+
+for(let i=1;i<=50;i++){
+
+photos.push({
+
+src:
+"images/wedding/"+i+".jpg",
+
+category:
+"wedding",
+
+label:
+"WEDDING"
+
+});
+
+}
+
+
+/* =========================
+   CREATE GALLERY
+========================= */
+
+const gallery=
+document.getElementById("gallery");
+
+
+function loadGallery(
+filter="all"
+){
+
+gallery.innerHTML="";
+
+
+photos.forEach(photo=>{
+
+if(
+filter!=="all" &&
+photo.category!==filter
+){
+
+return;
+
+}
+
+
+const item=
+document.createElement("div");
+
+item.className="photo";
+
+item.dataset.category=
+photo.category;
+
+
+const img=
+document.createElement("img");
+
+img.src=
+photo.src;
+
+img.alt=
+"ARJClick "+photo.label;
+
+img.loading="lazy";
+
+
+/*
+
+যে ছবিগুলো এখনো upload হয়নি,
+সেগুলো automatically hide হবে।
+
+*/
+
+img.onerror=()=>{
+
+item.remove();
+
+};
+
+
+const label=
+document.createElement("div");
+
+label.className="category";
+
+label.textContent=
+photo.label;
+
+
+item.appendChild(img);
+
+item.appendChild(label);
+
+gallery.appendChild(item);
+
+
+/* CLICK */
+
+item.addEventListener(
+"click",
+()=>{
+
+openViewer(
+photo.src,
+photo.label
+);
+
+});
+
+});
+
+}
+
+
+/* INITIAL */
+
+loadGallery();
+
+
+/* =========================
+   FILTER
+========================= */
+
+const filters=
+document.querySelectorAll(
+".filter"
+);
+
+
+filters.forEach(button=>{
+
+button.addEventListener(
+"click",
+()=>{
+
+filters.forEach(
+b=>b.classList.remove("active")
+);
+
+button.classList.add("active");
+
+
+loadGallery(
+button.dataset.filter
+);
+
+});
+
+});
+
+
+/* =========================
+   IMAGE VIEWER
+========================= */
+
+const viewer=
+document.getElementById(
+"viewer"
+);
+
+const viewerImage=
+document.getElementById(
+"viewerImage"
+);
+
+const downloadButton=
+document.getElementById(
+"downloadButton"
+);
+
+
+function openViewer(
+src,
+label
+){
+
+viewerImage.src=src;
+
+viewerImage.alt=
+"ARJClick "+label;
+
+downloadButton.href=src;
+
+downloadButton.download=
+src.split("/").pop();
+
+
+viewer.classList.add(
+"open"
+);
+
+document.body.style.overflow=
+"hidden";
+
+}
+
+
+function closeViewer(){
+
+viewer.classList.remove(
+"open"
+);
+
+viewerImage.src="";
+
+document.body.style.overflow="";
+
+}
+
+
+document
+.getElementById("viewerClose")
+.addEventListener(
+"click",
+closeViewer
+);
+
+
+/* CLICK OUTSIDE */
+
+viewer.addEventListener(
+"click",
+e=>{
+
+if(
+e.target===viewer
+){
+
+closeViewer();
+
+}
+
+});
+
+
+/* ESCAPE */
+
+document.addEventListener(
+"keydown",
+e=>{
+
+if(
+e.key==="Escape"
+){
+
+closeViewer();
+
+}
+
+});
+
+</script>
+
+
+</body>
+</html>
