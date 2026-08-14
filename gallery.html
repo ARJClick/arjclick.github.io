@@ -10,18 +10,11 @@ content="width=device-width, initial-scale=1.0">
 
 <title>ARJClick | Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
-rel="stylesheet">
-
 <style>
 
-:root{
-    --black:#030303;
-    --gold:#d4af37;
-    --gold-light:#f1d477;
-    --red:#c71920;
-    --line:rgba(212,175,55,.35);
-}
+/* =========================
+   BASIC
+========================= */
 
 *{
     margin:0;
@@ -29,10 +22,14 @@ rel="stylesheet">
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    background:var(--black);
-    color:var(--gold);
-    font-family:Montserrat,Arial,sans-serif;
+    background:#030303;
+    color:#f1d477;
+    font-family:Arial,sans-serif;
 }
 
 
@@ -41,92 +38,210 @@ body{
 ========================= */
 
 header{
-    height:72px;
+
+    height:128px;
+
     background:#030303;
-    border-bottom:1px solid var(--line);
+
+    border-bottom:1px solid #6f5b1e;
+
     position:sticky;
+
     top:0;
+
     z-index:1000;
+
 }
 
-.nav{
-    max-width:1200px;
+
+.header-inner{
+
     height:100%;
-    margin:auto;
-    padding:0 20px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
+    padding:10px 24px 8px 24px;
+
 }
 
 
-/* LOGO */
+/* =========================
+   ARJCLICK LOGO
+========================= */
 
 .logo{
+
+    text-decoration:none;
+
     display:flex;
+
     flex-direction:column;
-    align-items:center;
+
+    align-items:flex-start;
+
 }
 
-.camera{
-    width:34px;
-    height:25px;
-    border:3px solid var(--gold);
-    border-radius:5px;
+
+/* CAMERA */
+
+.camera-logo{
+
+    width:48px;
+
+    height:38px;
+
+    border:4px solid #d4af37;
+
+    border-radius:6px;
+
     position:relative;
-    margin-bottom:5px;
+
+    margin-left:68px;
+
+    margin-bottom:7px;
+
 }
 
-.camera:before{
+
+/* camera top */
+
+.camera-logo:before{
+
     content:"";
+
     position:absolute;
-    width:12px;
-    height:7px;
-    left:6px;
-    top:-10px;
-    border:3px solid var(--gold);
+
+    width:18px;
+
+    height:9px;
+
+    border:4px solid #d4af37;
+
     border-bottom:0;
-    border-radius:4px 4px 0 0;
+
+    border-radius:5px 5px 0 0;
+
+    left:10px;
+
+    top:-13px;
+
 }
 
-.camera:after{
+
+/* camera lens */
+
+.camera-logo:after{
+
     content:"";
+
     position:absolute;
-    width:11px;
-    height:11px;
-    left:8px;
-    top:4px;
-    border:3px solid var(--gold);
+
+    width:14px;
+
+    height:14px;
+
+    border:4px solid #d4af37;
+
     border-radius:50%;
+
+    left:13px;
+
+    top:7px;
+
 }
+
+
+/* LOGO NAME */
 
 .logo-name{
-    font-family:Cinzel,serif;
-    font-size:23px;
-    font-weight:700;
-    letter-spacing:1px;
+
+    font-family:Georgia,serif;
+
+    font-size:34px;
+
+    line-height:1;
+
+    letter-spacing:-1px;
+
+    white-space:nowrap;
+
 }
 
-.logo-name span{
-    color:var(--red);
+
+.logo-name .arj{
+
+    color:#c71920;
+
 }
+
+
+.logo-name .click{
+
+    color:#d4af37;
+
+}
+
+
+/* SUBTITLE */
 
 .logo-sub{
-    margin-top:5px;
-    font-size:6px;
-    letter-spacing:2px;
+
+    margin-top:9px;
+
+    margin-left:8px;
+
+    color:#e5c968;
+
+    font-size:10px;
+
+    letter-spacing:4px;
+
+    white-space:nowrap;
+
 }
 
 
-/* BACK */
+/* =========================
+   HAMBURGER
+========================= */
 
-.back{
-    border:1px solid var(--gold);
-    padding:10px 15px;
-    color:var(--gold-light);
-    font-size:9px;
-    letter-spacing:1.5px;
+.menu{
+
+    width:52px;
+
+    height:45px;
+
+    border:0;
+
+    background:transparent;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    padding:5px 0;
+
+    cursor:pointer;
+
+}
+
+
+.menu span{
+
+    width:40px;
+
+    height:5px;
+
+    background:#d4af37;
+
+    display:block;
+
 }
 
 
@@ -135,42 +250,70 @@ header{
 ========================= */
 
 .hero{
+
     text-align:center;
-    padding:55px 15px 30px;
+
+    padding:60px 20px 35px;
+
 }
+
 
 .kicker{
-    font-size:9px;
-    letter-spacing:4px;
-    color:var(--gold-light);
+
+    font-size:11px;
+
+    letter-spacing:5px;
+
+    color:#e5c968;
+
 }
+
 
 h1{
-    font-family:Cinzel,serif;
-    font-size:clamp(32px,7vw,55px);
+
+    margin-top:15px;
+
+    font-family:Georgia,serif;
+
+    font-size:42px;
+
     font-weight:400;
-    color:var(--gold-light);
-    margin:12px 0;
+
+    color:#f1d477;
+
 }
 
-.line{
+
+.gold-line{
+
     width:80px;
-    height:1px;
-    background:var(--gold);
-    margin:15px auto;
+
+    height:2px;
+
+    background:#d4af37;
+
+    margin:20px auto;
+
 }
+
 
 .hero p{
-    max-width:600px;
-    margin:auto;
-    color:#fff;
-    font-size:10px;
+
+    color:#eee;
+
+    font-size:14px;
+
     line-height:1.8;
+
+    max-width:600px;
+
+    margin:auto;
+
 }
 
 
 /* =========================
-   FILTER
+   FILTER BUTTONS
 ========================= */
 
 .filters{
@@ -179,35 +322,39 @@ h1{
 
     justify-content:center;
 
+    align-items:center;
+
     flex-wrap:wrap;
 
-    gap:8px;
+    gap:10px;
 
-    padding:10px 15px 30px;
+    padding:15px 20px 35px;
 
 }
 
+
 .filter{
-
-    padding:10px 15px;
-
-    border:1px solid var(--gold);
 
     background:transparent;
 
-    color:var(--gold-light);
+    border:1px solid #d4af37;
 
-    font-size:9px;
+    color:#e5c968;
 
-    letter-spacing:1.5px;
+    padding:11px 17px;
+
+    font-size:10px;
+
+    letter-spacing:2px;
 
     cursor:pointer;
 
 }
 
+
 .filter.active{
 
-    background:var(--gold);
+    background:#d4af37;
 
     color:#050505;
 
@@ -220,36 +367,44 @@ h1{
 
 .gallery{
 
+    width:100%;
+
     max-width:1200px;
 
     margin:auto;
 
-    padding:0 14px 60px;
+    padding:0 18px 70px;
 
     display:grid;
 
     grid-template-columns:
     repeat(3,1fr);
 
-    gap:10px;
+    gap:12px;
 
 }
 
-.photo{
 
-    border:1px solid var(--line);
+.photo-card{
 
-    background:#050505;
+    position:relative;
+
+    width:100%;
 
     aspect-ratio:4/5;
 
     overflow:hidden;
 
+    border:1px solid #6f5b1e;
+
+    background:#080808;
+
     cursor:pointer;
 
 }
 
-.photo img{
+
+.photo-card img{
 
     width:100%;
 
@@ -259,134 +414,58 @@ h1{
 
     display:block;
 
-    transition:.4s;
+    transition:transform .5s ease;
 
 }
 
-.photo:hover img{
+
+.photo-card:hover img{
 
     transform:scale(1.04);
 
 }
 
 
-/* =========================
-   CATEGORY LABEL
-========================= */
-
-.photo-category{
+.category-label{
 
     position:absolute;
-
-    z-index:2;
 
     left:8px;
 
     bottom:8px;
 
-    padding:5px 8px;
-
     background:rgba(0,0,0,.75);
 
-    color:var(--gold-light);
+    border:1px solid rgba(212,175,55,.6);
 
-    font-size:7px;
+    color:#f1d477;
 
-    letter-spacing:1px;
+    padding:6px 9px;
+
+    font-size:8px;
+
+    letter-spacing:1.5px;
 
 }
 
 
 /* =========================
-   VIEWER
+   LOADING
 ========================= */
 
-.viewer{
+.loading{
 
-    position:fixed;
+    grid-column:1/-1;
 
-    inset:0;
+    text-align:center;
 
-    background:rgba(0,0,0,.97);
+    padding:70px 20px;
 
-    z-index:5000;
+    color:#d4af37;
 
-    display:none;
+    letter-spacing:3px;
 
-    padding:15px;
-
-}
-
-.viewer.open{
-    display:block;
-}
-
-.viewer-content{
-
-    height:100%;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:15px;
-
-}
-
-.viewer-content img{
-
-    max-width:95vw;
-
-    max-height:78vh;
-
-    object-fit:contain;
-
-}
-
-.close{
-
-    position:absolute;
-
-    right:15px;
-
-    top:15px;
-
-    width:40px;
-
-    height:40px;
-
-    border:1px solid var(--gold);
-
-    background:#050505;
-
-    color:var(--gold);
-
-    font-size:25px;
-
-}
-
-
-/* SHARE */
-
-.share{
-
-    border:0;
-
-    background:var(--gold);
-
-    color:#050505;
-
-    padding:12px 22px;
-
-    font-size:9px;
-
-    font-weight:700;
-
-    letter-spacing:1.5px;
+    font-size:11px;
 
 }
 
@@ -401,11 +480,155 @@ h1{
 
     text-align:center;
 
-    padding:60px 10px;
+    padding:70px 20px;
 
-    color:#aaa;
+    color:#999;
 
-    font-size:11px;
+    font-size:12px;
+
+}
+
+
+/* =========================
+   PHOTO VIEWER
+========================= */
+
+.viewer{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.96);
+
+    z-index:5000;
+
+    display:none;
+
+}
+
+
+.viewer.show{
+
+    display:block;
+
+}
+
+
+.viewer-image{
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    max-width:94vw;
+
+    max-height:78vh;
+
+    object-fit:contain;
+
+}
+
+
+/* CLOSE */
+
+.close-viewer{
+
+    position:absolute;
+
+    top:18px;
+
+    right:18px;
+
+    width:45px;
+
+    height:45px;
+
+    border:1px solid #d4af37;
+
+    background:#050505;
+
+    color:#d4af37;
+
+    font-size:27px;
+
+    cursor:pointer;
+
+    z-index:2;
+
+}
+
+
+/* SHARE */
+
+.share-photo{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:28px;
+
+    transform:translateX(-50%);
+
+    border:0;
+
+    background:#d4af37;
+
+    color:#050505;
+
+    padding:14px 25px;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    cursor:pointer;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    border-top:1px solid #6f5b1e;
+
+    text-align:center;
+
+    padding:45px 20px;
+
+}
+
+
+.footer-logo{
+
+    font-family:Georgia,serif;
+
+    font-size:27px;
+
+    color:#f1d477;
+
+}
+
+
+.footer-sub{
+
+    margin-top:12px;
+
+    color:#ddd;
+
+    font-size:9px;
+
+    letter-spacing:4px;
 
 }
 
@@ -417,8 +640,72 @@ h1{
 @media(max-width:700px){
 
     header{
-        height:68px;
+
+        height:128px;
+
     }
+
+
+    .header-inner{
+
+        padding:8px 23px 8px 24px;
+
+    }
+
+
+    .camera-logo{
+
+        width:46px;
+
+        height:36px;
+
+        margin-left:70px;
+
+    }
+
+
+    .logo-name{
+
+        font-size:33px;
+
+    }
+
+
+    .logo-sub{
+
+        font-size:9px;
+
+        letter-spacing:3.5px;
+
+        margin-left:8px;
+
+    }
+
+
+    .menu{
+
+        width:45px;
+
+        height:42px;
+
+    }
+
+
+    .menu span{
+
+        width:40px;
+
+        height:5px;
+
+    }
+
+
+    h1{
+
+        font-size:38px;
+
+    }
+
 
     .gallery{
 
@@ -427,18 +714,48 @@ h1{
 
         gap:7px;
 
+        padding-left:12px;
+
+        padding-right:12px;
+
     }
 
-    .back{
 
-        padding:8px 10px;
+    .filter{
+
+        padding:10px 12px;
 
         font-size:8px;
 
     }
 
+}
+
+
+/* SMALL MOBILE */
+
+@media(max-width:380px){
+
     .logo-name{
-        font-size:20px;
+
+        font-size:29px;
+
+    }
+
+
+    .logo-sub{
+
+        font-size:8px;
+
+        letter-spacing:3px;
+
+    }
+
+
+    .camera-logo{
+
+        margin-left:60px;
+
     }
 
 }
@@ -457,19 +774,22 @@ h1{
 
 <header>
 
-<div class="nav">
+<div class="header-inner">
 
 
 <a href="index.html"
 class="logo">
 
-<div class="camera"></div>
+
+<div class="camera-logo"></div>
+
 
 <div class="logo-name">
 
-<span>ARJ</span>Click
+<span class="arj">ARJ</span><span class="click">CLICK</span>
 
 </div>
+
 
 <div class="logo-sub">
 
@@ -477,15 +797,20 @@ PHOTOGRAPHY & FILMS
 
 </div>
 
-</a>
-
-
-<a href="index.html"
-class="back">
-
-← BACK
 
 </a>
+
+
+<button class="menu"
+onclick="goHome()">
+
+<span></span>
+
+<span></span>
+
+<span></span>
+
+</button>
 
 
 </div>
@@ -495,32 +820,45 @@ class="back">
 
 
 <!-- =========================
-     TITLE
+     HERO
 ========================= -->
 
 <section class="hero">
 
+
 <div class="kicker">
+
 ARJCLICK PORTFOLIO
+
 </div>
 
+
 <h1>
+
 OUR WORK
+
 </h1>
 
-<div class="line"></div>
+
+<div class="gold-line"></div>
+
 
 <p>
-A collection of moments, emotions
-and stories captured by ARJClick.
+
+A collection of moments,
+emotions and stories captured
+with care, creativity and
+cinematic vision.
+
 </p>
+
 
 </section>
 
 
 
 <!-- =========================
-     FILTER
+     FILTERS
 ========================= -->
 
 <div class="filters">
@@ -528,7 +866,7 @@ and stories captured by ARJClick.
 
 <button
 class="filter active"
-data-filter="all">
+data-category="all">
 
 ALL
 
@@ -537,7 +875,7 @@ ALL
 
 <button
 class="filter"
-data-filter="model">
+data-category="model">
 
 MODEL
 
@@ -546,7 +884,7 @@ MODEL
 
 <button
 class="filter"
-data-filter="prewedding">
+data-category="prewedding">
 
 PRE-WEDDING
 
@@ -555,7 +893,7 @@ PRE-WEDDING
 
 <button
 class="filter"
-data-filter="baby">
+data-category="baby">
 
 BABY
 
@@ -564,7 +902,7 @@ BABY
 
 <button
 class="filter"
-data-filter="wedding">
+data-category="wedding">
 
 WEDDING
 
@@ -579,22 +917,24 @@ WEDDING
      GALLERY
 ========================= -->
 
-<div
+<main
 class="gallery"
 id="gallery">
 
-<div class="empty">
+
+<div class="loading">
 
 LOADING PORTFOLIO...
 
 </div>
 
-</div>
+
+</main>
 
 
 
 <!-- =========================
-     VIEWER
+     PHOTO VIEWER
 ========================= -->
 
 <div
@@ -603,7 +943,7 @@ id="viewer">
 
 
 <button
-class="close"
+class="close-viewer"
 onclick="closeViewer()">
 
 ×
@@ -611,18 +951,16 @@ onclick="closeViewer()">
 </button>
 
 
-<div class="viewer-content">
-
-
 <img
 id="viewerImage"
+class="viewer-image"
 src=""
-alt="ARJClick">
+alt="ARJClick Photography">
 
 
 <button
-class="share"
-id="shareButton">
+class="share-photo"
+onclick="sharePhoto()">
 
 ↗ SHARE PHOTO
 
@@ -631,29 +969,52 @@ id="shareButton">
 
 </div>
 
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+
+<div class="footer-logo">
+
+ARJCLICK
+
 </div>
+
+
+<div class="footer-sub">
+
+PHOTOGRAPHY & FILMS · © 2026
+
+</div>
+
+
+</footer>
 
 
 
 <script>
 
-/* =================================
-   GITHUB
-================================= */
+/* =========================================
+   GITHUB SETTINGS
+========================================= */
 
-const USER =
+const USERNAME =
 "ARJClick";
 
-const REPO =
+const REPOSITORY =
 "arjclick.github.io";
 
 const BRANCH =
 "main";
 
 
-/* =================================
-   EXACT FOLDERS
-================================= */
+/* =========================================
+   YOUR FOUR FOLDERS
+========================================= */
 
 const folders = {
 
@@ -674,27 +1035,31 @@ const folders = {
 
 let allPhotos = [];
 
-let currentFilter = "all";
+let selectedCategory = "all";
+
+let currentPhoto = "";
 
 
 
-/* =================================
-   LOAD FOLDER
-================================= */
+/* =========================================
+   GET PHOTOS FROM GITHUB
+========================================= */
 
-async function loadFolder(category){
+async function getPhotos(category){
 
     const folder =
     folders[category];
 
 
-    const api =
+    const apiURL =
 
     "https://api.github.com/repos/" +
 
-    USER + "/" +
+    USERNAME +
 
-    REPO +
+    "/" +
+
+    REPOSITORY +
 
     "/contents/" +
 
@@ -708,15 +1073,14 @@ async function loadFolder(category){
     try{
 
         const response =
-        await fetch(api);
+        await fetch(apiURL);
 
 
         if(!response.ok){
 
             console.log(
-                "Error:",
-                category,
-                response.status
+                "Folder error:",
+                folder
             );
 
             return [];
@@ -730,46 +1094,63 @@ async function loadFolder(category){
 
         return files
 
-        .filter(file =>
+        .filter(file => {
 
-            file.type === "file" &&
+            return (
 
-            /\.(jpg|jpeg|png|webp)$/i
-            .test(file.name)
+                file.type === "file"
 
-        )
+                &&
 
-        .map(file =>({
+                /\.(jpg|jpeg|png|webp)$/i
+                .test(file.name)
 
-            name:file.name,
+            );
 
-            category:category,
+        })
 
-            url:
+        .map(file => {
 
-            "https://raw.githubusercontent.com/" +
+            return {
 
-            USER + "/" +
+                category:
+                category,
 
-            REPO + "/" +
+                name:
+                file.name,
 
-            BRANCH + "/" +
+                url:
 
-            folder + "/" +
+                "https://raw.githubusercontent.com/" +
 
-            encodeURIComponent(file.name)
+                USERNAME +
 
-        }));
+                "/" +
+
+                REPOSITORY +
+
+                "/" +
+
+                BRANCH +
+
+                "/" +
+
+                folder +
+
+                "/" +
+
+                encodeURIComponent(file.name)
+
+            };
+
+        });
 
 
     }
 
     catch(error){
 
-        console.log(
-            category,
-            error
-        );
+        console.log(error);
 
         return [];
 
@@ -779,23 +1160,23 @@ async function loadFolder(category){
 
 
 
-/* =================================
-   LOAD EVERYTHING
-================================= */
+/* =========================================
+   LOAD ALL FOUR FOLDERS
+========================================= */
 
-async function loadGallery(){
+async function loadAllPhotos(){
 
     const results =
 
     await Promise.all([
 
-        loadFolder("model"),
+        getPhotos("model"),
 
-        loadFolder("prewedding"),
+        getPhotos("prewedding"),
 
-        loadFolder("baby"),
+        getPhotos("baby"),
 
-        loadFolder("wedding")
+        getPhotos("wedding")
 
     ]);
 
@@ -813,17 +1194,17 @@ async function loadGallery(){
     ];
 
 
-    showGallery();
+    displayPhotos();
 
 }
 
 
 
-/* =================================
-   SHOW GALLERY
-================================= */
+/* =========================================
+   DISPLAY
+========================================= */
 
-function showGallery(){
+function displayPhotos(){
 
     const gallery =
     document.getElementById(
@@ -834,24 +1215,33 @@ function showGallery(){
     gallery.innerHTML = "";
 
 
-    const photos =
-
-    currentFilter === "all"
-
-    ?
-
-    allPhotos
-
-    :
-
-    allPhotos.filter(
-        photo =>
-        photo.category ===
-        currentFilter
-    );
+    let photos;
 
 
-    if(!photos.length){
+    if(
+        selectedCategory === "all"
+    ){
+
+        photos =
+        allPhotos;
+
+    }
+
+    else{
+
+        photos =
+        allPhotos.filter(
+            photo =>
+            photo.category ===
+            selectedCategory
+        );
+
+    }
+
+
+    if(
+        photos.length === 0
+    ){
 
         gallery.innerHTML = `
 
@@ -868,43 +1258,49 @@ function showGallery(){
     }
 
 
-    photos.forEach(photo=>{
+    photos.forEach(photo => {
 
 
-        const item =
+        const card =
         document.createElement(
             "div"
         );
 
 
-        item.className =
-        "photo";
+        card.className =
+        "photo-card";
 
 
-        item.dataset.category =
-        photo.category;
-
-
-        item.innerHTML = `
+        card.innerHTML = `
 
         <img
         src="${photo.url}"
-        alt="ARJClick">
+        alt="ARJClick Photography"
+        loading="lazy">
+
+        <div class="category-label">
+
+        ${formatCategory(photo.category)}
+
+        </div>
 
         `;
 
 
-        item.onclick = function(){
+        card.addEventListener(
+            "click",
+            function(){
 
-            openViewer(
-                photo.url
-            );
+                openViewer(
+                    photo.url
+                );
 
-        };
+            }
+        );
 
 
         gallery.appendChild(
-            item
+            card
         );
 
 
@@ -914,151 +1310,126 @@ function showGallery(){
 
 
 
-/* =================================
+/* =========================================
+   CATEGORY NAME
+========================================= */
+
+function formatCategory(category){
+
+    if(
+        category === "prewedding"
+    ){
+
+        return "PRE-WEDDING";
+
+    }
+
+
+    return category.toUpperCase();
+
+}
+
+
+
+/* =========================================
    FILTER
-================================= */
+========================================= */
 
 document
 .querySelectorAll(".filter")
-.forEach(button=>{
+.forEach(button => {
 
 
-    button.onclick =
-    function(){
+    button.addEventListener(
+        "click",
+        function(){
 
 
-        document
-        .querySelectorAll(
-            ".filter"
-        )
-        .forEach(
-            b =>
-            b.classList.remove(
-                "active"
+            document
+            .querySelectorAll(
+                ".filter"
             )
-        );
+            .forEach(btn => {
+
+                btn.classList.remove(
+                    "active"
+                );
+
+            });
 
 
-        this.classList.add(
-            "active"
-        );
+            this.classList.add(
+                "active"
+            );
 
 
-        currentFilter =
-        this.dataset.filter;
+            selectedCategory =
+            this.dataset.category;
 
 
-        showGallery();
+            displayPhotos();
 
-    };
+        }
+    );
 
 });
 
 
 
-/* =================================
-   VIEWER
-================================= */
-
-const viewer =
-document.getElementById(
-    "viewer"
-);
-
-const viewerImage =
-document.getElementById(
-    "viewerImage"
-);
-
-const shareButton =
-document.getElementById(
-    "shareButton"
-);
-
-
+/* =========================================
+   OPEN PHOTO
+========================================= */
 
 function openViewer(url){
 
-    viewerImage.src =
+    currentPhoto =
     url;
 
 
-    viewer.classList.add(
-        "open"
+    document
+    .getElementById(
+        "viewerImage"
+    )
+    .src =
+    url;
+
+
+    document
+    .getElementById(
+        "viewer"
+    )
+    .classList.add(
+        "show"
     );
 
 
     document.body.style.overflow =
     "hidden";
 
-
-    shareButton.onclick =
-    async function(){
-
-
-        try{
-
-
-            if(
-                navigator.share
-            ){
-
-                await navigator.share({
-
-                    title:
-                    "ARJClick Photography",
-
-                    text:
-                    "ARJClick Photography",
-
-                    url:url
-
-                });
-
-            }
-
-            else{
-
-                await navigator
-                .clipboard
-                .writeText(url);
-
-
-                alert(
-                    "Photo link copied."
-                );
-
-            }
-
-
-        }
-
-        catch(error){
-
-            console.log(
-                "Share cancelled"
-            );
-
-        }
-
-    };
-
 }
 
 
 
-/* =================================
-   CLOSE VIEWER
-================================= */
+/* =========================================
+   CLOSE PHOTO
+========================================= */
 
 function closeViewer(){
 
-    viewer.classList.remove(
-        "open"
+    document
+    .getElementById(
+        "viewer"
+    )
+    .classList.remove(
+        "show"
     );
 
 
-    viewerImage.src = "";
+    document
+    .getElementById(
+        "viewerImage"
+    )
+    .src = "";
 
 
     document.body.style.overflow =
@@ -1066,6 +1437,76 @@ function closeViewer(){
 
 }
 
+
+
+/* =========================================
+   SHARE
+========================================= */
+
+async function sharePhoto(){
+
+    if(!currentPhoto){
+
+        return;
+
+    }
+
+
+    try{
+
+
+        if(
+            navigator.share
+        ){
+
+            await navigator.share({
+
+                title:
+                "ARJClick Photography",
+
+                text:
+                "ARJClick Photography",
+
+                url:
+                currentPhoto
+
+            });
+
+        }
+
+        else{
+
+            await navigator
+            .clipboard
+            .writeText(
+                currentPhoto
+            );
+
+
+            alert(
+                "Photo link copied."
+            );
+
+        }
+
+
+    }
+
+    catch(error){
+
+        console.log(
+            "Share cancelled"
+        );
+
+    }
+
+}
+
+
+
+/* =========================================
+   ESCAPE KEY
+========================================= */
 
 document.addEventListener(
 "keydown",
@@ -1083,11 +1524,24 @@ function(event){
 
 
 
-/* =================================
-   START
-================================= */
+/* =========================================
+   HEADER MENU
+========================================= */
 
-loadGallery();
+function goHome(){
+
+    window.location.href =
+    "index.html";
+
+}
+
+
+
+/* =========================================
+   START
+========================================= */
+
+loadAllPhotos();
 
 </script>
 
