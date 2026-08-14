@@ -1,1096 +1,1353 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>ARJClick | Photography & Films</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
 
 <style>
 
-/* =========================
-   ROOT
-========================= */
+/* ========================================
+   BASIC
+======================================== */
 
 :root{
-  --black:#030303;
-  --deep:#080705;
-  --gold:#d4af37;
-  --gold-light:#f0cf72;
-  --gold-dark:#8c7025;
-  --red:#c71920;
-  --white:#ffffff;
-  --gray:#a89b7c;
-  --line:rgba(212,175,55,.30);
+    --black:#030303;
+    --dark:#070605;
+    --gold:#d4af37;
+    --gold-light:#f0cf72;
+    --red:#c71920;
+    --white:#ffffff;
+    --line:rgba(212,175,55,.30);
 }
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth;
-  background:#030303;
+    scroll-behavior:smooth;
+    background:var(--black);
 }
 
 body{
-  background:#030303;
-  color:var(--gold);
-  font-family:Montserrat,Arial,sans-serif;
-  overflow-x:hidden;
-}
-
-img{
-  display:block;
-  max-width:100%;
+    background:var(--black);
+    color:var(--gold);
+    font-family:Montserrat,Arial,sans-serif;
+    overflow-x:hidden;
 }
 
 a{
-  color:inherit;
-  text-decoration:none;
+    text-decoration:none;
+    color:inherit;
 }
 
 button{
-  font-family:inherit;
+    font-family:inherit;
 }
 
 
-/* =========================
-   HEADER / LOGO
-========================= */
+/* ========================================
+   HEADER
+======================================== */
 
 .header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  height:74px;
-  background:rgba(3,3,3,.94);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    height:72px;
+
+    background:rgba(3,3,3,.95);
+
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid var(--line);
 }
 
 .nav{
-  height:100%;
-  max-width:1200px;
-  margin:auto;
-  padding:0 18px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+    height:100%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:0 16px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
 }
 
+
+/* ========================================
+   ARJCLICK LOGO
+======================================== */
+
 .logo{
-  display:flex;
-  align-items:center;
-  justify-content:center;
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
 }
 
 .logo-stack{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  line-height:1;
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    line-height:1;
 }
 
-.logo-camera{
-  width:34px;
-  height:24px;
-  border:3px solid var(--gold);
-  border-radius:5px;
-  position:relative;
-  margin-bottom:4px;
+
+/* CAMERA */
+
+.camera{
+    width:32px;
+    height:23px;
+
+    border:3px solid var(--gold);
+
+    border-radius:5px;
+
+    position:relative;
+
+    margin-bottom:4px;
 }
 
-.logo-camera:before{
-  content:"";
-  position:absolute;
-  width:12px;
-  height:6px;
-  border:3px solid var(--gold);
-  border-bottom:0;
-  border-radius:4px 4px 0 0;
-  left:5px;
-  top:-9px;
+.camera:before{
+    content:"";
+
+    position:absolute;
+
+    width:11px;
+    height:6px;
+
+    left:5px;
+    top:-9px;
+
+    border:3px solid var(--gold);
+
+    border-bottom:0;
+
+    border-radius:4px 4px 0 0;
 }
 
-.logo-camera:after{
-  content:"";
-  position:absolute;
-  width:11px;
-  height:11px;
-  border:3px solid var(--gold);
-  border-radius:50%;
-  left:8px;
-  top:4px;
+.camera:after{
+    content:"";
+
+    position:absolute;
+
+    width:10px;
+    height:10px;
+
+    left:8px;
+    top:4px;
+
+    border:3px solid var(--gold);
+
+    border-radius:50%;
 }
+
+
+/* LOGO TEXT */
 
 .logo-name{
-  font-family:Cinzel,serif;
-  font-size:25px;
-  font-weight:800;
-  letter-spacing:1px;
-  color:var(--gold-light);
+    font-family:Cinzel,serif;
+
+    font-size:23px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    color:var(--gold-light);
 }
 
 .logo-name .arj{
-  color:var(--red);
+    color:var(--red);
 }
 
 .logo-sub{
-  font-size:6px;
-  letter-spacing:2px;
-  margin-top:5px;
-  color:var(--gold);
+    font-size:5.5px;
+
+    letter-spacing:2px;
+
+    color:var(--gold);
+
+    margin-top:5px;
 }
+
+
+/* NAV */
 
 .nav-links{
-  display:flex;
-  gap:25px;
-  align-items:center;
+    display:flex;
+
+    gap:22px;
+
+    font-size:9px;
+
+    letter-spacing:1.2px;
+
+    color:var(--gold-light);
 }
 
-.nav-links a{
-  font-size:10px;
-  letter-spacing:1.2px;
-  color:var(--gold-light);
+.book-btn{
+    padding:10px 15px;
+
+    border:1px solid var(--gold);
+
+    color:var(--gold-light);
+
+    font-size:9px;
+
+    letter-spacing:1px;
 }
 
-.book-top{
-  border:1px solid var(--gold);
-  padding:10px 16px;
-  color:var(--gold-light);
-  font-size:10px;
-  letter-spacing:1px;
-}
+.menu-btn{
+    display:none;
 
-.menu{
-  display:none;
-  background:none;
-  border:0;
-  color:var(--gold);
-  font-size:28px;
-}
+    background:none;
 
+    border:0;
 
-/* =========================
-   COMMON
-========================= */
+    color:var(--gold);
 
-.section{
-  max-width:1200px;
-  margin:auto;
-  padding:75px 18px;
-}
-
-.kicker{
-  text-align:center;
-  font-size:9px;
-  letter-spacing:4px;
-  color:var(--gold-light);
-  margin-bottom:9px;
-}
-
-.section-title{
-  text-align:center;
-  font-family:Cinzel,serif;
-  font-size:clamp(27px,5vw,45px);
-  font-weight:400;
-  letter-spacing:1px;
-  color:var(--gold-light);
-}
-
-.rule{
-  width:85px;
-  height:1px;
-  background:var(--gold);
-  margin:17px auto 32px;
+    font-size:25px;
 }
 
 
-/* =========================
+/* ========================================
    HERO
-========================= */
+======================================== */
 
 .hero{
-  min-height:calc(100svh - 74px);
-  position:relative;
-  overflow:hidden;
-  display:flex;
-  align-items:center;
+    min-height:calc(100svh - 72px);
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
 }
 
 .hero-image{
-  position:absolute;
-  inset:0;
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
 }
 
-.hero-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  filter:none;
-}
+.hero-overlay{
+    position:absolute;
 
-.hero-image:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    90deg,
-    rgba(0,0,0,.38),
-    rgba(0,0,0,.08) 65%,
-    rgba(0,0,0,.18)
-  );
+    inset:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.38),
+        rgba(0,0,0,.08) 70%,
+        rgba(0,0,0,.20)
+    );
 }
 
 .hero-content{
-  position:relative;
-  z-index:2;
-  max-width:1200px;
-  width:100%;
-  margin:auto;
-  padding:50px 22px;
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:50px 20px;
 }
 
-.hero-text{
-  max-width:580px;
-}
+.hero-kicker{
+    font-size:9px;
 
-.hero-small{
-  color:var(--gold-light);
-  font-size:10px;
-  letter-spacing:4px;
-  margin-bottom:17px;
+    letter-spacing:4px;
+
+    color:var(--gold-light);
 }
 
 .hero h1{
-  font-family:Cinzel,serif;
-  font-size:clamp(35px,6vw,62px);
-  line-height:1.1;
-  font-weight:400;
-  color:var(--gold-light);
-  letter-spacing:1px;
-}
+    font-family:Cinzel,serif;
 
-.hero h1 span{
-  display:block;
+    font-weight:400;
+
+    font-size:
+    clamp(38px,6vw,66px);
+
+    line-height:1.08;
+
+    color:var(--gold-light);
+
+    margin:15px 0;
 }
 
 .hero-line{
-  width:130px;
-  height:1px;
-  background:var(--gold);
-  margin:22px 0;
+    width:120px;
+
+    height:1px;
+
+    background:var(--gold);
+
+    margin:20px 0;
 }
 
-.hero p{
-  color:#fff;
-  font-size:12px;
-  line-height:1.9;
-  max-width:500px;
+.hero-text{
+    max-width:510px;
+
+    color:var(--white);
+
+    font-size:11px;
+
+    line-height:1.9;
 }
 
-.hero-buttons{
-  display:flex;
-  gap:12px;
-  margin-top:25px;
-  flex-wrap:wrap;
+.hero-btn{
+    display:inline-block;
+
+    margin-top:24px;
+
+    padding:13px 20px;
+
+    background:var(--gold);
+
+    color:#050505;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:1.4px;
 }
 
-.btn{
-  display:inline-block;
-  padding:13px 20px;
-  border:1px solid var(--gold);
-  background:var(--gold);
-  color:#050505;
-  font-size:9px;
-  font-weight:700;
-  letter-spacing:1.3px;
-}
+.hero-btn.outline{
+    margin-left:7px;
 
-.btn-outline{
-  background:rgba(0,0,0,.35);
-  color:var(--gold-light);
+    background:rgba(0,0,0,.35);
+
+    color:var(--gold-light);
+
+    border:1px solid var(--gold);
 }
 
 
-/* =========================
+/* ========================================
+   SECTION
+======================================== */
+
+.section{
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:65px 16px;
+}
+
+.kicker{
+    text-align:center;
+
+    font-size:9px;
+
+    letter-spacing:4px;
+
+    color:var(--gold-light);
+}
+
+.section-title{
+    text-align:center;
+
+    font-family:Cinzel,serif;
+
+    font-size:
+    clamp(27px,5vw,45px);
+
+    font-weight:400;
+
+    color:var(--gold-light);
+
+    margin-top:8px;
+}
+
+.gold-rule{
+    width:85px;
+
+    height:1px;
+
+    background:var(--gold);
+
+    margin:16px auto 30px;
+}
+
+
+/* ========================================
    MAIN PHOTO SECTIONS
-========================= */
+======================================== */
 
 .photo-section{
-  max-width:1120px;
-  margin:0 auto;
-  padding:22px 8px;
+    max-width:1120px;
+
+    margin:auto;
+
+    padding:18px 7px;
 }
 
 .photo-frame{
-  height:700px;
-  position:relative;
-  overflow:hidden;
-  background:#050505;
-  border:1px solid var(--line);
+    height:700px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:#050505;
+
+    border:1px solid var(--line);
 }
 
-.photo-slide{
-  position:absolute;
-  inset:0;
-  opacity:0;
-  transform:scale(1.02);
-  transition:opacity .8s ease,transform 1s ease;
+.slide{
+    position:absolute;
+
+    inset:0;
+
+    opacity:0;
+
+    transition:
+    opacity .7s ease,
+    transform .9s ease;
+
+    transform:scale(1.02);
 }
 
-.photo-slide.active{
-  opacity:1;
-  transform:scale(1);
+.slide.active{
+    opacity:1;
+
+    transform:scale(1);
 }
 
-.photo-slide img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  filter:none;
+.slide img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
 }
 
-.photo-overlay{
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  background:linear-gradient(
-    90deg,
-    rgba(0,0,0,.14),
-    rgba(0,0,0,.03) 55%,
-    rgba(0,0,0,.10)
-  );
+.slide::after{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.14),
+        rgba(0,0,0,.02) 65%,
+        rgba(0,0,0,.12)
+    );
 }
+
+
+/* PHOTO TEXT */
 
 .photo-info{
-  position:absolute;
-  z-index:5;
-  left:45px;
-  bottom:60px;
-  max-width:480px;
-  color:var(--gold);
-  text-shadow:0 2px 12px rgba(0,0,0,.75);
+    position:absolute;
+
+    z-index:5;
+
+    left:42px;
+
+    bottom:55px;
+
+    max-width:500px;
+
+    text-shadow:
+    0 2px 12px rgba(0,0,0,.85);
 }
 
 .photo-info h2{
-  font-family:Cinzel,serif;
-  font-size:clamp(27px,5vw,48px);
-  line-height:1.1;
-  font-weight:400;
-  color:var(--gold-light);
+    font-family:Cinzel,serif;
+
+    font-size:
+    clamp(28px,5vw,48px);
+
+    font-weight:400;
+
+    line-height:1.08;
+
+    color:var(--gold-light);
 }
 
-.photo-info .line{
-  width:100px;
-  height:1px;
-  background:var(--gold);
-  margin:17px 0;
+.photo-line{
+    width:90px;
+
+    height:1px;
+
+    background:var(--gold);
+
+    margin:15px 0;
 }
 
 .photo-info p{
-  color:#fff;
-  font-family:"Cormorant Garamond",serif;
-  font-size:20px;
-  line-height:1.35;
-}
+    font-family:"Cormorant Garamond",serif;
 
-.photo-button{
-  display:inline-block;
-  margin-top:20px;
-  padding:10px 16px;
-  border:1px solid var(--gold);
-  color:var(--gold-light);
-  background:rgba(0,0,0,.35);
-  font-size:9px;
-  letter-spacing:1px;
-}
+    font-size:20px;
 
-.arrow{
-  position:absolute;
-  z-index:8;
-  top:50%;
-  transform:translateY(-50%);
-  width:40px;
-  height:40px;
-  border-radius:50%;
-  border:1px solid var(--gold);
-  background:rgba(0,0,0,.38);
-  color:var(--gold-light);
-  font-size:25px;
-}
+    line-height:1.35;
 
-.prev{
-  left:14px;
-}
-
-.next{
-  right:14px;
-}
-
-.dots{
-  position:absolute;
-  z-index:8;
-  bottom:18px;
-  left:50%;
-  transform:translateX(-50%);
-  display:flex;
-  gap:8px;
-}
-
-.dot{
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  border:1px solid var(--gold);
-  background:transparent;
-}
-
-.dot.active{
-  background:var(--gold);
+    color:var(--white);
 }
 
 
-/* =========================
-   ALL SERVICES
-========================= */
+/* VIEW WORK */
 
-.services-track-wrap{
-  position:relative;
+.view-work{
+    display:inline-block;
+
+    margin-top:18px;
+
+    padding:11px 16px;
+
+    background:rgba(0,0,0,.30);
+
+    border:1px solid var(--gold);
+
+    color:var(--gold-light);
+
+    font-size:9px;
+
+    letter-spacing:1.3px;
+
+    transition:.3s;
 }
 
-.services-track{
-  display:flex;
-  gap:12px;
-  overflow-x:auto;
-  scrollbar-width:none;
-  padding:5px 4px 15px;
+.view-work:hover{
+    background:var(--gold);
+
+    color:#050505;
 }
 
-.services-track::-webkit-scrollbar{
-  display:none;
+
+/* ARROWS */
+
+.slide-arrow{
+    position:absolute;
+
+    z-index:7;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:40px;
+    height:40px;
+
+    border:1px solid var(--gold);
+
+    border-radius:50%;
+
+    background:rgba(0,0,0,.45);
+
+    color:var(--gold-light);
+
+    font-size:25px;
+
+    cursor:pointer;
 }
 
-.service-card{
-  flex:0 0 145px;
-  border:1px solid var(--line);
-  background:#060504;
-  padding:15px 8px;
-  text-align:center;
+.slide-prev{
+    left:13px;
+}
+
+.slide-next{
+    right:13px;
+}
+
+
+/* DOTS */
+
+.slider-dots{
+    position:absolute;
+
+    z-index:8;
+
+    bottom:16px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    gap:7px;
+}
+
+.slider-dot{
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    border:1px solid var(--gold);
+
+    background:transparent;
+
+    padding:0;
+
+    cursor:pointer;
+}
+
+.slider-dot.active{
+    background:var(--gold);
+}
+
+
+/* ========================================
+   SERVICES
+======================================== */
+
+.services{
+    display:flex;
+
+    gap:10px;
+
+    overflow-x:auto;
+
+    scrollbar-width:none;
+
+    padding-bottom:8px;
+}
+
+.services::-webkit-scrollbar{
+    display:none;
+}
+
+.service{
+    flex:0 0 145px;
+
+    background:#060504;
+
+    border:1px solid var(--line);
+
+    padding:15px 8px;
+
+    text-align:center;
 }
 
 .service-icon{
-  width:58px;
-  height:58px;
-  border:1px solid var(--gold);
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  margin:auto auto 10px;
-  font-size:23px;
+    width:56px;
+    height:56px;
+
+    border:1px solid var(--gold);
+
+    border-radius:50%;
+
+    display:grid;
+
+    place-items:center;
+
+    margin:0 auto 9px;
+
+    font-size:21px;
 }
 
-.service-card h3{
-  font-family:Cinzel,serif;
-  color:var(--gold-light);
-  font-size:10px;
-  line-height:1.4;
-  font-weight:400;
+.service h3{
+    font-family:Cinzel,serif;
+
+    font-size:10px;
+
+    font-weight:400;
+
+    line-height:1.4;
+
+    color:var(--gold-light);
 }
 
 
-/* =========================
+/* ========================================
    RECENT WORK
-========================= */
+======================================== */
 
-.recent-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:10px;
+.recent-work{
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:9px;
 }
 
-.recent-card{
-  padding:0;
-  border:1px solid var(--line);
-  background:#050505;
-  overflow:hidden;
-  aspect-ratio:4/3;
-  cursor:pointer;
+.recent-photo{
+    border:1px solid var(--line);
+
+    background:#050505;
+
+    aspect-ratio:4/3;
+
+    overflow:hidden;
+
+    padding:0;
+
+    cursor:pointer;
 }
 
-.recent-card img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:.5s;
+.recent-photo img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
 }
 
-.recent-card:hover img{
-  transform:scale(1.05);
-}
-
-.explore{
-  display:block;
-  margin:28px auto 0;
-  padding:13px 23px;
-  border:1px solid var(--gold);
-  background:transparent;
-  color:var(--gold-light);
-  font-size:10px;
-  letter-spacing:2px;
-}
-
-
-/* =========================
-   GALLERY MODAL
-========================= */
-
-.gallery-modal,
-.viewer{
-  position:fixed;
-  inset:0;
-  z-index:5000;
-  display:none;
-  background:rgba(0,0,0,.96);
-  padding:15px;
-}
-
-.gallery-modal.open,
-.viewer.open{
-  display:block;
-}
-
-.gallery-box{
-  height:100%;
-  max-width:1100px;
-  margin:auto;
-  overflow:auto;
-  padding:25px 10px;
-  border:1px solid var(--line);
-  background:#050505;
-}
-
-.close{
-  position:fixed;
-  right:20px;
-  top:15px;
-  width:40px;
-  height:40px;
-  border:1px solid var(--gold);
-  background:#050505;
-  color:var(--gold);
-  font-size:25px;
-  z-index:20;
-}
-
-.gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:8px;
-  margin-top:25px;
-}
-
-.gallery-item{
-  border:1px solid var(--line);
-  padding:0;
-  background:#050505;
-  aspect-ratio:4/3;
-  overflow:hidden;
-}
-
-.gallery-item img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+.recent-photo:hover img{
+    transform:scale(1.05);
 }
 
 
-/* =========================
-   VIEWER
-========================= */
-
-.viewer-content{
-  height:100%;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:15px;
-}
-
-.viewer-content img{
-  max-width:95%;
-  max-height:78vh;
-  object-fit:contain;
-  border:1px solid var(--gold);
-}
-
-.download{
-  display:inline-block;
-  background:var(--gold);
-  color:#050505;
-  padding:12px 20px;
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:1.2px;
-}
-
-
-/* =========================
+/* ========================================
    EXPERIENCE
-========================= */
+======================================== */
 
 .stats{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    border-top:1px solid var(--line);
+
+    border-bottom:1px solid var(--line);
 }
 
 .stat{
-  text-align:center;
-  padding:30px 8px;
-  border-right:1px solid var(--line);
+    text-align:center;
+
+    padding:28px 5px;
+
+    border-right:1px solid var(--line);
 }
 
 .stat:last-child{
-  border-right:0;
+    border-right:0;
 }
 
 .stat strong{
-  display:block;
-  font-family:Cinzel,serif;
-  font-size:30px;
-  font-weight:400;
-  color:var(--gold-light);
+    display:block;
+
+    font-family:Cinzel,serif;
+
+    font-size:30px;
+
+    font-weight:400;
+
+    color:var(--gold-light);
 }
 
 .stat span{
-  color:#fff;
-  font-size:8px;
-  letter-spacing:1.5px;
+    font-size:8px;
+
+    letter-spacing:1.4px;
+
+    color:var(--white);
 }
 
 
-/* =========================
+/* ========================================
    CLIENT REVIEWS
-========================= */
+======================================== */
 
 .review-wrap{
-  position:relative;
-  display:flex;
-  align-items:center;
-  gap:7px;
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
 }
 
-.review-slider{
-  flex:1;
-  display:flex;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  scrollbar-width:none;
-  touch-action:pan-x;
+.review-track{
+    display:flex;
+
+    overflow-x:auto;
+
+    scroll-snap-type:x mandatory;
+
+    scrollbar-width:none;
+
+    flex:1;
 }
 
-.review-slider::-webkit-scrollbar{
-  display:none;
+.review-track::-webkit-scrollbar{
+    display:none;
 }
 
 .review{
-  flex:0 0 100%;
-  scroll-snap-align:center;
-  border:1px solid var(--line);
-  background:#050403;
-  padding:20px;
+    flex:0 0 100%;
+
+    scroll-snap-align:center;
+
+    border:1px solid var(--line);
+
+    padding:18px;
+
+    background:#050403;
 }
 
 .review-video{
-  width:100%;
-  aspect-ratio:16/9;
-  border:1px solid var(--line);
-  display:grid;
-  place-items:center;
+    aspect-ratio:16/9;
+
+    border:1px solid var(--line);
+
+    display:grid;
+
+    place-items:center;
 }
 
-.play{
-  width:60px;
-  height:60px;
-  border:1px solid var(--gold);
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  color:var(--gold);
-  font-size:20px;
+.play-icon{
+    width:58px;
+    height:58px;
+
+    border:1px solid var(--gold);
+
+    border-radius:50%;
+
+    display:grid;
+
+    place-items:center;
+
+    color:var(--gold);
 }
 
 .review p{
-  color:#fff;
-  font-family:"Cormorant Garamond",serif;
-  font-size:20px;
-  line-height:1.4;
-  margin-top:18px;
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:20px;
+
+    line-height:1.4;
+
+    color:var(--white);
+
+    margin-top:15px;
 }
 
 .review cite{
-  display:block;
-  margin-top:12px;
-  color:var(--gold);
-  font-size:8px;
-  letter-spacing:2px;
+    display:block;
+
+    margin-top:8px;
+
+    font-size:8px;
+
+    letter-spacing:1.8px;
+
+    color:var(--gold);
 }
 
 .review-arrow{
-  flex:0 0 38px;
-  width:38px;
-  height:38px;
-  border-radius:50%;
-  border:1px solid var(--gold);
-  background:#050505;
-  color:var(--gold);
-  font-size:25px;
-}
+    flex:0 0 38px;
 
-.review-dots{
-  display:flex;
-  justify-content:center;
-  gap:7px;
-  margin-top:12px;
-}
+    width:38px;
+    height:38px;
 
+    border:1px solid var(--gold);
 
-/* =========================
-   WHY
-========================= */
+    border-radius:50%;
 
-.why-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-}
+    background:#050505;
 
-.why-card{
-  border:1px solid var(--line);
-  padding:25px 18px;
-  background:#050403;
-}
+    color:var(--gold);
 
-.why-card .icon{
-  font-size:24px;
-  margin-bottom:12px;
-}
-
-.why-card h3{
-  font-family:Cinzel,serif;
-  color:var(--gold-light);
-  font-size:15px;
-  font-weight:400;
-  margin-bottom:10px;
-}
-
-.why-card p{
-  color:#fff;
-  font-size:10px;
-  line-height:1.8;
+    font-size:23px;
 }
 
 
-/* =========================
+/* ========================================
+   WHY ARJCLICK
+======================================== */
+
+.feature-cards{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:11px;
+}
+
+.feature-card{
+    border:1px solid var(--line);
+
+    background:#050403;
+
+    padding:22px 16px;
+}
+
+.feature-card-icon{
+    color:var(--gold);
+
+    font-size:20px;
+}
+
+.feature-card h3{
+    font-family:Cinzel,serif;
+
+    font-size:15px;
+
+    font-weight:400;
+
+    color:var(--gold-light);
+
+    margin:10px 0;
+}
+
+.feature-card p{
+    color:var(--white);
+
+    font-size:10px;
+
+    line-height:1.8;
+}
+
+
+/* ========================================
    PRICING
-========================= */
+======================================== */
 
 .price-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:11px;
 }
 
 .price-card{
-  border:1px solid var(--line);
-  background:#050403;
-  padding:25px 18px;
+    border:1px solid var(--line);
+
+    background:#050403;
+
+    padding:23px 16px;
 }
 
 .price-card h3{
-  font-family:Cinzel,serif;
-  color:var(--gold-light);
-  font-size:16px;
-  font-weight:400;
+    font-family:Cinzel,serif;
+
+    font-size:15px;
+
+    font-weight:400;
+
+    color:var(--gold-light);
 }
 
 .price{
-  font-family:"Cormorant Garamond",serif;
-  font-size:35px;
-  color:var(--gold);
-  margin:10px 0;
-}
+    display:block;
 
-.price-card ul{
-  list-style:none;
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:34px;
+
+    margin:8px 0;
+
+    color:var(--gold-light);
 }
 
 .price-card li{
-  color:#fff;
-  font-size:10px;
-  padding:7px 0;
-  border-bottom:1px solid rgba(212,175,55,.10);
+    list-style:none;
+
+    color:var(--white);
+
+    font-size:10px;
+
+    padding:6px 0;
+
+    border-bottom:1px solid rgba(212,175,55,.10);
 }
 
 
-/* =========================
+/* ========================================
    ABOUT
-========================= */
+======================================== */
 
 .about{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-  align-items:center;
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:25px;
+
+    align-items:center;
 }
 
-.about-photo{
-  border:1px solid var(--line);
-  overflow:hidden;
-}
+.about-image{
+    width:100%;
 
-.about-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+    aspect-ratio:4/3;
+
+    object-fit:cover;
+
+    border:1px solid var(--line);
 }
 
 .about-text h2{
-  font-family:Cinzel,serif;
-  font-weight:400;
-  font-size:35px;
-  color:var(--gold-light);
-  margin-bottom:17px;
+    font-family:Cinzel,serif;
+
+    font-size:35px;
+
+    font-weight:400;
+
+    color:var(--gold-light);
+
+    margin:10px 0 16px;
 }
 
 .about-text p{
-  color:#fff;
-  font-size:11px;
-  line-height:1.9;
-  margin-bottom:12px;
+    color:var(--white);
+
+    font-size:11px;
+
+    line-height:1.9;
+
+    margin-bottom:10px;
 }
 
 
-/* =========================
+/* ========================================
    CONTACT
-========================= */
+======================================== */
 
 .contact{
-  text-align:center;
-  border:1px solid var(--gold);
-  padding:40px 18px;
-  background:#060504;
+    text-align:center;
+
+    border:1px solid var(--gold);
+
+    padding:40px 18px;
+
+    background:#060504;
 }
 
 .contact h2{
-  font-family:Cinzel,serif;
-  font-size:30px;
-  font-weight:400;
-  color:var(--gold-light);
+    font-family:Cinzel,serif;
+
+    font-size:30px;
+
+    font-weight:400;
+
+    color:var(--gold-light);
 }
 
 .contact p{
-  color:#fff;
-  font-size:11px;
-  line-height:1.8;
-  margin:12px auto 22px;
-  max-width:520px;
+    max-width:560px;
+
+    margin:12px auto 22px;
+
+    color:var(--white);
+
+    font-size:11px;
+
+    line-height:1.8;
 }
 
 .whatsapp{
-  display:inline-block;
-  background:var(--gold);
-  color:#050505;
-  padding:14px 22px;
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:1px;
+    display:inline-block;
+
+    background:var(--gold);
+
+    color:#050505;
+
+    padding:14px 22px;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
 }
 
 
-/* =========================
+/* ========================================
+   PHOTO VIEWER
+   SHARE ONLY
+======================================== */
+
+.photo-viewer{
+    position:fixed;
+
+    inset:0;
+
+    z-index:5000;
+
+    display:none;
+
+    background:rgba(0,0,0,.97);
+
+    padding:12px;
+}
+
+.photo-viewer.open{
+    display:block;
+}
+
+.viewer-close{
+    position:absolute;
+
+    right:16px;
+
+    top:13px;
+
+    width:40px;
+    height:40px;
+
+    border:1px solid var(--gold);
+
+    background:#050505;
+
+    color:var(--gold);
+
+    font-size:24px;
+
+    cursor:pointer;
+}
+
+.viewer-content{
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:15px;
+}
+
+.viewer-content img{
+    max-width:95vw;
+
+    max-height:78vh;
+
+    object-fit:contain;
+
+    border:1px solid var(--line);
+}
+
+.share-button{
+    display:inline-block;
+
+    padding:12px 22px;
+
+    background:var(--gold);
+
+    color:#050505;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:1.5px;
+}
+
+
+/* ========================================
    FOOTER
-========================= */
+======================================== */
 
 footer{
-  border-top:1px solid var(--line);
-  text-align:center;
-  padding:28px 10px;
+    text-align:center;
+
+    border-top:1px solid var(--line);
+
+    padding:28px 10px;
 }
 
 footer strong{
-  font-family:Cinzel,serif;
-  font-size:20px;
-  color:var(--gold-light);
+    font-family:Cinzel,serif;
+
+    font-size:20px;
+
+    color:var(--gold-light);
 }
 
 footer p{
-  color:#fff;
-  font-size:8px;
-  letter-spacing:2px;
-  margin-top:7px;
+    color:var(--white);
+
+    font-size:7px;
+
+    letter-spacing:2px;
+
+    margin-top:6px;
 }
 
 
-/* =========================
+/* ========================================
    MOBILE
-========================= */
+======================================== */
 
 @media(max-width:760px){
 
-  .header{
-    height:68px;
-  }
+    .header{
+        height:68px;
+    }
 
-  .nav{
-    padding:0 12px;
-  }
+    .nav{
+        padding:0 12px;
+    }
 
-  .nav-links,
-  .book-top{
-    display:none;
-  }
+    .nav-links,
+    .book-btn{
+        display:none;
+    }
 
-  .menu{
-    display:block;
-  }
+    .menu-btn{
+        display:block;
+    }
 
-  .logo-camera{
-    width:30px;
-    height:21px;
-  }
+    .logo-name{
+        font-size:20px;
+    }
 
-  .logo-name{
-    font-size:20px;
-  }
+    .camera{
+        width:29px;
+        height:21px;
+    }
 
-  .hero{
-    min-height:calc(100svh - 68px);
-  }
+    .hero-content{
+        padding:45px 18px;
+    }
 
-  .hero-content{
-    padding:45px 18px 65px;
-  }
+    .hero h1{
+        font-size:34px;
+    }
 
-  .hero h1{
-    font-size:34px;
-  }
+    .section{
+        padding:55px 12px;
+    }
 
-  .hero p{
-    font-size:11px;
-  }
+    .photo-frame{
+        width:96%;
 
-  .section{
-    padding:55px 13px;
-  }
+        margin:auto;
 
-  .photo-section{
-    padding:15px 5px;
-  }
+        height:650px;
+    }
 
-  .photo-frame{
-    width:96%;
-    margin:auto;
-    height:650px;
-  }
+    .photo-info{
+        left:24px;
 
-  .photo-info{
-    left:25px;
-    right:25px;
-    bottom:60px;
-  }
+        right:22px;
 
-  .photo-info h2{
-    font-size:30px;
-  }
+        bottom:54px;
+    }
 
-  .photo-info p{
-    font-size:18px;
-  }
+    .photo-info h2{
+        font-size:30px;
+    }
 
-  .recent-grid{
-    grid-template-columns:repeat(2,1fr);
-    gap:7px;
-  }
+    .photo-info p{
+        font-size:18px;
+    }
 
-  .gallery-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
+    .recent-work{
+        grid-template-columns:
+        repeat(2,1fr);
 
-  .stats{
-    grid-template-columns:repeat(2,1fr);
-  }
+        gap:7px;
+    }
 
-  .stat{
-    border-bottom:1px solid var(--line);
-  }
+    .stats{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
 
-  .stat:nth-child(2){
-    border-right:0;
-  }
+    .stat{
+        border-bottom:1px solid var(--line);
+    }
 
-  .why-grid,
-  .price-grid{
-    grid-template-columns:1fr;
-  }
+    .stat:nth-child(2){
+        border-right:0;
+    }
 
-  .about{
-    grid-template-columns:1fr;
-  }
+    .feature-cards,
+    .price-grid,
+    .about{
+        grid-template-columns:1fr;
+    }
 
-  .review-arrow{
-    flex:0 0 32px;
-    width:32px;
-    height:32px;
-    font-size:21px;
-  }
-
-  .review{
-    padding:13px;
-  }
-
-  .review p{
-    font-size:18px;
-  }
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- =========================
+<!-- ========================================
      HEADER
-========================= -->
+======================================== -->
 
 <header class="header">
 
 <nav class="nav">
 
-<a href="#home" class="logo">
+
+<a href="#home"
+class="logo">
 
 <div class="logo-stack">
 
-<div class="logo-camera"></div>
+<div class="camera"></div>
 
 <div class="logo-name">
+
 <span class="arj">ARJ</span>Click
+
 </div>
 
 <div class="logo-sub">
+
 PHOTOGRAPHY & FILMS
+
 </div>
 
 </div>
@@ -1101,23 +1358,35 @@ PHOTOGRAPHY & FILMS
 <div class="nav-links">
 
 <a href="#home">HOME</a>
+
 <a href="#services">SERVICES</a>
+
 <a href="#portfolio">PORTFOLIO</a>
+
 <a href="#pricing">PACKAGES</a>
+
 <a href="#about">ABOUT</a>
+
 <a href="#contact">CONTACT</a>
 
 </div>
 
 
-<a href="#contact" class="book-top">
+<a href="#contact"
+class="book-btn">
+
 BOOK NOW
+
 </a>
 
 
-<button class="menu" id="menu">
+<button class="menu-btn"
+id="menuBtn">
+
 ☰
+
 </button>
+
 
 </nav>
 
@@ -1125,58 +1394,65 @@ BOOK NOW
 
 
 
-<main id="home">
-
-
-<!-- =========================
+<!-- ========================================
      HERO
-========================= -->
+======================================== -->
 
-<section class="hero">
-
-<div class="hero-image">
+<section class="hero"
+id="home">
 
 <img
+class="hero-image"
 src="images/hero.jpg"
 alt="ARJClick Photography">
 
-</div>
+<div class="hero-overlay"></div>
 
 
 <div class="hero-content">
 
-<div class="hero-text">
+<div class="hero-kicker">
 
-<div class="hero-small">
 WE CAPTURE YOUR STORY
+
 </div>
 
+
 <h1>
-YOUR MOMENTS
-<span>BEAUTIFULLY.</span>
+
+YOUR MOMENTS<br>
+BEAUTIFULLY.
+
 </h1>
+
 
 <div class="hero-line"></div>
 
-<p>
-Turning real emotions, confidence and celebrations
-into timeless photographs and cinematic films.
+
+<p class="hero-text">
+
+Turning real emotions, confidence and
+celebrations into timeless photographs
+and cinematic films.
+
 </p>
 
 
-<div class="hero-buttons">
+<a href="#services"
+class="hero-btn">
 
-<a href="#portfolio" class="btn">
 EXPLORE WORK
+
 </a>
 
-<a href="#contact" class="btn btn-outline">
+
+<a href="#contact"
+class="hero-btn outline">
+
 BOOK NOW
+
 </a>
 
-</div>
-
-</div>
 
 </div>
 
@@ -1184,72 +1460,67 @@ BOOK NOW
 
 
 
-<!-- =========================
-     MODEL
-========================= -->
+<!-- ========================================
+     MODEL SHOOTING
+======================================== -->
 
-<section class="photo-section" id="services">
+<section class="photo-section"
+id="services">
 
-<div class="photo-frame" data-name="model">
+<div class="photo-frame"
+data-category="model">
 
-<div class="photo-slide active">
-<img src="images/model/1.jpg" alt="Model Shooting">
-</div>
 
-<div class="photo-slide">
-<img src="images/model/2.jpg" alt="Model Shooting">
-</div>
-
-<div class="photo-slide">
-<img src="images/model/3.jpg" alt="Model Shooting">
-</div>
-
-<div class="photo-slide">
-<img src="images/model/4.jpg" alt="Model Shooting">
-</div>
-
-<div class="photo-slide">
-<img src="images/model/5.jpg" alt="Model Shooting">
-</div>
-
-<div class="photo-slide">
-<img src="images/model/6.jpg" alt="Model Shooting">
-</div>
-
-<div class="photo-overlay"></div>
+<div class="slider-dots"></div>
 
 
 <div class="photo-info">
 
 <h2>
+
 MODEL<br>
 SHOOTING
+
 </h2>
 
-<div class="line"></div>
+<div class="photo-line"></div>
 
 <p>
-Fashion, portfolio and creative model photography
-designed to capture confidence and personality.
+
+Fashion, portfolio and creative
+model photography designed to
+capture confidence and personality.
+
 </p>
 
-<a href="#portfolio" class="photo-button">
+
+<a href="gallery.html?category=model"
+class="view-work">
+
 VIEW MODEL WORK
+
 </a>
 
 </div>
 
 
-<button class="arrow prev" onclick="changeSlide('model',-1)">
+<button
+class="slide-arrow slide-prev"
+onclick="moveSlide('model',-1)">
+
 ‹
+
 </button>
 
-<button class="arrow next" onclick="changeSlide('model',1)">
+
+<button
+class="slide-arrow slide-next"
+onclick="moveSlide('model',1)">
+
 ›
+
 </button>
 
-
-<div class="dots" id="dots-model"></div>
 
 </div>
 
@@ -1257,71 +1528,65 @@ VIEW MODEL WORK
 
 
 
-<!-- =========================
-     PRE WEDDING
-========================= -->
+<!-- ========================================
+     PRE-WEDDING
+======================================== -->
 
 <section class="photo-section">
 
-<div class="photo-frame" data-name="prewedding">
+<div class="photo-frame"
+data-category="prewedding">
 
-<div class="photo-slide active">
-<img src="images/prewedding/1.jpg" alt="Pre Wedding">
-</div>
 
-<div class="photo-slide">
-<img src="images/prewedding/2.jpg" alt="Pre Wedding">
-</div>
-
-<div class="photo-slide">
-<img src="images/prewedding/3.jpg" alt="Pre Wedding">
-</div>
-
-<div class="photo-slide">
-<img src="images/prewedding/4.jpg" alt="Pre Wedding">
-</div>
-
-<div class="photo-slide">
-<img src="images/prewedding/5.jpg" alt="Pre Wedding">
-</div>
-
-<div class="photo-slide">
-<img src="images/prewedding/6.jpg" alt="Pre Wedding">
-</div>
-
-<div class="photo-overlay"></div>
+<div class="slider-dots"></div>
 
 
 <div class="photo-info">
 
 <h2>
+
 PRE-WEDDING<br>
 SHOOT
+
 </h2>
 
-<div class="line"></div>
+<div class="photo-line"></div>
 
 <p>
-Romantic and cinematic storytelling created
-around your love and connection.
+
+Romantic and cinematic storytelling
+created around your love and connection.
+
 </p>
 
-<a href="#portfolio" class="photo-button">
+
+<a href="gallery.html?category=prewedding"
+class="view-work">
+
 VIEW PRE-WEDDING WORK
+
 </a>
 
 </div>
 
 
-<button class="arrow prev" onclick="changeSlide('prewedding',-1)">
+<button
+class="slide-arrow slide-prev"
+onclick="moveSlide('prewedding',-1)">
+
 ‹
+
 </button>
 
-<button class="arrow next" onclick="changeSlide('prewedding',1)">
+
+<button
+class="slide-arrow slide-next"
+onclick="moveSlide('prewedding',1)">
+
 ›
+
 </button>
 
-<div class="dots" id="dots-prewedding"></div>
 
 </div>
 
@@ -1329,71 +1594,65 @@ VIEW PRE-WEDDING WORK
 
 
 
-<!-- =========================
+<!-- ========================================
      BABY
-========================= -->
+======================================== -->
 
 <section class="photo-section">
 
-<div class="photo-frame" data-name="baby">
+<div class="photo-frame"
+data-category="baby">
 
-<div class="photo-slide active">
-<img src="images/baby/1.jpg" alt="Baby Shooting">
-</div>
 
-<div class="photo-slide">
-<img src="images/baby/2.jpg" alt="Baby Shooting">
-</div>
-
-<div class="photo-slide">
-<img src="images/baby/3.jpg" alt="Baby Shooting">
-</div>
-
-<div class="photo-slide">
-<img src="images/baby/4.jpg" alt="Baby Shooting">
-</div>
-
-<div class="photo-slide">
-<img src="images/baby/5.jpg" alt="Baby Shooting">
-</div>
-
-<div class="photo-slide">
-<img src="images/baby/6.jpg" alt="Baby Shooting">
-</div>
-
-<div class="photo-overlay"></div>
+<div class="slider-dots"></div>
 
 
 <div class="photo-info">
 
 <h2>
+
 BABY<br>
 SHOOTING
+
 </h2>
 
-<div class="line"></div>
+<div class="photo-line"></div>
 
 <p>
-Pure, natural and precious moments captured
-with warmth, care and creativity.
+
+Pure, natural and precious moments
+captured with warmth, care and creativity.
+
 </p>
 
-<a href="#portfolio" class="photo-button">
+
+<a href="gallery.html?category=baby"
+class="view-work">
+
 VIEW BABY WORK
+
 </a>
 
 </div>
 
 
-<button class="arrow prev" onclick="changeSlide('baby',-1)">
+<button
+class="slide-arrow slide-prev"
+onclick="moveSlide('baby',-1)">
+
 ‹
+
 </button>
 
-<button class="arrow next" onclick="changeSlide('baby',1)">
+
+<button
+class="slide-arrow slide-next"
+onclick="moveSlide('baby',1)">
+
 ›
+
 </button>
 
-<div class="dots" id="dots-baby"></div>
 
 </div>
 
@@ -1401,71 +1660,66 @@ VIEW BABY WORK
 
 
 
-<!-- =========================
+<!-- ========================================
      WEDDING
-========================= -->
+======================================== -->
 
 <section class="photo-section">
 
-<div class="photo-frame" data-name="wedding">
+<div class="photo-frame"
+data-category="wedding">
 
-<div class="photo-slide active">
-<img src="images/wedding/1.jpg" alt="Wedding Photography">
-</div>
 
-<div class="photo-slide">
-<img src="images/wedding/2.jpg" alt="Wedding Photography">
-</div>
-
-<div class="photo-slide">
-<img src="images/wedding/3.jpg" alt="Wedding Photography">
-</div>
-
-<div class="photo-slide">
-<img src="images/wedding/4.jpg" alt="Wedding Photography">
-</div>
-
-<div class="photo-slide">
-<img src="images/wedding/5.jpg" alt="Wedding Photography">
-</div>
-
-<div class="photo-slide">
-<img src="images/wedding/6.jpg" alt="Wedding Photography">
-</div>
-
-<div class="photo-overlay"></div>
+<div class="slider-dots"></div>
 
 
 <div class="photo-info">
 
 <h2>
+
 WEDDING<br>
 PHOTOGRAPHY
+
 </h2>
 
-<div class="line"></div>
+<div class="photo-line"></div>
 
 <p>
-Elegant wedding stories captured with emotion,
-detail and cinematic storytelling.
+
+Elegant wedding stories captured
+with emotion, detail and cinematic
+storytelling.
+
 </p>
 
-<a href="#portfolio" class="photo-button">
+
+<a href="gallery.html?category=wedding"
+class="view-work">
+
 VIEW WEDDING WORK
+
 </a>
 
 </div>
 
 
-<button class="arrow prev" onclick="changeSlide('wedding',-1)">
+<button
+class="slide-arrow slide-prev"
+onclick="moveSlide('wedding',-1)">
+
 ‹
+
 </button>
 
-<button class="arrow next" onclick="changeSlide('wedding',1)">
+
+<button
+class="slide-arrow slide-next"
+onclick="moveSlide('wedding',1)">
+
 ›
+
 </button>
 
-<div class="dots" id="dots-wedding"></div>
 
 </div>
 
@@ -1473,59 +1727,124 @@ VIEW WEDDING WORK
 
 
 
-<!-- =========================
+<!-- ========================================
      ALL SERVICES
-========================= -->
+======================================== -->
 
 <section class="section">
 
 <div class="kicker">
+
 ALL SERVICES
+
 </div>
 
+
 <h2 class="section-title">
+
 WHAT WE DO
+
 </h2>
 
-<div class="rule"></div>
+
+<div class="gold-rule"></div>
 
 
-<div class="services-track">
+<div class="services">
 
-<div class="service-card">
-<div class="service-icon">📷</div>
-<h3>MODEL<br>SHOOTING</h3>
+
+<div class="service">
+
+<div class="service-icon">
+📷
 </div>
 
-<div class="service-card">
-<div class="service-icon">💍</div>
-<h3>PRE-WEDDING<br>SHOOT</h3>
+<h3>
+MODEL<br>
+SHOOTING
+</h3>
+
 </div>
 
-<div class="service-card">
-<div class="service-icon">👶</div>
-<h3>BABY<br>SHOOTING</h3>
+
+<div class="service">
+
+<div class="service-icon">
+💍
 </div>
 
-<div class="service-card">
-<div class="service-icon">💒</div>
-<h3>WEDDING<br>PHOTOGRAPHY</h3>
+<h3>
+PRE-WEDDING
+</h3>
+
 </div>
 
-<div class="service-card">
-<div class="service-icon">♡</div>
-<h3>ANNIVERSARY</h3>
+
+<div class="service">
+
+<div class="service-icon">
+👶
 </div>
 
-<div class="service-card">
-<div class="service-icon">🎂</div>
-<h3>BIRTHDAY</h3>
+<h3>
+BABY<br>
+SHOOTING
+</h3>
+
 </div>
 
-<div class="service-card">
-<div class="service-icon">✦</div>
-<h3>EVENT</h3>
+
+<div class="service">
+
+<div class="service-icon">
+💒
 </div>
+
+<h3>
+WEDDING
+</h3>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+♡
+</div>
+
+<h3>
+ANNIVERSARY
+</h3>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+🎂
+</div>
+
+<h3>
+BIRTHDAY
+</h3>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+✦
+</div>
+
+<h3>
+EVENT
+</h3>
+
+</div>
+
 
 </div>
 
@@ -1533,212 +1852,118 @@ WHAT WE DO
 
 
 
-<!-- =========================
+<!-- ========================================
      RECENT WORK
-========================= -->
+======================================== -->
 
-<section class="section" id="portfolio">
+<section class="section"
+id="portfolio">
 
 <div class="kicker">
+
 PORTFOLIO
+
 </div>
+
 
 <h2 class="section-title">
+
 RECENT WORK
+
 </h2>
 
-<div class="rule"></div>
+
+<div class="gold-rule"></div>
 
 
-<div class="recent-grid">
+<div class="recent-work"
+id="recentWork">
 
-<button class="recent-card"
-data-photo="images/model/1.jpg">
-
-<img src="images/model/1.jpg"
-alt="Model Work">
-
-</button>
-
-
-<button class="recent-card"
-data-photo="images/prewedding/1.jpg">
-
-<img src="images/prewedding/1.jpg"
-alt="Pre Wedding Work">
-
-</button>
-
-
-<button class="recent-card"
-data-photo="images/baby/1.jpg">
-
-<img src="images/baby/1.jpg"
-alt="Baby Work">
-
-</button>
-
-
-<button class="recent-card"
-data-photo="images/wedding/1.jpg">
-
-<img src="images/wedding/1.jpg"
-alt="Wedding Work">
-
-</button>
-
-
-<button class="recent-card"
-data-photo="images/model/2.jpg">
-
-<img src="images/model/2.jpg"
-alt="Model Work">
-
-</button>
-
-
-<button class="recent-card"
-data-photo="images/prewedding/2.jpg">
-
-<img src="images/prewedding/2.jpg"
-alt="Pre Wedding Work">
-
-</button>
-
-
-<button class="recent-card"
-data-photo="images/baby/2.jpg">
-
-<img src="images/baby/2.jpg"
-alt="Baby Work">
-
-</button>
-
-
-<button class="recent-card"
-data-photo="images/wedding/2.jpg">
-
-<img src="images/wedding/2.jpg"
-alt="Wedding Work">
-
-</button>
+<!-- Photos will be inserted automatically -->
 
 </div>
-
-
-<a href="gallery.html"
-style="
-display:block;
-width:max-content;
-margin:28px auto 0;
-padding:13px 23px;
-background:var(--gold);
-color:#050505;
-border:1px solid var(--gold);
-border-radius:2px;
-font-size:10px;
-font-weight:700;
-letter-spacing:2px;
-text-decoration:none;
-cursor:pointer;
-">
-EXPLORE MORE...
-</a>
 
 </section>
 
 
 
-
-<button class="close" id="closeGallery">
-×
-</button>
-
-<div class="gallery-box">
-
-<div class="kicker">
-ARJCLICK PORTFOLIO
-</div>
-
-
-
-<div class="rule"></div>
-
-<div class="gallery-grid"
-id="galleryGrid">
-</div>
-
-</div>
-
-</div>
-
-
-
-<!-- =========================
-     IMAGE VIEWER
-========================= -->
-
-<div class="viewer" id="viewer">
-
-<button class="close" id="closeViewer">
-×
-</button>
-
-<div class="viewer-content">
-
-<img id="viewerImage" src="" alt="ARJClick">
-
-<a id="download"
-class="download"
-href="#"
-download>
-↓ DOWNLOAD PHOTO
-</a>
-
-</div>
-
-</div>
-
-
-
-<!-- =========================
+<!-- ========================================
      EXPERIENCE
-========================= -->
+======================================== -->
 
 <section class="section">
 
 <div class="kicker">
+
 EXPERIENCE
+
 </div>
 
+
 <h2 class="section-title">
+
 CRAFTED WITH PURPOSE
+
 </h2>
 
-<div class="rule"></div>
+
+<div class="gold-rule"></div>
 
 
 <div class="stats">
 
-<div class="stat">
-<strong>01+</strong>
-<span>YEARS EXPERIENCE</span>
-</div>
 
 <div class="stat">
-<strong>100+</strong>
-<span>SESSIONS</span>
+
+<strong>
+01+
+</strong>
+
+<span>
+YEARS EXPERIENCE
+</span>
+
 </div>
 
-<div class="stat">
-<strong>50+</strong>
-<span>HAPPY CLIENTS</span>
-</div>
 
 <div class="stat">
-<strong>4</strong>
-<span>SIGNATURE SHOOTS</span>
+
+<strong>
+100+
+</strong>
+
+<span>
+SESSIONS
+</span>
+
 </div>
+
+
+<div class="stat">
+
+<strong>
+50+
+</strong>
+
+<span>
+HAPPY CLIENTS
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>
+4
+</strong>
+
+<span>
+SIGNATURE SHOOTS
+</span>
+
+</div>
+
 
 </div>
 
@@ -1746,191 +1971,216 @@ CRAFTED WITH PURPOSE
 
 
 
-<!-- =========================
+<!-- ========================================
      CLIENT REVIEWS
-========================= -->
-
-<section class="section" id="reviews">
-
-<div class="kicker">
-CLIENT STORIES
-</div>
-
-<h2 class="section-title">
-CLIENT VIDEO REVIEWS
-</h2>
-
-<div class="rule"></div>
-
-
-<div class="review-wrap">
-
-<button class="review-arrow"
-id="reviewPrev">
-‹
-</button>
-
-
-<div class="review-slider"
-id="reviewSlider">
-
-
-<div class="review">
-
-<div class="review-video">
-
-<div class="play">
-▶
-</div>
-
-</div>
-
-<p>
-“Beautiful work, comfortable direction
-and memories we will always keep.”
-</p>
-
-<cite>
-CLIENT REVIEW • VIDEO
-</cite>
-
-</div>
-
-
-
-<div class="review">
-
-<div class="review-video">
-
-<div class="play">
-▶
-</div>
-
-</div>
-
-<p>
-“The photographs feel natural,
-cinematic and full of emotion.”
-</p>
-
-<cite>
-CLIENT REVIEW • VIDEO
-</cite>
-
-</div>
-
-
-
-<div class="review">
-
-<div class="review-video">
-
-<div class="play">
-▶
-</div>
-
-</div>
-
-<p>
-“Professional guidance from the first
-frame to the final delivery.”
-</p>
-
-<cite>
-CLIENT REVIEW • VIDEO
-</cite>
-
-</div>
-
-
-
-<div class="review">
-
-<div class="review-video">
-
-<div class="play">
-▶
-</div>
-
-</div>
-
-<p>
-“Every photograph has the premium
-editorial feeling we wanted.”
-</p>
-
-<cite>
-CLIENT REVIEW • VIDEO
-</cite>
-
-</div>
-
-
-
-<div class="review">
-
-<div class="review-video">
-
-<div class="play">
-▶
-</div>
-
-</div>
-
-<p>
-“A wonderful experience and photographs
-we will treasure for years.”
-</p>
-
-<cite>
-CLIENT REVIEW • VIDEO
-</cite>
-
-</div>
-
-
-</div>
-
-
-<button class="review-arrow"
-id="reviewNext">
-›
-</button>
-
-</div>
-
-
-<div class="review-dots"
-id="reviewDots">
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     WHY ARJCLICK
-========================= -->
+======================================== -->
 
 <section class="section">
 
 <div class="kicker">
-WHY ARJCLICK
+
+CLIENT STORIES
+
 </div>
 
+
 <h2 class="section-title">
-WHY ARJCLICK
+
+CLIENT VIDEO REVIEWS
+
 </h2>
 
-<div class="rule"></div>
+
+<div class="gold-rule"></div>
 
 
-<div class="why-grid">
+<div class="review-wrap">
 
 
-<div class="why-card">
+<button
+class="review-arrow"
+id="reviewPrev">
 
-<div class="icon">
+‹
+
+</button>
+
+
+<div class="review-track"
+id="reviewTrack">
+
+
+<div class="review">
+
+<div class="review-video">
+
+<div class="play-icon">
+▶
+</div>
+
+</div>
+
+<p>
+
+Beautiful work, comfortable direction
+and memories we will always keep.
+
+</p>
+
+<cite>
+CLIENT REVIEW • VIDEO
+</cite>
+
+</div>
+
+
+
+<div class="review">
+
+<div class="review-video">
+
+<div class="play-icon">
+▶
+</div>
+
+</div>
+
+<p>
+
+The photographs feel natural,
+cinematic and full of emotion.
+
+</p>
+
+<cite>
+CLIENT REVIEW • VIDEO
+</cite>
+
+</div>
+
+
+
+<div class="review">
+
+<div class="review-video">
+
+<div class="play-icon">
+▶
+</div>
+
+</div>
+
+<p>
+
+Professional guidance from the first
+frame to the final delivery.
+
+</p>
+
+<cite>
+CLIENT REVIEW • VIDEO
+</cite>
+
+</div>
+
+
+
+<div class="review">
+
+<div class="review-video">
+
+<div class="play-icon">
+▶
+</div>
+
+</div>
+
+<p>
+
+Every photograph has the premium
+editorial feeling we wanted.
+
+</p>
+
+<cite>
+CLIENT REVIEW • VIDEO
+</cite>
+
+</div>
+
+
+
+<div class="review">
+
+<div class="review-video">
+
+<div class="play-icon">
+▶
+</div>
+
+</div>
+
+<p>
+
+A wonderful experience and photographs
+we will treasure for years.
+
+</p>
+
+<cite>
+CLIENT REVIEW • VIDEO
+</cite>
+
+</div>
+
+
+</div>
+
+
+<button
+class="review-arrow"
+id="reviewNext">
+
+›
+
+</button>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ========================================
+     WHY ARJCLICK
+======================================== -->
+
+<section class="section">
+
+<div class="kicker">
+
+WHY ARJCLICK
+
+</div>
+
+
+<h2 class="section-title">
+
+WHY ARJCLICK
+
+</h2>
+
+
+<div class="gold-rule"></div>
+
+
+<div class="feature-cards">
+
+
+<div class="feature-card">
+
+<div class="feature-card-icon">
 ✦
 </div>
 
@@ -1939,17 +2189,19 @@ EDITORIAL VISION
 </h3>
 
 <p>
-Premium composition inspired by fashion,
-cinema and storytelling.
+
+Premium composition inspired by
+fashion, cinema and storytelling.
+
 </p>
 
 </div>
 
 
 
-<div class="why-card">
+<div class="feature-card">
 
-<div class="icon">
+<div class="feature-card-icon">
 ◈
 </div>
 
@@ -1958,17 +2210,19 @@ PERSONAL DIRECTION
 </h3>
 
 <p>
-Natural posing and thoughtful guidance
-so every frame feels effortless.
+
+Natural posing and thoughtful
+guidance so every frame feels effortless.
+
 </p>
 
 </div>
 
 
 
-<div class="why-card">
+<div class="feature-card">
 
-<div class="icon">
+<div class="feature-card-icon">
 ◇
 </div>
 
@@ -1977,8 +2231,10 @@ CAREFUL EDITING
 </h3>
 
 <p>
+
 Consistent colour, detail and finishing
 designed to keep photographs timeless.
+
 </p>
 
 </div>
@@ -1990,22 +2246,28 @@ designed to keep photographs timeless.
 
 
 
-<!-- =========================
+<!-- ========================================
      PRICING
-========================= -->
+======================================== -->
 
 <section class="section"
 id="pricing">
 
 <div class="kicker">
+
 PRICING & PACKAGES
+
 </div>
 
+
 <h2 class="section-title">
+
 CHOOSE YOUR STORY
+
 </h2>
 
-<div class="rule"></div>
+
+<div class="gold-rule"></div>
 
 
 <div class="price-grid">
@@ -2017,58 +2279,27 @@ CHOOSE YOUR STORY
 MODEL
 </h3>
 
-<div class="price">
-  <span class="old-price">₹1,500</span>
-  <span class="new-price">₹1,000</span>
-  <span class="discount"></span>
-</div>
-
-<script>
-  const oldPrice = 1500;
-  const newPrice = 1000;
-
-  const discount = Math.round(
-    ((oldPrice - newPrice) / oldPrice) * 100
-  );
-
-  document.querySelector(".discount").textContent =
-    discount + "% OFF";
-</script>
-
-<style>
-  .price {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 20px 0;
-    font-family: Arial, sans-serif;
-  }
-
-  .old-price {
-    color: #888;
-    font-size: 18px;
-    text-decoration: line-through;
-  }
-
-  .new-price {
-    color: #d4af37;
-    font-size: 28px;
-    font-weight: 700;
-  }
-
-  .discount {
-    color: #d4af37;
-    font-size: 15px;
-    font-weight: 600;
-  }
-</style>
+<strong class="price">
+₹ —
+</strong>
 
 <ul>
 
-<li>Creative direction</li>
-<li>Edited photographs</li>
-<li>Location session</li>
-<li>Final delivery</li>
+<li>
+Creative direction
+</li>
+
+<li>
+Edited photographs
+</li>
+
+<li>
+Location session
+</li>
+
+<li>
+Final delivery
+</li>
 
 </ul>
 
@@ -2082,16 +2313,27 @@ MODEL
 PRE-WEDDING
 </h3>
 
-<div class="price">
+<strong class="price">
 ₹ —
-</div>
+</strong>
 
 <ul>
 
-<li>Cinematic storytelling</li>
-<li>Couple direction</li>
-<li>Edited photographs</li>
-<li>Premium delivery</li>
+<li>
+Cinematic storytelling
+</li>
+
+<li>
+Couple direction
+</li>
+
+<li>
+Edited photographs
+</li>
+
+<li>
+Premium delivery
+</li>
 
 </ul>
 
@@ -2105,16 +2347,27 @@ PRE-WEDDING
 WEDDING
 </h3>
 
-<div class="price">
+<strong class="price">
 ₹ —
-</div>
+</strong>
 
 <ul>
 
-<li>Wedding coverage</li>
-<li>Photography</li>
-<li>Cinematic moments</li>
-<li>Final delivery</li>
+<li>
+Wedding coverage
+</li>
+
+<li>
+Photography
+</li>
+
+<li>
+Cinematic moments
+</li>
+
+<li>
+Final delivery
+</li>
 
 </ul>
 
@@ -2127,9 +2380,9 @@ WEDDING
 
 
 
-<!-- =========================
+<!-- ========================================
      ABOUT
-========================= -->
+======================================== -->
 
 <section class="section"
 id="about">
@@ -2137,38 +2390,47 @@ id="about">
 <div class="about">
 
 
-<div class="about-photo">
-
 <img
+class="about-image"
 src="images/hero.jpg"
 alt="ARJClick Photography">
-
-</div>
 
 
 <div class="about-text">
 
-<div class="kicker"
+<div
+class="kicker"
 style="text-align:left">
+
 ABOUT ARJCLICK
+
 </div>
+
 
 <h2>
 WE FRAME EMOTION.
 </h2>
 
-<p>
-ARJClick Photography & Films is built around
-a simple idea: beautiful photography should
-feel personal, cinematic and memorable.
-</p>
 
 <p>
-From model portfolios and pre-wedding stories
-to baby and wedding moments, every session is
-approached with attention to light, composition
-and emotion.
+
+ARJClick Photography & Films is
+built around a simple idea:
+beautiful photography should feel
+personal, cinematic and memorable.
+
 </p>
+
+
+<p>
+
+From model portfolios and pre-wedding
+stories to baby and wedding moments,
+every session is approached with
+attention to light, composition and emotion.
+
+</p>
+
 
 </div>
 
@@ -2178,9 +2440,9 @@ and emotion.
 
 
 
-<!-- =========================
+<!-- ========================================
      CONTACT
-========================= -->
+======================================== -->
 
 <section class="section"
 id="contact">
@@ -2188,21 +2450,36 @@ id="contact">
 <div class="contact">
 
 <div class="kicker">
+
 LET'S CREATE
+
 </div>
 
+
 <h2>
+
 YOUR STORY DESERVES
 A BEAUTIFUL FRAME.
+
 </h2>
 
+
 <p>
-Tell us what you are planning and we will help
-you choose the right photography package.
+
+Tell us what you are planning and we
+will help you choose the right
+photography package.
+
 </p>
 
+
+<!--
+CHANGE 91XXXXXXXXXX
+TO YOUR REAL WHATSAPP NUMBER
+-->
+
 <a
-href="https://wa.me/+917718124609"
+href="https://wa.me/91XXXXXXXXXX"
 class="whatsapp"
 target="_blank">
 
@@ -2210,18 +2487,12 @@ target="_blank">
 
 </a>
 
+
 </div>
 
 </section>
 
 
-</main>
-
-
-
-<!-- =========================
-     FOOTER
-========================= -->
 
 <footer>
 
@@ -2237,47 +2508,114 @@ PHOTOGRAPHY & FILMS • © 2026
 
 
 
+<!-- ========================================
+     PHOTO VIEWER
+     SHARE ONLY
+======================================== -->
+
+<div
+class="photo-viewer"
+id="photoViewer">
+
+
+<button
+class="viewer-close"
+id="viewerClose">
+
+×
+
+</button>
+
+
+<div class="viewer-content">
+
+
+<img
+id="viewerImage"
+src=""
+alt="ARJClick Photography">
+
+
+<a
+href="#"
+id="shareButton"
+class="share-button">
+
+↗ SHARE PHOTO
+
+</a>
+
+
+</div>
+
+</div>
+
+
+
 <script>
 
-/* =========================
-   MOBILE MENU
-========================= */
+/* ========================================
+   GITHUB IMAGE SETTINGS
+======================================== */
 
-const menu =
-document.getElementById("menu");
+/*
+   Your GitHub:
 
-const navLinks =
-document.querySelector(".nav-links");
+   Username:
+   ARJClick
 
-menu.addEventListener("click",()=>{
+   Repository:
+   ARJClick
 
-if(navLinks.style.display==="flex"){
+   Folder structure:
 
-navLinks.style.display="";
+   images/model/
+   images/prewedding/
+   images/baby/
+   images/wedding/
 
-}else{
+   IMPORTANT:
+   Images can have ANY filename.
 
-navLinks.style.display="flex";
-navLinks.style.position="absolute";
-navLinks.style.top="68px";
-navLinks.style.left="0";
-navLinks.style.right="0";
-navLinks.style.flexDirection="column";
-navLinks.style.background="#050505";
-navLinks.style.padding="15px";
-navLinks.style.gap="18px";
-navLinks.style.borderBottom="1px solid #8c7025";
+   Example:
 
-}
+   IMG_001.jpg
+   DSC_4567.jpg
+   baby-new.jpg
 
-});
+   No 1.jpg / 2.jpg requirement.
+*/
 
 
-/* =========================
-   PHOTO SLIDERS
-========================= */
+const GITHUB_USER =
+"ARJClick";
 
-const sliderState={
+const GITHUB_REPO =
+"ARJClick";
+
+const GITHUB_BRANCH =
+"main";
+
+
+const categories = [
+"model",
+"prewedding",
+"baby",
+"wedding"
+];
+
+
+const galleryData = {
+
+model:[],
+prewedding:[],
+baby:[],
+wedding:[]
+
+};
+
+
+const slidePosition = {
 
 model:0,
 prewedding:0,
@@ -2287,73 +2625,301 @@ wedding:0
 };
 
 
-function setupDots(){
 
-document
-.querySelectorAll(".photo-frame")
-.forEach(frame=>{
+/* ========================================
+   IMAGE CHECK
+======================================== */
 
-const name=frame.dataset.name;
+function isImage(filename){
 
-const slides=
-frame.querySelectorAll(".photo-slide");
+return /\.(jpg|jpeg|png|webp)$/i
+.test(filename);
 
-const dots=
-frame.querySelector(".dots");
+}
 
-slides.forEach((slide,i)=>{
 
-const dot=
-document.createElement("button");
 
-dot.className=
-"dot"+(i===0?" active":"");
+/* ========================================
+   GET IMAGES FROM GITHUB
+======================================== */
 
-dot.onclick=()=>{
-showSlide(name,i);
+async function loadImages(category){
+
+const api =
+
+`https://api.github.com/repos/`+
+`${GITHUB_USER}/`+
+`${GITHUB_REPO}/contents/images/`+
+`${category}?ref=${GITHUB_BRANCH}`;
+
+
+try{
+
+const response =
+await fetch(
+api,
+{cache:"no-store"}
+);
+
+
+if(!response.ok){
+
+throw new Error(
+"GitHub API error"
+);
+
+}
+
+
+const files =
+await response.json();
+
+
+galleryData[category] =
+
+files
+
+.filter(file =>
+file.type === "file" &&
+isImage(file.name)
+)
+
+.map(file =>({
+
+name:file.name,
+
+url:file.download_url
+
+}));
+
+
+renderSlider(category);
+
+
+}
+
+catch(error){
+
+console.log(
+"Could not load:",
+category,
+error
+);
+
+galleryData[category] = [];
+
+renderSlider(category);
+
+}
+
+}
+
+
+
+/* ========================================
+   CREATE 6 PHOTO SLIDER
+======================================== */
+
+function renderSlider(category){
+
+const frame =
+
+document.querySelector(
+`[data-category="${category}"]`
+);
+
+
+if(!frame){
+
+return;
+
+}
+
+
+/* Remove old slides */
+
+frame
+.querySelectorAll(".slide")
+.forEach(slide =>
+slide.remove()
+);
+
+
+/*
+   First 6 available images
+*/
+
+const sixPhotos =
+
+galleryData[category]
+.slice(0,6);
+
+
+sixPhotos.forEach(
+(photo,index)=>{
+
+const slide =
+document.createElement("div");
+
+slide.className =
+"slide";
+
+
+if(index === 0){
+
+slide.classList.add(
+"active"
+);
+
+}
+
+
+const image =
+document.createElement("img");
+
+image.src =
+photo.url;
+
+image.alt =
+"ARJClick "+category;
+
+
+slide.appendChild(
+image
+);
+
+
+const dots =
+frame.querySelector(
+".slider-dots"
+);
+
+
+frame.insertBefore(
+slide,
+dots
+);
+
+});
+
+
+/* Create dots */
+
+const dots =
+frame.querySelector(
+".slider-dots"
+);
+
+dots.innerHTML = "";
+
+
+sixPhotos.forEach(
+(photo,index)=>{
+
+const dot =
+document.createElement(
+"button"
+);
+
+dot.className =
+"slider-dot";
+
+
+if(index === 0){
+
+dot.classList.add(
+"active"
+);
+
+}
+
+
+dot.onclick = function(){
+
+showSlide(
+category,
+index
+);
+
 };
+
 
 dots.appendChild(dot);
 
 });
 
-});
+
+slidePosition[category] =
+0;
 
 }
 
 
-function showSlide(name,index){
 
-const frame=
+/* ========================================
+   SHOW SLIDE
+======================================== */
+
+function showSlide(
+category,
+index
+){
+
+const frame =
+
 document.querySelector(
-'[data-name="'+name+'"]'
+`[data-category="${category}"]`
 );
 
-if(!frame)return;
 
-const slides=
-frame.querySelectorAll(".photo-slide");
+const slides =
 
-const dots=
-frame.querySelectorAll(".dot");
+frame.querySelectorAll(
+".slide"
+);
 
-sliderState[name]=
-(index+slides.length)%slides.length;
 
-slides.forEach((slide,i)=>{
+if(!slides.length){
+
+return;
+
+}
+
+
+let position =
+
+(index + slides.length)
+% slides.length;
+
+
+slidePosition[category] =
+position;
+
+
+slides.forEach(
+(slide,i)=>{
 
 slide.classList.toggle(
 "active",
-i===sliderState[name]
+i === position
 );
 
 });
 
-dots.forEach((dot,i)=>{
+
+const dots =
+
+frame.querySelectorAll(
+".slider-dot"
+);
+
+
+dots.forEach(
+(dot,i)=>{
 
 dot.classList.toggle(
 "active",
-i===sliderState[name]
+i === position
 );
 
 });
@@ -2361,63 +2927,79 @@ i===sliderState[name]
 }
 
 
-function changeSlide(name,direction){
+
+/* ========================================
+   NEXT / PREVIOUS
+======================================== */
+
+function moveSlide(
+category,
+direction
+){
 
 showSlide(
-name,
-sliderState[name]+direction
+
+category,
+
+slidePosition[category]
++
+direction
+
 );
 
 }
 
 
-setupDots();
 
-
-/* AUTO SLIDE */
-
-setInterval(()=>{
-
-Object.keys(sliderState)
-.forEach(name=>{
-changeSlide(name,1);
-});
-
-},5000);
-
-
-/* MOBILE SWIPE */
+/* ========================================
+   TOUCH SWIPE
+======================================== */
 
 document
 .querySelectorAll(".photo-frame")
 .forEach(frame=>{
 
-const name=frame.dataset.name;
+let startX = 0;
 
-let startX=0;
 
 frame.addEventListener(
 "touchstart",
-e=>{
-startX=e.changedTouches[0].screenX;
+event=>{
+
+startX =
+event.changedTouches[0]
+.screenX;
+
 },
 {passive:true}
 );
+
 
 frame.addEventListener(
 "touchend",
-e=>{
+event=>{
 
-const endX=
-e.changedTouches[0].screenX;
+const endX =
+event.changedTouches[0]
+.screenX;
 
-const distance=endX-startX;
 
-if(Math.abs(distance)>45){
+const difference =
+endX - startX;
 
-changeSlide(
-name,
-distance<0?1:-1
+
+if(
+Math.abs(difference) > 45
+){
+
+moveSlide(
+
+frame.dataset.category,
+
+difference < 0
+? 1
+: -1
+
 );
 
 }
@@ -2429,309 +3011,436 @@ distance<0?1:-1
 });
 
 
-/* =========================
-   IMAGE VIEWER
-========================= */
 
-const viewer=
-document.getElementById("viewer");
+/* ========================================
+   AUTO SLIDER
+======================================== */
 
-const viewerImage=
-document.getElementById("viewerImage");
+setInterval(
+function(){
 
-const download=
-document.getElementById("download");
+categories.forEach(
+category=>{
 
-
-function openPhoto(src){
-
-viewerImage.src=src;
-
-download.href=src;
-
-download.download=
-src.split("/").pop();
-
-viewer.classList.add("open");
-
-document.body.style.overflow="hidden";
-
-}
-
-
-function closePhoto(){
-
-viewer.classList.remove("open");
-
-viewerImage.src="";
-
-document.body.style.overflow="";
-
-}
-
-
-document
-.querySelectorAll(".recent-card")
-.forEach(card=>{
-
-card.addEventListener("click",()=>{
-
-openPhoto(
-card.dataset.photo
+moveSlide(
+category,
+1
 );
 
 });
 
-});
-
-
-document
-.getElementById("closeViewer")
-.addEventListener(
-"click",
-closePhoto
+},
+5000
 );
 
 
-/* =========================
-   EXPLORE MORE GALLERY
-========================= */
 
-const explore=
-document.getElementById("explore");
+/* ========================================
+   RECENT WORK
+======================================== */
 
-const galleryModal=
-document.getElementById("galleryModal");
+function renderRecentWork(){
 
-const galleryGrid=
-document.getElementById("galleryGrid");
-
-const closeGallery=
-document.getElementById("closeGallery");
+const container =
+document.getElementById(
+"recentWork"
+);
 
 
-const galleryPaths=[];
+container.innerHTML = "";
+
+
+let selected = [];
 
 
 /*
-  50 portfolio slots.
-
-  For your complete gallery,
-  upload:
-
-  images/portfolio/1.jpg
-  images/portfolio/2.jpg
-  ...
-  images/portfolio/50.jpg
-
+   2 photos from each category
+   = 8 photos total
 */
 
+categories.forEach(
+category=>{
 
-for(let i=1;i<=50;i++){
+galleryData[category]
+.slice(0,2)
+.forEach(
+photo=>{
 
-galleryPaths.push(
-"images/portfolio/"+i+".jpg"
+selected.push(
+photo
+);
+
+});
+
+});
+
+
+selected
+.slice(0,8)
+.forEach(
+photo=>{
+
+
+const button =
+document.createElement(
+"button"
+);
+
+
+button.className =
+"recent-photo";
+
+
+const image =
+document.createElement(
+"img"
+);
+
+
+image.src =
+photo.url;
+
+image.alt =
+"ARJClick Recent Work";
+
+
+button.appendChild(
+image
+);
+
+
+button.onclick =
+function(){
+
+openPhotoViewer(
+photo.url
+);
+
+};
+
+
+container.appendChild(
+button
+);
+
+});
+
+}
+
+
+
+/* ========================================
+   LOAD ALL CATEGORY IMAGES
+======================================== */
+
+Promise.all(
+
+categories.map(
+category =>
+loadImages(category)
+)
+
+).then(
+function(){
+
+renderRecentWork();
+
+}
+);
+
+
+
+/* ========================================
+   PHOTO VIEWER
+   NO DOWNLOAD
+======================================== */
+
+const photoViewer =
+document.getElementById(
+"photoViewer"
+);
+
+
+const viewerImage =
+document.getElementById(
+"viewerImage"
+);
+
+
+const shareButton =
+document.getElementById(
+"shareButton"
+);
+
+
+
+function openPhotoViewer(
+photoURL
+){
+
+viewerImage.src =
+photoURL;
+
+
+/*
+   SHARE ONLY
+
+   No download attribute.
+*/
+
+shareButton.onclick =
+async function(event){
+
+event.preventDefault();
+
+
+try{
+
+if(
+navigator.share
+){
+
+await navigator.share({
+
+title:
+"ARJClick Photography",
+
+text:
+"View this photograph from ARJClick.",
+
+url:
+window.location.href
+
+});
+
+}
+
+else{
+
+await navigator.clipboard
+.writeText(photoURL);
+
+alert(
+"Photo link copied."
 );
 
 }
 
+}
 
-explore.addEventListener(
+catch(error){
+
+console.log(
+"Share cancelled"
+);
+
+}
+
+};
+
+
+photoViewer
+.classList.add("open");
+
+
+document.body.style.overflow =
+"hidden";
+
+}
+
+
+
+/* ========================================
+   CLOSE PHOTO
+======================================== */
+
+function closePhotoViewer(){
+
+photoViewer
+.classList.remove(
+"open"
+);
+
+
+viewerImage.src = "";
+
+
+document.body.style.overflow =
+"";
+
+}
+
+
+document
+.getElementById(
+"viewerClose"
+)
+.addEventListener(
 "click",
-()=>{
-
-galleryGrid.innerHTML="";
-
-galleryPaths.forEach(src=>{
-
-const button=
-document.createElement("button");
-
-button.className=
-"gallery-item";
-
-const img=
-document.createElement("img");
-
-img.src=src;
-
-img.loading="lazy";
-
-img.alt="ARJClick Portfolio";
-
-img.onerror=()=>{
-button.style.display="none";
-};
-
-button.appendChild(img);
-
-button.onclick=()=>{
-galleryModal.classList.remove("open");
-openPhoto(src);
-};
-
-galleryGrid.appendChild(button);
-
-});
-
-galleryModal.classList.add("open");
-
-});
+closePhotoViewer
+);
 
 
-
-closeGallery.onclick=()=>{
-galleryModal.classList.remove("open");
-};
-
-
-galleryModal.addEventListener(
+photoViewer
+.addEventListener(
 "click",
-e=>{
+function(event){
 
-if(e.target===galleryModal){
+if(
+event.target === photoViewer
+){
 
-galleryModal.classList.remove("open");
+closePhotoViewer();
 
 }
 
 });
 
 
-/* =========================
-   CLIENT REVIEW SLIDER
-========================= */
+document.addEventListener(
+"keydown",
+function(event){
 
-const reviewSlider=
-document.getElementById("reviewSlider");
+if(
+event.key === "Escape"
+){
 
-const reviewPrev=
-document.getElementById("reviewPrev");
+closePhotoViewer();
 
-const reviewNext=
-document.getElementById("reviewNext");
-
-const reviewDots=
-document.getElementById("reviewDots");
-
-const reviews=
-reviewSlider.querySelectorAll(".review");
-
-let reviewIndex=0;
-
-
-reviews.forEach((_,i)=>{
-
-const dot=
-document.createElement("button");
-
-dot.className=
-"dot"+(i===0?" active":"");
-
-dot.onclick=()=>{
-goReview(i);
-};
-
-reviewDots.appendChild(dot);
+}
 
 });
 
 
-function goReview(index){
 
-reviewIndex=
-(index+reviews.length)%reviews.length;
+/* ========================================
+   CLIENT REVIEW SLIDER
+======================================== */
 
-reviewSlider.scrollTo({
+const reviewTrack =
+document.getElementById(
+"reviewTrack"
+);
+
+
+let reviewIndex = 0;
+
+
+function showReview(index){
+
+reviewIndex =
+(index + 5) % 5;
+
+
+reviewTrack.scrollTo({
 
 left:
-reviewIndex*reviewSlider.clientWidth,
+reviewIndex *
+reviewTrack.clientWidth,
 
 behavior:"smooth"
 
 });
 
-
-reviewDots
-.querySelectorAll(".dot")
-.forEach((dot,i)=>{
-
-dot.classList.toggle(
-"active",
-i===reviewIndex
-);
-
-});
-
 }
 
 
-reviewPrev.onclick=()=>{
-goReview(reviewIndex-1);
+document
+.getElementById(
+"reviewPrev"
+)
+.onclick =
+function(){
+
+showReview(
+reviewIndex - 1
+);
+
 };
 
 
-reviewNext.onclick=()=>{
-goReview(reviewIndex+1);
+document
+.getElementById(
+"reviewNext"
+)
+.onclick =
+function(){
+
+showReview(
+reviewIndex + 1
+);
+
 };
 
 
-/* REVIEW SWIPE */
 
-let reviewStart=0;
+/* ========================================
+   MOBILE MENU
+======================================== */
 
-reviewSlider.addEventListener(
-"touchstart",
-e=>{
-reviewStart=
-e.changedTouches[0].screenX;
-},
-{passive:true}
+const menuButton =
+document.getElementById(
+"menuBtn"
 );
 
 
-reviewSlider.addEventListener(
-"touchend",
-e=>{
-
-const end=
-e.changedTouches[0].screenX;
-
-const distance=end-reviewStart;
-
-if(Math.abs(distance)>45){
-
-goReview(
-reviewIndex+
-(distance<0?1:-1)
+const navLinks =
+document.querySelector(
+".nav-links"
 );
+
+
+menuButton.onclick =
+function(){
+
+if(
+navLinks.style.display ===
+"flex"
+){
+
+navLinks.style.display =
+"";
+
+return;
 
 }
 
-},
-{passive:true}
-);
 
+navLinks.style.display =
+"flex";
 
-/* =========================
-   ESCAPE
-========================= */
+navLinks.style.position =
+"absolute";
 
-document.addEventListener(
-"keydown",
-e=>{
+navLinks.style.top =
+"68px";
 
-if(e.key==="Escape"){
+navLinks.style.left =
+"0";
 
-closePhoto();
+navLinks.style.right =
+"0";
 
-galleryModal.classList.remove("open");
+navLinks.style.flexDirection =
+"column";
 
-}
+navLinks.style.background =
+"#050505";
 
-});
+navLinks.style.padding =
+"18px";
+
+navLinks.style.gap =
+"18px";
+
+navLinks.style.borderBottom =
+"1px solid rgba(212,175,55,.3)";
+
+};
 
 </script>
 
+
 </body>
+
 </html>
