@@ -1,43 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ARJClick | Complete Gallery</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>ARJClick | Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+rel="stylesheet">
 
 <style>
 
 :root{
-  --black:#030303;
-  --gold:#d4af37;
-  --gold-light:#f0cf72;
-  --red:#c71920;
-  --white:#ffffff;
-  --line:rgba(212,175,55,.30);
+    --black:#030303;
+    --gold:#d4af37;
+    --gold-light:#f1d477;
+    --red:#c71920;
+    --line:rgba(212,175,55,.35);
 }
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  background:#030303;
-  scroll-behavior:smooth;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-  background:#030303;
-  color:var(--gold);
-  font-family:Montserrat,Arial,sans-serif;
-  overflow-x:hidden;
+    background:var(--black);
+    color:var(--gold);
+    font-family:Montserrat,Arial,sans-serif;
 }
 
 
@@ -45,202 +40,132 @@ body{
    HEADER
 ========================= */
 
-.header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  height:74px;
-
-  background:rgba(3,3,3,.94);
-  backdrop-filter:blur(12px);
-
-  border-bottom:1px solid var(--line);
+header{
+    height:72px;
+    background:#030303;
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 .nav{
-  height:100%;
-  max-width:1200px;
-  margin:auto;
+    max-width:1200px;
+    height:100%;
+    margin:auto;
+    padding:0 20px;
 
-  padding:0 18px;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
 
-/* =========================
-   SAME ARJCLICK LOGO
-========================= */
+/* LOGO */
 
 .logo{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  text-decoration:none;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
-.logo-stack{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-
-  line-height:1;
+.camera{
+    width:34px;
+    height:25px;
+    border:3px solid var(--gold);
+    border-radius:5px;
+    position:relative;
+    margin-bottom:5px;
 }
 
-
-/* CAMERA ICON */
-
-.logo-camera{
-  width:34px;
-  height:24px;
-
-  border:3px solid var(--gold);
-  border-radius:5px;
-
-  position:relative;
-
-  margin-bottom:4px;
+.camera:before{
+    content:"";
+    position:absolute;
+    width:12px;
+    height:7px;
+    left:6px;
+    top:-10px;
+    border:3px solid var(--gold);
+    border-bottom:0;
+    border-radius:4px 4px 0 0;
 }
 
-.logo-camera:before{
-  content:"";
-
-  position:absolute;
-
-  width:12px;
-  height:6px;
-
-  left:5px;
-  top:-9px;
-
-  border:3px solid var(--gold);
-
-  border-bottom:0;
-
-  border-radius:4px 4px 0 0;
+.camera:after{
+    content:"";
+    position:absolute;
+    width:11px;
+    height:11px;
+    left:8px;
+    top:4px;
+    border:3px solid var(--gold);
+    border-radius:50%;
 }
-
-.logo-camera:after{
-  content:"";
-
-  position:absolute;
-
-  width:11px;
-  height:11px;
-
-  left:8px;
-  top:4px;
-
-  border:3px solid var(--gold);
-
-  border-radius:50%;
-}
-
-
-/* LOGO TEXT */
 
 .logo-name{
-  font-family:Cinzel,serif;
-
-  font-size:25px;
-
-  font-weight:800;
-
-  letter-spacing:1px;
-
-  color:var(--gold-light);
+    font-family:Cinzel,serif;
+    font-size:23px;
+    font-weight:700;
+    letter-spacing:1px;
 }
 
-.logo-name .arj{
-  color:var(--red);
+.logo-name span{
+    color:var(--red);
 }
 
 .logo-sub{
-  font-size:6px;
-
-  letter-spacing:2px;
-
-  margin-top:5px;
-
-  color:var(--gold);
+    margin-top:5px;
+    font-size:6px;
+    letter-spacing:2px;
 }
 
 
-/* BACK BUTTON */
+/* BACK */
 
 .back{
-  display:inline-block;
-
-  border:1px solid var(--gold);
-
-  padding:10px 16px;
-
-  color:var(--gold-light);
-
-  background:#050505;
-
-  font-size:9px;
-
-  letter-spacing:1.2px;
-
-  text-decoration:none;
+    border:1px solid var(--gold);
+    padding:10px 15px;
+    color:var(--gold-light);
+    font-size:9px;
+    letter-spacing:1.5px;
 }
 
 
 /* =========================
-   PAGE HEADING
+   TITLE
 ========================= */
 
-.heading{
-  text-align:center;
-
-  padding:55px 15px 35px;
+.hero{
+    text-align:center;
+    padding:55px 15px 30px;
 }
 
 .kicker{
-  font-size:9px;
-
-  letter-spacing:4px;
-
-  color:var(--gold-light);
-
-  margin-bottom:12px;
+    font-size:9px;
+    letter-spacing:4px;
+    color:var(--gold-light);
 }
 
-.heading h1{
-  font-family:Cinzel,serif;
-
-  font-size:clamp(27px,5vw,48px);
-
-  font-weight:400;
-
-  color:var(--gold-light);
-
-  letter-spacing:1px;
+h1{
+    font-family:Cinzel,serif;
+    font-size:clamp(32px,7vw,55px);
+    font-weight:400;
+    color:var(--gold-light);
+    margin:12px 0;
 }
 
 .line{
-  width:85px;
-  height:1px;
-
-  background:var(--gold);
-
-  margin:17px auto;
+    width:80px;
+    height:1px;
+    background:var(--gold);
+    margin:15px auto;
 }
 
-.heading p{
-  max-width:600px;
-
-  margin:auto;
-
-  color:#fff;
-
-  font-size:11px;
-
-  line-height:1.8;
+.hero p{
+    max-width:600px;
+    margin:auto;
+    color:#fff;
+    font-size:10px;
+    line-height:1.8;
 }
 
 
@@ -249,40 +174,43 @@ body{
 ========================= */
 
 .filters{
-  display:flex;
 
-  justify-content:center;
+    display:flex;
 
-  gap:8px;
+    justify-content:center;
 
-  padding:0 15px 30px;
+    flex-wrap:wrap;
 
-  flex-wrap:wrap;
+    gap:8px;
+
+    padding:10px 15px 30px;
+
 }
 
 .filter{
-  border:1px solid rgba(212,175,55,.5);
 
-  background:#050505;
+    padding:10px 15px;
 
-  color:var(--gold-light);
+    border:1px solid var(--gold);
 
-  padding:9px 13px;
+    background:transparent;
 
-  font-size:8px;
+    color:var(--gold-light);
 
-  letter-spacing:1px;
+    font-size:9px;
 
-  cursor:pointer;
+    letter-spacing:1.5px;
 
-  transition:.3s;
+    cursor:pointer;
+
 }
 
-.filter.active,
-.filter:hover{
-  background:var(--gold);
+.filter.active{
 
-  color:#050505;
+    background:var(--gold);
+
+    color:#050505;
+
 }
 
 
@@ -291,74 +219,81 @@ body{
 ========================= */
 
 .gallery{
-  max-width:1200px;
 
-  margin:auto;
+    max-width:1200px;
 
-  padding:0 15px 70px;
+    margin:auto;
 
-  display:grid;
+    padding:0 14px 60px;
 
-  grid-template-columns:repeat(4,1fr);
+    display:grid;
 
-  gap:10px;
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:10px;
+
 }
 
 .photo{
-  position:relative;
 
-  aspect-ratio:4/3;
+    border:1px solid var(--line);
 
-  overflow:hidden;
+    background:#050505;
 
-  background:#050505;
+    aspect-ratio:4/5;
 
-  border:1px solid var(--line);
+    overflow:hidden;
 
-  cursor:pointer;
+    cursor:pointer;
+
 }
 
 .photo img{
-  width:100%;
-  height:100%;
 
-  object-fit:cover;
+    width:100%;
 
-  display:block;
+    height:100%;
 
-  transition:
-  transform .55s ease,
-  opacity .35s ease;
+    object-fit:cover;
+
+    display:block;
+
+    transition:.4s;
+
 }
 
 .photo:hover img{
-  transform:scale(1.05);
 
-  opacity:.92;
+    transform:scale(1.04);
+
 }
 
 
-/* CATEGORY LABEL */
+/* =========================
+   CATEGORY LABEL
+========================= */
 
-.category{
-  position:absolute;
+.photo-category{
 
-  left:8px;
-  bottom:8px;
+    position:absolute;
 
-  padding:5px 8px;
+    z-index:2;
 
-  background:rgba(0,0,0,.62);
+    left:8px;
 
-  border:1px solid rgba(212,175,55,.45);
+    bottom:8px;
 
-  color:var(--gold-light);
+    padding:5px 8px;
 
-  font-size:7px;
+    background:rgba(0,0,0,.75);
 
-  letter-spacing:1px;
+    color:var(--gold-light);
 
-  z-index:2;
+    font-size:7px;
+
+    letter-spacing:1px;
+
 }
 
 
@@ -367,119 +302,111 @@ body{
 ========================= */
 
 .viewer{
-  position:fixed;
 
-  inset:0;
+    position:fixed;
 
-  z-index:5000;
+    inset:0;
 
-  display:none;
+    background:rgba(0,0,0,.97);
 
-  background:rgba(0,0,0,.97);
+    z-index:5000;
 
-  padding:15px;
+    display:none;
+
+    padding:15px;
+
 }
 
 .viewer.open{
-  display:block;
-}
-
-.viewer-close{
-  position:absolute;
-
-  right:18px;
-  top:15px;
-
-  width:42px;
-  height:42px;
-
-  border:1px solid var(--gold);
-
-  background:#050505;
-
-  color:var(--gold);
-
-  font-size:25px;
-
-  z-index:10;
-
-  cursor:pointer;
+    display:block;
 }
 
 .viewer-content{
-  height:100%;
 
-  display:flex;
+    height:100%;
 
-  flex-direction:column;
+    display:flex;
 
-  align-items:center;
+    flex-direction:column;
 
-  justify-content:center;
+    align-items:center;
 
-  gap:15px;
+    justify-content:center;
+
+    gap:15px;
+
 }
 
 .viewer-content img{
-  max-width:95vw;
 
-  max-height:78vh;
+    max-width:95vw;
 
-  object-fit:contain;
+    max-height:78vh;
 
-  border:1px solid rgba(212,175,55,.5);
+    object-fit:contain;
+
 }
 
-.download{
-  display:inline-flex;
+.close{
 
-  align-items:center;
-  justify-content:center;
+    position:absolute;
 
-  padding:12px 20px;
+    right:15px;
 
-  background:var(--gold);
+    top:15px;
 
-  color:#050505;
+    width:40px;
 
-  font-size:9px;
+    height:40px;
 
-  font-weight:700;
+    border:1px solid var(--gold);
 
-  letter-spacing:1.5px;
+    background:#050505;
 
-  text-decoration:none;
+    color:var(--gold);
+
+    font-size:25px;
+
+}
+
+
+/* SHARE */
+
+.share{
+
+    border:0;
+
+    background:var(--gold);
+
+    color:#050505;
+
+    padding:12px 22px;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:1.5px;
+
 }
 
 
 /* =========================
-   FOOTER
+   EMPTY
 ========================= */
 
-footer{
-  border-top:1px solid var(--line);
+.empty{
 
-  text-align:center;
+    grid-column:1/-1;
 
-  padding:30px 15px;
-}
+    text-align:center;
 
-footer strong{
-  font-family:Cinzel,serif;
+    padding:60px 10px;
 
-  font-size:20px;
+    color:#aaa;
 
-  color:var(--gold-light);
-}
+    font-size:11px;
 
-footer p{
-  margin-top:7px;
-
-  color:#fff;
-
-  font-size:7px;
-
-  letter-spacing:2px;
 }
 
 
@@ -489,92 +416,30 @@ footer p{
 
 @media(max-width:700px){
 
-  .header{
-    height:68px;
-  }
+    header{
+        height:68px;
+    }
 
-  .nav{
-    padding:0 12px;
-  }
+    .gallery{
 
-  .logo-camera{
-    width:30px;
-    height:21px;
-  }
+        grid-template-columns:
+        repeat(2,1fr);
 
-  .logo-name{
-    font-size:20px;
-  }
+        gap:7px;
 
-  .logo-sub{
-    font-size:5px;
-  }
+    }
 
-  .back{
-    padding:9px 11px;
+    .back{
 
-    font-size:8px;
-  }
+        padding:8px 10px;
 
-  .heading{
-    padding:45px 12px 28px;
-  }
+        font-size:8px;
 
-  .heading h1{
-    font-size:29px;
-  }
+    }
 
-  .filters{
-    gap:6px;
-  }
-
-  .filter{
-    padding:8px 10px;
-
-    font-size:7px;
-  }
-
-  .gallery{
-    grid-template-columns:repeat(2,1fr);
-
-    gap:7px;
-
-    padding:
-    0 8px 55px;
-  }
-
-  .photo{
-    aspect-ratio:3/4;
-  }
-
-  .viewer{
-    padding:8px;
-  }
-
-  .viewer-content img{
-    max-width:96vw;
-
-    max-height:75vh;
-  }
-
-}
-
-
-/* SMALL PHONE */
-
-@media(max-width:380px){
-
-  .logo-name{
-    font-size:18px;
-  }
-
-  .logo-camera{
-    transform:scale(.9);
-  }
-
-  .gallery{
-    gap:5px;
-  }
+    .logo-name{
+        font-size:20px;
+    }
 
 }
 
@@ -590,22 +455,19 @@ footer p{
      HEADER
 ========================= -->
 
-<header class="header">
+<header>
 
-<nav class="nav">
+<div class="nav">
 
 
-<!-- EXACT SAME LOGO STYLE -->
+<a href="index.html"
+class="logo">
 
-<a href="index.html" class="logo">
-
-<div class="logo-stack">
-
-<div class="logo-camera"></div>
+<div class="camera"></div>
 
 <div class="logo-name">
 
-<span class="arj">ARJ</span>Click
+<span>ARJ</span>Click
 
 </div>
 
@@ -615,46 +477,42 @@ PHOTOGRAPHY & FILMS
 
 </div>
 
+</a>
+
+
+<a href="index.html"
+class="back">
+
+← BACK
+
+</a>
+
+
 </div>
-
-</a>
-
-
-<a href="index.html" class="back">
-
-← BACK TO ARJCLICK
-
-</a>
-
-
-</nav>
 
 </header>
 
 
 
 <!-- =========================
-     HEADING
+     TITLE
 ========================= -->
 
-<section class="heading">
+<section class="hero">
 
 <div class="kicker">
 ARJCLICK PORTFOLIO
 </div>
 
 <h1>
-EXPLORE MORE
+OUR WORK
 </h1>
 
 <div class="line"></div>
 
 <p>
-
-A collection of our Model,
-Pre-Wedding, Baby and Wedding
-photography.
-
+A collection of moments, emotions
+and stories captured by ARJClick.
 </p>
 
 </section>
@@ -662,10 +520,11 @@ photography.
 
 
 <!-- =========================
-     FILTERS
+     FILTER
 ========================= -->
 
 <div class="filters">
+
 
 <button
 class="filter active"
@@ -675,6 +534,7 @@ ALL
 
 </button>
 
+
 <button
 class="filter"
 data-filter="model">
@@ -682,6 +542,7 @@ data-filter="model">
 MODEL
 
 </button>
+
 
 <button
 class="filter"
@@ -691,6 +552,7 @@ PRE-WEDDING
 
 </button>
 
+
 <button
 class="filter"
 data-filter="baby">
@@ -698,6 +560,7 @@ data-filter="baby">
 BABY
 
 </button>
+
 
 <button
 class="filter"
@@ -707,6 +570,7 @@ WEDDING
 
 </button>
 
+
 </div>
 
 
@@ -715,16 +579,22 @@ WEDDING
      GALLERY
 ========================= -->
 
-<main
+<div
 class="gallery"
 id="gallery">
 
-</main>
+<div class="empty">
+
+LOADING PORTFOLIO...
+
+</div>
+
+</div>
 
 
 
 <!-- =========================
-     IMAGE VIEWER
+     VIEWER
 ========================= -->
 
 <div
@@ -733,8 +603,8 @@ id="viewer">
 
 
 <button
-class="viewer-close"
-id="viewerClose">
+class="close"
+onclick="closeViewer()">
 
 ×
 
@@ -747,333 +617,481 @@ id="viewerClose">
 <img
 id="viewerImage"
 src=""
-alt="ARJClick Photography">
+alt="ARJClick">
 
 
-<a
-id="downloadButton"
-class="download"
-href="#"
-download>
+<button
+class="share"
+id="shareButton">
 
-↓ DOWNLOAD PHOTO
+↗ SHARE PHOTO
 
-</a>
+</button>
 
 
 </div>
 
 </div>
-
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-<strong>
-ARJClick
-</strong>
-
-<p>
-PHOTOGRAPHY & FILMS • © 2026
-</p>
-
-</footer>
 
 
 
 <script>
 
-/* =========================
-   PHOTO LIST
-========================= */
+/* =================================
+   GITHUB
+================================= */
 
-const photos=[];
+const USER =
+"ARJClick";
 
+const REPO =
+"arjclick.github.io";
 
-/* MODEL */
-
-for(let i=1;i<=50;i++){
-
-photos.push({
-
-src:"images/model/"+i+".jpg",
-
-category:"model",
-
-label:"MODEL"
-
-});
-
-}
+const BRANCH =
+"main";
 
 
-/* PRE-WEDDING */
+/* =================================
+   EXACT FOLDERS
+================================= */
 
-for(let i=1;i<=50;i++){
+const folders = {
 
-photos.push({
+    model:
+    "images/model",
 
-src:"images/prewedding/"+i+".jpg",
+    prewedding:
+    "images/prewedding",
 
-category:"prewedding",
+    baby:
+    "images/baby",
 
-label:"PRE-WEDDING"
-
-});
-
-}
-
-
-/* BABY */
-
-for(let i=1;i<=50;i++){
-
-photos.push({
-
-src:"images/baby/"+i+".jpg",
-
-category:"baby",
-
-label:"BABY"
-
-});
-
-}
-
-
-/* WEDDING */
-
-for(let i=1;i<=50;i++){
-
-photos.push({
-
-src:"images/wedding/"+i+".jpg",
-
-category:"wedding",
-
-label:"WEDDING"
-
-});
-
-}
-
-
-/* =========================
-   LOAD GALLERY
-========================= */
-
-const gallery=
-document.getElementById("gallery");
-
-
-function loadGallery(filter="all"){
-
-gallery.innerHTML="";
-
-
-photos.forEach(photo=>{
-
-if(
-filter!=="all" &&
-photo.category!==filter
-){
-
-return;
-
-}
-
-
-const item=
-document.createElement("div");
-
-item.className="photo";
-
-
-const img=
-document.createElement("img");
-
-img.src=photo.src;
-
-img.alt=
-"ARJClick "+photo.label;
-
-img.loading="lazy";
-
-
-/*
-যে photo এখনও upload হয়নি,
-সেই photo hide হবে।
-*/
-
-img.onerror=()=>{
-
-item.remove();
+    wedding:
+    "images/wedding"
 
 };
 
 
-const label=
-document.createElement("div");
+let allPhotos = [];
 
-label.className="category";
-
-label.textContent=
-photo.label;
+let currentFilter = "all";
 
 
-item.appendChild(img);
 
-item.appendChild(label);
+/* =================================
+   LOAD FOLDER
+================================= */
 
-gallery.appendChild(item);
+async function loadFolder(category){
+
+    const folder =
+    folders[category];
 
 
-/* OPEN VIEWER */
+    const api =
 
-item.addEventListener(
-"click",
-()=>{
+    "https://api.github.com/repos/" +
 
-openViewer(photo.src);
+    USER + "/" +
 
-});
+    REPO +
 
-});
+    "/contents/" +
+
+    folder +
+
+    "?ref=" +
+
+    BRANCH;
+
+
+    try{
+
+        const response =
+        await fetch(api);
+
+
+        if(!response.ok){
+
+            console.log(
+                "Error:",
+                category,
+                response.status
+            );
+
+            return [];
+
+        }
+
+
+        const files =
+        await response.json();
+
+
+        return files
+
+        .filter(file =>
+
+            file.type === "file" &&
+
+            /\.(jpg|jpeg|png|webp)$/i
+            .test(file.name)
+
+        )
+
+        .map(file =>({
+
+            name:file.name,
+
+            category:category,
+
+            url:
+
+            "https://raw.githubusercontent.com/" +
+
+            USER + "/" +
+
+            REPO + "/" +
+
+            BRANCH + "/" +
+
+            folder + "/" +
+
+            encodeURIComponent(file.name)
+
+        }));
+
+
+    }
+
+    catch(error){
+
+        console.log(
+            category,
+            error
+        );
+
+        return [];
+
+    }
 
 }
 
 
-/* FIRST LOAD */
 
-loadGallery();
+/* =================================
+   LOAD EVERYTHING
+================================= */
+
+async function loadGallery(){
+
+    const results =
+
+    await Promise.all([
+
+        loadFolder("model"),
+
+        loadFolder("prewedding"),
+
+        loadFolder("baby"),
+
+        loadFolder("wedding")
+
+    ]);
 
 
-/* =========================
+    allPhotos = [
+
+        ...results[0],
+
+        ...results[1],
+
+        ...results[2],
+
+        ...results[3]
+
+    ];
+
+
+    showGallery();
+
+}
+
+
+
+/* =================================
+   SHOW GALLERY
+================================= */
+
+function showGallery(){
+
+    const gallery =
+    document.getElementById(
+        "gallery"
+    );
+
+
+    gallery.innerHTML = "";
+
+
+    const photos =
+
+    currentFilter === "all"
+
+    ?
+
+    allPhotos
+
+    :
+
+    allPhotos.filter(
+        photo =>
+        photo.category ===
+        currentFilter
+    );
+
+
+    if(!photos.length){
+
+        gallery.innerHTML = `
+
+        <div class="empty">
+
+        NO PHOTOS FOUND
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    photos.forEach(photo=>{
+
+
+        const item =
+        document.createElement(
+            "div"
+        );
+
+
+        item.className =
+        "photo";
+
+
+        item.dataset.category =
+        photo.category;
+
+
+        item.innerHTML = `
+
+        <img
+        src="${photo.url}"
+        alt="ARJClick">
+
+        `;
+
+
+        item.onclick = function(){
+
+            openViewer(
+                photo.url
+            );
+
+        };
+
+
+        gallery.appendChild(
+            item
+        );
+
+
+    });
+
+}
+
+
+
+/* =================================
    FILTER
-========================= */
+================================= */
 
 document
 .querySelectorAll(".filter")
 .forEach(button=>{
 
-button.addEventListener(
-"click",
-()=>{
 
-document
-.querySelectorAll(".filter")
-.forEach(btn=>{
-btn.classList.remove("active");
+    button.onclick =
+    function(){
+
+
+        document
+        .querySelectorAll(
+            ".filter"
+        )
+        .forEach(
+            b =>
+            b.classList.remove(
+                "active"
+            )
+        );
+
+
+        this.classList.add(
+            "active"
+        );
+
+
+        currentFilter =
+        this.dataset.filter;
+
+
+        showGallery();
+
+    };
+
 });
 
 
-button.classList.add("active");
 
-
-loadGallery(
-button.dataset.filter
-);
-
-});
-
-});
-
-
-/* =========================
+/* =================================
    VIEWER
-========================= */
+================================= */
 
-const viewer=
+const viewer =
 document.getElementById(
-"viewer"
+    "viewer"
 );
 
-const viewerImage=
+const viewerImage =
 document.getElementById(
-"viewerImage"
+    "viewerImage"
 );
 
-const downloadButton=
+const shareButton =
 document.getElementById(
-"downloadButton"
+    "shareButton"
 );
 
 
-function openViewer(src){
 
-viewerImage.src=src;
+function openViewer(url){
 
-downloadButton.href=src;
-
-downloadButton.download=
-src.split("/").pop();
+    viewerImage.src =
+    url;
 
 
-viewer.classList.add("open");
+    viewer.classList.add(
+        "open"
+    );
 
-document.body.style.overflow=
-"hidden";
+
+    document.body.style.overflow =
+    "hidden";
+
+
+    shareButton.onclick =
+    async function(){
+
+
+        try{
+
+
+            if(
+                navigator.share
+            ){
+
+                await navigator.share({
+
+                    title:
+                    "ARJClick Photography",
+
+                    text:
+                    "ARJClick Photography",
+
+                    url:url
+
+                });
+
+            }
+
+            else{
+
+                await navigator
+                .clipboard
+                .writeText(url);
+
+
+                alert(
+                    "Photo link copied."
+                );
+
+            }
+
+
+        }
+
+        catch(error){
+
+            console.log(
+                "Share cancelled"
+            );
+
+        }
+
+    };
 
 }
 
+
+
+/* =================================
+   CLOSE VIEWER
+================================= */
 
 function closeViewer(){
 
-viewer.classList.remove(
-"open"
-);
-
-viewerImage.src="";
-
-document.body.style.overflow=
-"";
-
-}
+    viewer.classList.remove(
+        "open"
+    );
 
 
-document
-.getElementById("viewerClose")
-.addEventListener(
-"click",
-closeViewer
-);
+    viewerImage.src = "";
 
 
-/* CLICK OUTSIDE */
-
-viewer.addEventListener(
-"click",
-function(e){
-
-if(e.target===viewer){
-
-closeViewer();
+    document.body.style.overflow =
+    "";
 
 }
 
-});
-
-
-/* ESCAPE */
 
 document.addEventListener(
 "keydown",
-function(e){
+function(event){
 
-if(e.key==="Escape"){
+    if(
+        event.key === "Escape"
+    ){
 
-closeViewer();
+        closeViewer();
 
-}
+    }
 
 });
+
+
+
+/* =================================
+   START
+================================= */
+
+loadGallery();
 
 </script>
 
 
 </body>
+
 </html>
