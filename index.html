@@ -2010,10 +2010,23 @@ CHOOSE YOUR STORY
 MODEL
 </h3>
 
-<div style="font-size:30px;">
-  <span style="text-decoration:line-through;color:#888;font-size:18px;">₹1,500</span>
-  <strong>₹1,000</strong>
+<div class="price">
+  <span id="oldPrice">₹1,500</span>
+  <span id="newPrice">₹1,000</span>
+  <span id="discount"></span>
 </div>
+
+<script>
+  const oldPrice = 1500;
+  const newPrice = 1000;
+
+  const discount = Math.round(
+    ((oldPrice - newPrice) / oldPrice) * 100
+  );
+
+  document.getElementById("discount").textContent =
+    discount + "% OFF";
+</script>
 
 <ul>
 
