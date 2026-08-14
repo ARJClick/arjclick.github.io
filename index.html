@@ -1,26 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>ARJClick | Photography & Films</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
 
 <style>
 
+/* =====================================
+   BASIC
+===================================== */
+
 :root{
+
     --black:#030303;
     --gold:#d4af37;
-    --gold-light:#f0cf72;
+    --gold-light:#f1d477;
     --red:#c71920;
-    --white:#fff;
+    --white:#ffffff;
     --line:rgba(212,175,55,.35);
+
 }
 
 *{
@@ -34,10 +49,13 @@ html{
 }
 
 body{
+
     background:var(--black);
     color:var(--gold);
     font-family:Montserrat,Arial,sans-serif;
+
     overflow-x:hidden;
+
 }
 
 a{
@@ -45,79 +63,138 @@ a{
     text-decoration:none;
 }
 
+button{
+    font-family:inherit;
+}
 
-/* ================================
+
+
+/* =====================================
    HEADER
-================================ */
+===================================== */
 
 header{
+
     position:sticky;
     top:0;
+
     z-index:1000;
+
     height:72px;
-    background:rgba(3,3,3,.96);
+
+    background:#030303;
+
     border-bottom:1px solid var(--line);
-    backdrop-filter:blur(10px);
+
 }
 
 .nav{
+
     height:100%;
+
     max-width:1200px;
+
     margin:auto;
-    padding:0 18px;
+
+    padding:0 20px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
 }
 
 
 /* LOGO */
 
 .logo{
+
     display:flex;
+
     flex-direction:column;
+
     align-items:center;
+
     line-height:1;
+
 }
 
+
+/* CAMERA LOGO */
+
 .camera{
-    width:32px;
-    height:23px;
+
+    width:34px;
+
+    height:25px;
+
     border:3px solid var(--gold);
+
     border-radius:5px;
+
     position:relative;
-    margin-bottom:4px;
+
+    margin-bottom:5px;
+
 }
 
 .camera:before{
+
     content:"";
+
     position:absolute;
-    width:11px;
-    height:6px;
-    left:5px;
-    top:-9px;
+
+    width:12px;
+
+    height:7px;
+
+    left:6px;
+
+    top:-10px;
+
     border:3px solid var(--gold);
+
     border-bottom:0;
+
     border-radius:4px 4px 0 0;
+
 }
 
 .camera:after{
+
     content:"";
+
     position:absolute;
-    width:10px;
-    height:10px;
+
+    width:11px;
+
+    height:11px;
+
     left:8px;
+
     top:4px;
+
     border:3px solid var(--gold);
+
     border-radius:50%;
+
 }
 
+
+/* BRAND NAME */
+
 .logo-name{
+
     font-family:Cinzel,serif;
+
     font-size:23px;
+
     font-weight:700;
+
     letter-spacing:1px;
+
 }
 
 .logo-name span{
@@ -125,173 +202,275 @@ header{
 }
 
 .logo-sub{
+
     margin-top:5px;
-    font-size:5.5px;
-    letter-spacing:2px;
+
+    font-size:6px;
+
+    letter-spacing:2.2px;
+
     color:var(--gold);
+
 }
 
 
-/* NAV */
+/* DESKTOP MENU */
 
 .nav-links{
+
     display:flex;
+
     gap:22px;
+
     font-size:9px;
+
     letter-spacing:1px;
+
     color:var(--gold-light);
+
 }
+
+
+/* BOOK NOW TOP */
 
 .book-top{
+
     padding:10px 15px;
-    border:1px solid var(--gold);
+
+    background:var(--gold);
+
+    color:#050505;
+
     font-size:9px;
+
+    font-weight:700;
+
     letter-spacing:1px;
+
 }
+
+
+/* MOBILE MENU */
 
 .menu{
+
     display:none;
-    border:0;
+
     background:none;
+
+    border:0;
+
     color:var(--gold);
-    font-size:28px;
+
+    font-size:29px;
+
 }
 
 
-/* ================================
+
+/* =====================================
    HERO
-================================ */
+===================================== */
 
 .hero{
+
     min-height:calc(100svh - 72px);
+
     position:relative;
+
     display:flex;
+
     align-items:center;
+
     overflow:hidden;
+
 }
+
+
+/* HERO IMAGE */
 
 .hero img{
+
     position:absolute;
+
     inset:0;
+
     width:100%;
+
     height:100%;
+
     object-fit:cover;
+
 }
+
+
+/* DARK OVERLAY */
 
 .hero:after{
+
     content:"";
+
     position:absolute;
+
     inset:0;
-    background:rgba(0,0,0,.22);
+
+    background:
+
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.68),
+        rgba(0,0,0,.25)
+    );
+
 }
 
+
+/* HERO CONTENT */
+
 .hero-content{
+
     position:relative;
+
     z-index:2;
-    max-width:1200px;
+
     width:100%;
+
+    max-width:1200px;
+
     margin:auto;
+
     padding:40px 20px;
+
 }
 
 .kicker{
+
     font-size:9px;
+
     letter-spacing:4px;
+
     color:var(--gold-light);
+
 }
 
 .hero h1{
+
     font-family:Cinzel,serif;
-    font-size:clamp(38px,7vw,70px);
+
+    font-size:clamp(38px,7vw,72px);
+
     font-weight:400;
+
     line-height:1.08;
+
     color:var(--gold-light);
-    margin:15px 0;
+
+    margin:16px 0;
+
 }
 
 .line{
+
     width:90px;
+
     height:1px;
+
     background:var(--gold);
+
     margin:18px 0;
+
 }
 
 .hero p{
-    max-width:500px;
+
+    max-width:540px;
+
     color:#fff;
+
     font-size:11px;
+
     line-height:1.9;
+
 }
+
+
+/* ONLY BOOK NOW */
 
 .gold-btn{
+
     display:inline-block;
-    margin-top:22px;
-    padding:13px 20px;
+
+    margin-top:23px;
+
+    padding:14px 24px;
+
     background:var(--gold);
+
     color:#050505;
-    font-size:9px;
-    font-weight:700;
-    letter-spacing:1.5px;
-}
 
-.outline-btn{
-    margin-left:7px;
-    background:rgba(0,0,0,.4);
-    color:var(--gold-light);
     border:1px solid var(--gold);
+
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    transition:.3s;
+
+}
+
+.gold-btn:hover{
+
+    transform:translateY(-2px);
+
+    opacity:.9;
+
 }
 
 
-/* ================================
-   SECTION
-================================ */
 
-.section{
-    max-width:1200px;
-    margin:auto;
-    padding:60px 14px;
-}
-
-.section-title{
-    text-align:center;
-    font-family:Cinzel,serif;
-    font-size:clamp(28px,5vw,45px);
-    font-weight:400;
-    color:var(--gold-light);
-    margin-top:8px;
-}
-
-.gold-line{
-    width:80px;
-    height:1px;
-    background:var(--gold);
-    margin:16px auto 30px;
-}
-
-
-/* ================================
-   CATEGORY SLIDER
-================================ */
+/* =====================================
+   CATEGORY SECTION
+===================================== */
 
 .category{
+
     max-width:1150px;
+
     margin:auto;
-    padding:15px 10px;
+
+    padding:22px 10px;
+
 }
 
 .slider{
+
     position:relative;
+
     height:690px;
+
     overflow:hidden;
+
     border:1px solid var(--line);
+
     background:#050505;
+
 }
 
+
+/* SLIDES */
+
 .slide{
+
     position:absolute;
+
     inset:0;
+
     opacity:0;
-    transition:opacity .7s ease;
+
+    transition:opacity .8s ease;
+
 }
 
 .slide.active{
@@ -299,189 +478,410 @@ header{
 }
 
 .slide img{
+
     width:100%;
+
     height:100%;
+
     object-fit:cover;
+
     display:block;
+
 }
+
+
+/* DARK IMAGE OVERLAY */
 
 .slide:after{
+
     content:"";
+
     position:absolute;
+
     inset:0;
-    background:linear-gradient(
+
+    background:
+
+    linear-gradient(
         90deg,
-        rgba(0,0,0,.35),
-        rgba(0,0,0,.03),
-        rgba(0,0,0,.15)
+        rgba(0,0,0,.42),
+        rgba(0,0,0,.05),
+        rgba(0,0,0,.25)
     );
+
 }
 
+
+/* TEXT */
+
 .slide-info{
+
     position:absolute;
+
     z-index:5;
+
     left:42px;
+
     bottom:55px;
-    max-width:520px;
+
+    max-width:530px;
+
 }
 
 .slide-info h2{
+
     font-family:Cinzel,serif;
-    font-size:clamp(30px,5vw,50px);
+
+    font-size:clamp(30px,5vw,52px);
+
     font-weight:400;
+
     line-height:1.08;
+
     color:var(--gold-light);
+
 }
 
 .slide-info p{
+
     font-family:"Cormorant Garamond",serif;
-    font-size:20px;
+
+    font-size:21px;
+
     line-height:1.35;
+
     color:#fff;
+
 }
 
-.view{
-    display:inline-block;
-    margin-top:18px;
-    padding:11px 16px;
-    border:1px solid var(--gold);
-    color:var(--gold-light);
-    font-size:9px;
-    letter-spacing:1.3px;
-}
+
+/* ARROWS */
 
 .arrow{
+
     position:absolute;
+
     z-index:10;
+
     top:50%;
+
     transform:translateY(-50%);
 
-    width:42px;
-    height:42px;
+    width:43px;
+
+    height:43px;
 
     border:1px solid var(--gold);
+
     border-radius:50%;
 
     background:rgba(0,0,0,.45);
+
     color:var(--gold-light);
 
-    font-size:25px;
+    font-size:26px;
+
 }
 
 .prev{
-    left:13px;
+    left:14px;
 }
 
 .next{
-    right:13px;
+    right:14px;
 }
 
+
+/* DOTS */
+
 .dots{
+
     position:absolute;
+
     z-index:20;
+
     bottom:17px;
+
     left:50%;
+
     transform:translateX(-50%);
+
     display:flex;
+
     gap:7px;
+
 }
 
 .dot{
+
     width:8px;
+
     height:8px;
+
     padding:0;
+
     border-radius:50%;
+
     border:1px solid var(--gold);
+
     background:transparent;
+
 }
 
 .dot.active{
+
     background:var(--gold);
+
 }
 
 
-/* ================================
+
+/* =====================================
    SERVICES
-================================ */
+===================================== */
+
+.section{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:60px 14px;
+
+}
+
+.section-title{
+
+    text-align:center;
+
+    font-family:Cinzel,serif;
+
+    font-size:clamp(28px,5vw,45px);
+
+    font-weight:400;
+
+    color:var(--gold-light);
+
+    margin-top:8px;
+
+}
+
+.gold-line{
+
+    width:80px;
+
+    height:1px;
+
+    background:var(--gold);
+
+    margin:16px auto 30px;
+
+}
+
 
 .services{
+
     display:flex;
+
     gap:10px;
+
     overflow-x:auto;
+
     scrollbar-width:none;
+
 }
 
 .services::-webkit-scrollbar{
     display:none;
 }
 
+
 .service{
+
     flex:0 0 145px;
+
     border:1px solid var(--line);
-    padding:18px 8px;
+
+    padding:20px 8px;
+
     text-align:center;
-    background:#050403;
+
+    background:#050505;
+
 }
 
 .service-icon{
+
     width:55px;
+
     height:55px;
+
     border:1px solid var(--gold);
+
     border-radius:50%;
+
     display:grid;
+
     place-items:center;
+
     margin:auto auto 10px;
+
     font-size:21px;
+
 }
 
 .service h3{
+
     font-family:Cinzel,serif;
+
     font-size:10px;
+
     font-weight:400;
+
     color:var(--gold-light);
+
 }
 
 
-/* ================================
-   RECENT WORK
-================================ */
 
-.recent{
+/* =====================================
+   PRICE & PACKAGES
+===================================== */
+
+.packages{
+
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:8px;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:12px;
+
 }
 
-.recent button{
-    padding:0;
+
+.package{
+
     border:1px solid var(--line);
+
     background:#050505;
-    aspect-ratio:4/3;
-    overflow:hidden;
+
+    padding:25px 15px;
+
+    text-align:center;
+
+    position:relative;
+
+    transition:.3s;
+
 }
 
-.recent img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+.package:hover{
+
+    transform:translateY(-4px);
+
+    border-color:var(--gold);
+
 }
 
 
-/* ================================
+.package h3{
+
+    font-family:Cinzel,serif;
+
+    font-size:17px;
+
+    font-weight:400;
+
+    color:var(--gold-light);
+
+    margin-bottom:15px;
+
+}
+
+
+.package .price{
+
+    font-family:Cinzel,serif;
+
+    font-size:25px;
+
+    color:var(--gold);
+
+    margin-bottom:18px;
+
+}
+
+
+.package ul{
+
+    list-style:none;
+
+    color:#fff;
+
+    font-size:9px;
+
+    line-height:2;
+
+    margin-bottom:20px;
+
+}
+
+
+.package li:before{
+
+    content:"✓ ";
+
+    color:var(--gold);
+
+}
+
+
+.package-btn{
+
+    display:inline-block;
+
+    padding:10px 14px;
+
+    background:var(--gold);
+
+    color:#050505;
+
+    font-size:8px;
+
+    font-weight:700;
+
+    letter-spacing:1.5px;
+
+}
+
+
+
+/* =====================================
    EXPERIENCE
-================================ */
+===================================== */
 
 .stats{
+
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+    repeat(4,1fr);
+
     border-top:1px solid var(--line);
+
     border-bottom:1px solid var(--line);
+
 }
 
 .stat{
+
     padding:28px 5px;
+
     text-align:center;
+
     border-right:1px solid var(--line);
+
 }
 
 .stat:last-child{
@@ -489,145 +889,235 @@ header{
 }
 
 .stat strong{
+
     display:block;
+
     font-family:Cinzel,serif;
+
     font-size:30px;
+
     font-weight:400;
+
     color:var(--gold-light);
+
 }
 
 .stat span{
+
     font-size:8px;
+
     letter-spacing:1px;
+
     color:#fff;
+
 }
 
 
-/* ================================
+
+/* =====================================
    WHY
-================================ */
+===================================== */
 
 .features{
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+    repeat(3,1fr);
+
     gap:10px;
+
 }
 
 .feature{
+
     border:1px solid var(--line);
+
     padding:22px 15px;
+
 }
 
 .feature h3{
+
     font-family:Cinzel,serif;
+
     font-size:15px;
+
     font-weight:400;
+
     color:var(--gold-light);
+
     margin:10px 0;
+
 }
 
 .feature p{
+
     color:#fff;
+
     font-size:10px;
+
     line-height:1.8;
+
 }
 
 
-/* ================================
+
+/* =====================================
    ABOUT
-================================ */
+===================================== */
 
 .about{
+
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+    1fr 1fr;
+
     gap:25px;
+
     align-items:center;
+
 }
 
 .about img{
+
     width:100%;
+
     aspect-ratio:4/3;
+
     object-fit:cover;
+
     border:1px solid var(--line);
+
 }
 
 .about h2{
+
     font-family:Cinzel,serif;
+
     font-size:35px;
+
     font-weight:400;
+
     color:var(--gold-light);
+
     margin:10px 0 16px;
+
 }
 
 .about p{
+
     color:#fff;
+
     font-size:11px;
+
     line-height:1.9;
+
     margin-bottom:10px;
+
 }
 
 
-/* ================================
+
+/* =====================================
    CONTACT
-================================ */
+===================================== */
 
 .contact{
+
     text-align:center;
+
     border:1px solid var(--gold);
-    padding:42px 18px;
+
+    padding:45px 18px;
+
 }
 
 .contact h2{
+
     font-family:Cinzel,serif;
+
     font-size:30px;
+
     font-weight:400;
+
     color:var(--gold-light);
+
 }
 
 .contact p{
+
     max-width:550px;
+
     margin:12px auto 22px;
+
     color:#fff;
+
     font-size:11px;
+
     line-height:1.8;
+
 }
 
 
-/* ================================
+
+/* =====================================
    FOOTER
-================================ */
+===================================== */
 
 footer{
+
     text-align:center;
-    padding:30px 10px;
+
+    padding:32px 10px;
+
     border-top:1px solid var(--line);
+
 }
 
 footer strong{
+
     font-family:Cinzel,serif;
-    font-size:21px;
+
+    font-size:22px;
+
     color:var(--gold-light);
+
 }
 
 footer p{
+
     margin-top:7px;
+
     color:#fff;
+
     font-size:7px;
+
     letter-spacing:2px;
+
 }
 
 
-/* ================================
+
+/* =====================================
    PHOTO VIEWER
-================================ */
+===================================== */
 
 .viewer{
+
     position:fixed;
+
     inset:0;
+
     z-index:5000;
+
     display:none;
+
     background:rgba(0,0,0,.97);
+
     padding:12px;
+
 }
 
 .viewer.open{
@@ -635,47 +1125,79 @@ footer p{
 }
 
 .viewer-close{
+
     position:absolute;
+
     right:15px;
+
     top:12px;
 
     width:40px;
+
     height:40px;
 
     border:1px solid var(--gold);
+
     background:#050505;
+
     color:var(--gold);
+
     font-size:25px;
+
 }
 
 .viewer-content{
+
     height:100%;
+
     display:flex;
+
     flex-direction:column;
+
     align-items:center;
+
     justify-content:center;
+
     gap:15px;
+
 }
 
 .viewer-content img{
+
     max-width:95vw;
+
     max-height:78vh;
+
     object-fit:contain;
+
 }
+
+
+/* SHARE ONLY */
 
 .share{
-    padding:12px 22px;
+
+    padding:12px 23px;
+
     background:var(--gold);
+
     color:#050505;
+
+    border:0;
+
     font-size:9px;
+
     font-weight:700;
+
     letter-spacing:1.5px;
+
 }
 
 
-/* ================================
+
+/* =====================================
    MOBILE
-================================ */
+===================================== */
 
 @media(max-width:760px){
 
@@ -701,23 +1223,31 @@ footer p{
     }
 
     .hero h1{
-        font-size:34px;
+        font-size:35px;
     }
 
-    .section{
-        padding:50px 12px;
+    .hero p{
+        font-size:11px;
     }
 
     .slider{
+
         height:650px;
+
         width:96%;
+
         margin:auto;
+
     }
 
     .slide-info{
+
         left:24px;
+
         right:20px;
+
         bottom:50px;
+
     }
 
     .slide-info h2{
@@ -728,12 +1258,18 @@ footer p{
         font-size:18px;
     }
 
-    .recent{
-        grid-template-columns:repeat(2,1fr);
+    .packages{
+
+        grid-template-columns:
+        1fr 1fr;
+
     }
 
     .stats{
-        grid-template-columns:repeat(2,1fr);
+
+        grid-template-columns:
+        1fr 1fr;
+
     }
 
     .stat:nth-child(2){
@@ -742,7 +1278,26 @@ footer p{
 
     .features,
     .about{
+
+        grid-template-columns:
+        1fr;
+
+    }
+
+}
+
+
+
+/* SMALL MOBILE */
+
+@media(max-width:430px){
+
+    .packages{
         grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:32px;
     }
 
 }
@@ -751,51 +1306,74 @@ footer p{
 
 </head>
 
+
+
 <body>
 
 
-<!-- =================================
+
+<!-- =====================================
      HEADER
-================================= -->
+===================================== -->
 
 <header>
 
 <nav class="nav">
+
 
 <a href="#home" class="logo">
 
 <div class="camera"></div>
 
 <div class="logo-name">
+
 <span>ARJ</span>Click
+
 </div>
 
 <div class="logo-sub">
+
 PHOTOGRAPHY & FILMS
+
 </div>
 
 </a>
+
 
 
 <div class="nav-links">
 
 <a href="#home">HOME</a>
+
 <a href="#services">SERVICES</a>
-<a href="#portfolio">PORTFOLIO</a>
+
+<a href="#packages">PACKAGES</a>
+
 <a href="#about">ABOUT</a>
+
 <a href="#contact">CONTACT</a>
 
 </div>
 
 
-<a href="#contact" class="book-top">
+
+<a href="#contact"
+class="book-top">
+
 BOOK NOW
+
 </a>
 
 
-<button class="menu" id="menu">
+
+<button
+class="menu"
+id="menu">
+
 ☰
+
 </button>
+
 
 </nav>
 
@@ -803,42 +1381,62 @@ BOOK NOW
 
 
 
-<!-- =================================
+<!-- =====================================
      HERO
-================================= -->
+===================================== -->
 
-<section class="hero" id="home">
+<section
+class="hero"
+id="home">
+
+
+<!-- MODEL PHOTO AS HERO -->
 
 <img
-src="images/hero.jpg"
+src="images/model/1.jpg"
 alt="ARJClick Photography">
+
 
 <div class="hero-content">
 
+
 <div class="kicker">
+
 WE CAPTURE YOUR STORY
+
 </div>
 
+
 <h1>
+
 YOUR MOMENTS<br>
 BEAUTIFULLY.
+
 </h1>
+
 
 <div class="line"></div>
 
+
 <p>
-Turning real emotions, confidence and
-celebrations into timeless photographs
-and cinematic films.
+
+Turning real emotions, confidence
+and celebrations into timeless
+photographs and cinematic films.
+
 </p>
 
-<a href="#services" class="gold-btn">
-EXPLORE WORK
+
+<!-- ONLY BOOK NOW -->
+
+<a
+href="#contact"
+class="gold-btn">
+
+BOOK NOW
+
 </a>
 
-<a href="#contact" class="gold-btn outline-btn">
-BOOK NOW
-</a>
 
 </div>
 
@@ -846,46 +1444,59 @@ BOOK NOW
 
 
 
-<!-- =================================
-     MODEL
-================================= -->
+<!-- =====================================
+     MODEL SHOOTING
+===================================== -->
 
 <section class="category">
 
-<div class="slider" data-category="model">
+<div
+class="slider"
+data-category="model">
+
 
 <div class="slide-info">
 
 <h2>
+
 MODEL<br>
 SHOOTING
+
 </h2>
 
 <div class="line"></div>
 
 <p>
+
 Fashion, portfolio and creative
 model photography designed to
 capture confidence and personality.
-</p>
 
-<a href="gallery.html?category=model" class="view">
-VIEW MODEL WORK
-</a>
+</p>
 
 </div>
 
-<button class="arrow prev"
+
+<button
+class="arrow prev"
 onclick="changeSlide('model',-1)">
+
 ‹
+
 </button>
 
-<button class="arrow next"
+
+<button
+class="arrow next"
 onclick="changeSlide('model',1)">
+
 ›
+
 </button>
+
 
 <div class="dots"></div>
+
 
 </div>
 
@@ -893,45 +1504,58 @@ onclick="changeSlide('model',1)">
 
 
 
-<!-- =================================
-     PREWEDDING
-================================= -->
+<!-- =====================================
+     PRE-WEDDING
+===================================== -->
 
 <section class="category">
 
-<div class="slider" data-category="prewedding">
+<div
+class="slider"
+data-category="prewedding">
+
 
 <div class="slide-info">
 
 <h2>
+
 PRE-WEDDING<br>
 SHOOT
+
 </h2>
 
 <div class="line"></div>
 
 <p>
+
 Romantic and cinematic storytelling
 created around your love and connection.
-</p>
 
-<a href="gallery.html?category=prewedding" class="view">
-VIEW PRE-WEDDING WORK
-</a>
+</p>
 
 </div>
 
-<button class="arrow prev"
+
+<button
+class="arrow prev"
 onclick="changeSlide('prewedding',-1)">
+
 ‹
+
 </button>
 
-<button class="arrow next"
+
+<button
+class="arrow next"
 onclick="changeSlide('prewedding',1)">
+
 ›
+
 </button>
+
 
 <div class="dots"></div>
+
 
 </div>
 
@@ -939,45 +1563,58 @@ onclick="changeSlide('prewedding',1)">
 
 
 
-<!-- =================================
-     BABY
-================================= -->
+<!-- =====================================
+     BABY SHOOTING
+===================================== -->
 
 <section class="category">
 
-<div class="slider" data-category="baby">
+<div
+class="slider"
+data-category="baby">
+
 
 <div class="slide-info">
 
 <h2>
+
 BABY<br>
 SHOOTING
+
 </h2>
 
 <div class="line"></div>
 
 <p>
+
 Pure, natural and precious moments
 captured with warmth, care and creativity.
-</p>
 
-<a href="gallery.html?category=baby" class="view">
-VIEW BABY WORK
-</a>
+</p>
 
 </div>
 
-<button class="arrow prev"
+
+<button
+class="arrow prev"
 onclick="changeSlide('baby',-1)">
+
 ‹
+
 </button>
 
-<button class="arrow next"
+
+<button
+class="arrow next"
 onclick="changeSlide('baby',1)">
+
 ›
+
 </button>
+
 
 <div class="dots"></div>
+
 
 </div>
 
@@ -985,46 +1622,59 @@ onclick="changeSlide('baby',1)">
 
 
 
-<!-- =================================
+<!-- =====================================
      WEDDING
-================================= -->
+===================================== -->
 
 <section class="category">
 
-<div class="slider" data-category="wedding">
+<div
+class="slider"
+data-category="wedding">
+
 
 <div class="slide-info">
 
 <h2>
+
 WEDDING<br>
 PHOTOGRAPHY
+
 </h2>
 
 <div class="line"></div>
 
 <p>
+
 Elegant wedding stories captured
 with emotion, detail and cinematic
 storytelling.
-</p>
 
-<a href="gallery.html?category=wedding" class="view">
-VIEW WEDDING WORK
-</a>
+</p>
 
 </div>
 
-<button class="arrow prev"
+
+<button
+class="arrow prev"
 onclick="changeSlide('wedding',-1)">
+
 ‹
+
 </button>
 
-<button class="arrow next"
+
+<button
+class="arrow next"
 onclick="changeSlide('wedding',1)">
+
 ›
+
 </button>
+
 
 <div class="dots"></div>
+
 
 </div>
 
@@ -1032,59 +1682,127 @@ onclick="changeSlide('wedding',1)">
 
 
 
-<!-- =================================
+<!-- =====================================
      SERVICES
-================================= -->
+===================================== -->
 
-<section class="section" id="services">
+<section
+class="section"
+id="services">
+
 
 <div class="kicker">
+
 ALL SERVICES
+
 </div>
 
+
 <h2 class="section-title">
+
 WHAT WE DO
+
 </h2>
+
 
 <div class="gold-line"></div>
 
 
 <div class="services">
 
-<div class="service">
-<div class="service-icon">📷</div>
-<h3>MODEL<br>SHOOTING</h3>
-</div>
 
 <div class="service">
-<div class="service-icon">💍</div>
-<h3>PRE-WEDDING</h3>
+
+<div class="service-icon">
+📷
 </div>
 
-<div class="service">
-<div class="service-icon">👶</div>
-<h3>BABY<br>SHOOTING</h3>
+<h3>
+MODEL<br>
+SHOOTING
+</h3>
+
 </div>
 
-<div class="service">
-<div class="service-icon">💒</div>
-<h3>WEDDING</h3>
-</div>
 
 <div class="service">
-<div class="service-icon">♡</div>
-<h3>ANNIVERSARY</h3>
+
+<div class="service-icon">
+💍
 </div>
 
-<div class="service">
-<div class="service-icon">🎂</div>
-<h3>BIRTHDAY</h3>
+<h3>
+PRE-WEDDING
+</h3>
+
 </div>
 
+
 <div class="service">
-<div class="service-icon">✦</div>
-<h3>EVENT</h3>
+
+<div class="service-icon">
+👶
 </div>
+
+<h3>
+BABY<br>
+SHOOTING
+</h3>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+💒
+</div>
+
+<h3>
+WEDDING
+</h3>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+♡
+</div>
+
+<h3>
+ANNIVERSARY
+</h3>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+🎂
+</div>
+
+<h3>
+BIRTHDAY
+</h3>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+✦
+</div>
+
+<h3>
+EVENT
+</h3>
+
+</div>
+
 
 </div>
 
@@ -1092,46 +1810,182 @@ WHAT WE DO
 
 
 
+<!-- =====================================
+     PRICE & PACKAGES
+===================================== -->
 
+<section
+class="section"
+id="packages">
 
-
-<!-- =================================
-     EXPERIENCE
-================================= -->
-
-<section class="section">
 
 <div class="kicker">
-EXPERIENCE
+
+PRICE & PACKAGES
+
 </div>
 
+
 <h2 class="section-title">
-CRAFTED WITH PURPOSE
+
+CHOOSE YOUR PACKAGE
+
 </h2>
+
 
 <div class="gold-line"></div>
 
-<div class="stats">
 
-<div class="stat">
-<strong>01+</strong>
-<span>YEARS EXPERIENCE</span>
+
+<div class="packages">
+
+
+<!-- MODEL -->
+
+<div class="package">
+
+<h3>
+MODEL SHOOT
+</h3>
+
+<div class="price">
+₹____
 </div>
 
-<div class="stat">
-<strong>100+</strong>
-<span>SESSIONS</span>
+<ul>
+
+<li>Studio / Outdoor Shoot</li>
+
+<li>Professional Direction</li>
+
+<li>Edited Photographs</li>
+
+<li>High Quality Delivery</li>
+
+</ul>
+
+
+<a
+href="#contact"
+class="package-btn">
+
+BOOK NOW
+
+</a>
+
 </div>
 
-<div class="stat">
-<strong>50+</strong>
-<span>HAPPY CLIENTS</span>
+
+
+<!-- PRE-WEDDING -->
+
+<div class="package">
+
+<h3>
+PRE-WEDDING
+</h3>
+
+<div class="price">
+₹____
 </div>
 
-<div class="stat">
-<strong>4</strong>
-<span>SIGNATURE SHOOTS</span>
+<ul>
+
+<li>Pre-Wedding Session</li>
+
+<li>Creative Locations</li>
+
+<li>Edited Photographs</li>
+
+<li>Cinematic Style</li>
+
+</ul>
+
+
+<a
+href="#contact"
+class="package-btn">
+
+BOOK NOW
+
+</a>
+
 </div>
+
+
+
+<!-- BABY -->
+
+<div class="package">
+
+<h3>
+BABY SHOOT
+</h3>
+
+<div class="price">
+₹____
+</div>
+
+<ul>
+
+<li>Baby Photography</li>
+
+<li>Creative Setup</li>
+
+<li>Edited Photographs</li>
+
+<li>High Quality Delivery</li>
+
+</ul>
+
+
+<a
+href="#contact"
+class="package-btn">
+
+BOOK NOW
+
+</a>
+
+</div>
+
+
+
+<!-- WEDDING -->
+
+<div class="package">
+
+<h3>
+WEDDING
+</h3>
+
+<div class="price">
+₹____
+</div>
+
+<ul>
+
+<li>Wedding Photography</li>
+
+<li>Candid Coverage</li>
+
+<li>Traditional Coverage</li>
+
+<li>Edited Delivery</li>
+
+</ul>
+
+
+<a
+href="#contact"
+class="package-btn">
+
+BOOK NOW
+
+</a>
+
+</div>
+
 
 </div>
 
@@ -1139,24 +1993,117 @@ CRAFTED WITH PURPOSE
 
 
 
-<!-- =================================
-     WHY ARJCLICK
-================================= -->
+<!-- =====================================
+     EXPERIENCE
+===================================== -->
 
 <section class="section">
 
+
 <div class="kicker">
-WHY ARJCLICK
+
+EXPERIENCE
+
 </div>
 
+
 <h2 class="section-title">
-OUR APPROACH
+
+CRAFTED WITH PURPOSE
+
 </h2>
+
+
+<div class="gold-line"></div>
+
+
+<div class="stats">
+
+
+<div class="stat">
+
+<strong>
+01+
+</strong>
+
+<span>
+YEARS EXPERIENCE
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>
+100+
+</strong>
+
+<span>
+SESSIONS
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>
+50+
+</strong>
+
+<span>
+HAPPY CLIENTS
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>
+4
+</strong>
+
+<span>
+SIGNATURE SHOOTS
+</span>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================
+     WHY ARJCLICK
+===================================== -->
+
+<section class="section">
+
+
+<div class="kicker">
+
+WHY ARJCLICK
+
+</div>
+
+
+<h2 class="section-title">
+
+OUR APPROACH
+
+</h2>
+
 
 <div class="gold-line"></div>
 
 
 <div class="features">
+
 
 <div class="feature">
 
@@ -1165,11 +2112,14 @@ EDITORIAL VISION
 </h3>
 
 <p>
+
 Premium composition inspired by
 fashion, cinema and storytelling.
+
 </p>
 
 </div>
+
 
 
 <div class="feature">
@@ -1179,11 +2129,14 @@ PERSONAL DIRECTION
 </h3>
 
 <p>
+
 Natural posing and thoughtful
 guidance so every frame feels effortless.
+
 </p>
 
 </div>
+
 
 
 <div class="feature">
@@ -1193,11 +2146,14 @@ CAREFUL EDITING
 </h3>
 
 <p>
+
 Consistent colour, detail and finishing
 designed to keep photographs timeless.
+
 </p>
 
 </div>
+
 
 </div>
 
@@ -1205,44 +2161,62 @@ designed to keep photographs timeless.
 
 
 
-<!-- =================================
+<!-- =====================================
      ABOUT
-================================= -->
+===================================== -->
 
-<section class="section" id="about">
+<section
+class="section"
+id="about">
+
 
 <div class="about">
 
+
 <img
-src="images/hero.jpg"
+src="images/model/1.jpg"
 alt="ARJClick Photography">
 
 
 <div>
 
+
 <div class="kicker">
+
 ABOUT ARJCLICK
+
 </div>
 
+
 <h2>
+
 WE FRAME EMOTION.
+
 </h2>
 
+
 <p>
+
 ARJClick Photography & Films is
 built around a simple idea:
 beautiful photography should feel
 personal, cinematic and memorable.
+
 </p>
 
+
 <p>
+
 From model portfolios and pre-wedding
 stories to baby and wedding moments,
 every session is approached with
 attention to light, composition and emotion.
+
 </p>
 
+
 </div>
+
 
 </div>
 
@@ -1250,33 +2224,51 @@ attention to light, composition and emotion.
 
 
 
-<!-- =================================
+<!-- =====================================
      CONTACT
-================================= -->
+===================================== -->
 
-<section class="section" id="contact">
+<section
+class="section"
+id="contact">
+
 
 <div class="contact">
 
+
 <div class="kicker">
+
 LET'S CREATE
+
 </div>
 
+
 <h2>
+
 YOUR STORY DESERVES<br>
 A BEAUTIFUL FRAME.
+
 </h2>
 
+
 <p>
-Tell us what you are planning and we
-will help you choose the right
+
+Tell us what you are planning and
+we will help you choose the right
 photography package.
+
 </p>
 
 
+<!-- =================================
+     WHATSAPP NUMBER
+
+     এখানে 91XXXXXXXXXX-এর জায়গায়
+     আপনার আসল WhatsApp number বসাবেন।
+================================= -->
 
 <a
-href="https://wa.me/+917718124609"
+href="https://wa.me/91XXXXXXXXXX"
 target="_blank"
 class="gold-btn">
 
@@ -1284,43 +2276,69 @@ class="gold-btn">
 
 </a>
 
+
 </div>
 
 </section>
 
 
 
+<!-- =====================================
+     FOOTER
+===================================== -->
+
 <footer>
 
-<strong>ARJClick</strong>
+<strong>
+ARJClick
+</strong>
+
 
 <p>
+
 PHOTOGRAPHY & FILMS • © 2026
+
 </p>
 
 </footer>
 
 
 
-<!-- =================================
+<!-- =====================================
      PHOTO VIEWER
-================================= -->
+===================================== -->
 
-<div class="viewer" id="viewer">
+<div
+class="viewer"
+id="viewer">
 
-<button class="viewer-close"
+
+<button
+class="viewer-close"
 onclick="closeViewer()">
+
 ×
+
 </button>
+
 
 <div class="viewer-content">
 
-<img id="viewerImage" src="" alt="ARJClick">
 
-<button class="share"
+<img
+id="viewerImage"
+src=""
+alt="ARJClick">
+
+
+<button
+class="share"
 id="shareButton">
+
 ↗ SHARE PHOTO
+
 </button>
+
 
 </div>
 
@@ -1330,26 +2348,23 @@ id="shareButton">
 
 <script>
 
-/* =================================================
-   IMPORTANT
-   YOUR REAL GITHUB REPOSITORY
-================================================= */
+/* =====================================
+   GITHUB SETTINGS
+===================================== */
 
-const GITHUB_USER = "ARJClick";
+const GITHUB_USER =
+"ARJClick";
 
-const GITHUB_REPO = "arjclick.github.io";
+const GITHUB_REPO =
+"arjclick.github.io";
 
-const GITHUB_BRANCH = "main";
+const GITHUB_BRANCH =
+"main";
 
 
-/* =================================================
-   EXACT FOLDER MAPPING
-
-   MODEL      → images/model/
-   PREWEDDING → images/prewedding/
-   BABY       → images/baby/
-   WEDDING    → images/wedding/
-================================================= */
+/* =====================================
+   EXACT FOLDERS
+===================================== */
 
 const folders = {
 
@@ -1367,6 +2382,10 @@ const folders = {
 
 };
 
+
+/* =====================================
+   PHOTO DATA
+===================================== */
 
 const data = {
 
@@ -1395,40 +2414,46 @@ const positions = {
 
 
 
-/* =================================================
-   LOAD ONE FOLDER
-
-   IMPORTANT:
-   category is passed together with its own folder.
-================================================= */
+/* =====================================
+   LOAD FOLDER
+===================================== */
 
 async function loadFolder(category){
 
-    const folder = folders[category];
+    const folder =
+    folders[category];
+
 
     const api =
+
     "https://api.github.com/repos/" +
-    GITHUB_USER + "/" +
+
+    GITHUB_USER +
+
+    "/" +
+
     GITHUB_REPO +
+
     "/contents/" +
+
     folder +
+
     "?ref=" +
+
     GITHUB_BRANCH;
 
 
     try{
 
         const response =
-        await fetch(api, {
-            cache:"no-store"
-        });
+        await fetch(api);
 
 
         if(!response.ok){
 
             console.log(
-                "GitHub error:",
-                category,
+                category +
+                " folder error:",
                 response.status
             );
 
@@ -1441,42 +2466,55 @@ async function loadFolder(category){
         await response.json();
 
 
-        /* শুধুমাত্র image file */
+        data[category] =
 
-        data[category] = files
+        files
 
-        .filter(file => {
+        .filter(file =>
 
-            return file.type === "file" &&
+            file.type === "file" &&
+
             /\.(jpg|jpeg|png|webp)$/i
-            .test(file.name);
+            .test(file.name)
 
-        })
+        )
 
-        .map(file => {
+        .map(file =>({
 
-            return {
+            name:file.name,
 
-                name:file.name,
+            url:
 
-                url:
-                "https://raw.githubusercontent.com/" +
-                GITHUB_USER + "/" +
-                GITHUB_REPO + "/" +
-                GITHUB_BRANCH + "/" +
-                folder + "/" +
-                encodeURIComponent(file.name)
+            "https://raw.githubusercontent.com/" +
 
-            };
+            GITHUB_USER +
 
-        });
+            "/" +
+
+            GITHUB_REPO +
+
+            "/" +
+
+            GITHUB_BRANCH +
+
+            "/" +
+
+            folder +
+
+            "/" +
+
+            encodeURIComponent(file.name)
+
+        }));
 
 
-        console.log(
-            category,
-            data[category]
-        );
+        /*
+           GitHub directory সাধারণত
+           filename অনুযায়ী দেয়।
 
+           1.jpg, 2.jpg, 3.jpg হলে
+           সেই order-এ থাকবে।
+        */
 
         createSlider(category);
 
@@ -1485,7 +2523,6 @@ async function loadFolder(category){
     catch(error){
 
         console.log(
-            "Folder loading error:",
             category,
             error
         );
@@ -1496,56 +2533,71 @@ async function loadFolder(category){
 
 
 
-/* =================================================
+/* =====================================
    CREATE SLIDER
-================================================= */
+===================================== */
 
 function createSlider(category){
 
     const slider =
+
     document.querySelector(
+
         '.slider[data-category="' +
+
         category +
+
         '"]'
+
     );
 
 
-    if(!slider) return;
+    if(!slider)
+    return;
 
-
-    /* পুরোনো slide মুছে ফেলি */
 
     slider
+
     .querySelectorAll(".slide")
-    .forEach(el => el.remove());
+
+    .forEach(
+        element =>
+        element.remove()
+    );
 
 
     const dots =
     slider.querySelector(".dots");
 
+
     dots.innerHTML = "";
 
 
     /*
-       এই category-র folder থেকেই
-       সর্বোচ্চ 6টি ছবি
+       প্রথম 6টি ছবি
     */
 
     const photos =
     data[category].slice(0,6);
 
 
-    photos.forEach((photo,index)=>{
+    photos.forEach(
+    (photo,index)=>{
+
 
         const slide =
         document.createElement("div");
 
-        slide.className = "slide";
+
+        slide.className =
+        "slide";
 
 
         if(index === 0){
 
-            slide.classList.add("active");
+            slide.classList.add(
+                "active"
+            );
 
         }
 
@@ -1553,35 +2605,51 @@ function createSlider(category){
         const img =
         document.createElement("img");
 
-        img.src = photo.url;
+
+        img.src =
+        photo.url;
+
 
         img.alt =
-        "ARJClick " + category;
+        "ARJClick " +
+        category;
 
 
         slide.appendChild(img);
 
 
         slider.insertBefore(
+
             slide,
-            slider.querySelector(".slide-info")
+
+            slider.querySelector(
+                ".slide-info"
+            )
+
         );
 
 
         const dot =
-        document.createElement("button");
+        document.createElement(
+            "button"
+        );
 
-        dot.className = "dot";
+
+        dot.className =
+        "dot";
 
 
         if(index === 0){
 
-            dot.classList.add("active");
+            dot.classList.add(
+                "active"
+            );
 
         }
 
 
-        dot.onclick = function(){
+        dot.onclick =
+        function(){
 
             showSlide(
                 category,
@@ -1593,37 +2661,52 @@ function createSlider(category){
 
         dots.appendChild(dot);
 
+
     });
 
 }
 
 
 
-/* =================================================
+/* =====================================
    SHOW SLIDE
-================================================= */
+===================================== */
 
-function showSlide(category,index){
+function showSlide(
+    category,
+    index
+){
 
     const slider =
+
     document.querySelector(
+
         '.slider[data-category="' +
+
         category +
+
         '"]'
+
     );
 
 
-    if(!slider) return;
+    if(!slider)
+    return;
 
 
     const slides =
-    slider.querySelectorAll(".slide");
+
+    slider.querySelectorAll(
+        ".slide"
+    );
 
 
-    if(!slides.length) return;
+    if(!slides.length)
+    return;
 
 
     index =
+
     (index + slides.length)
     % slides.length;
 
@@ -1633,37 +2716,43 @@ function showSlide(category,index){
 
 
     slides.forEach(
-        (slide,i)=>{
+    (slide,i)=>{
 
-            slide.classList.toggle(
-                "active",
-                i === index
-            );
+        slide.classList.toggle(
 
-        }
-    );
+            "active",
+
+            i === index
+
+        );
+
+    });
 
 
     slider
+
     .querySelectorAll(".dot")
+
     .forEach(
-        (dot,i)=>{
+    (dot,i)=>{
 
-            dot.classList.toggle(
-                "active",
-                i === index
-            );
+        dot.classList.toggle(
 
-        }
-    );
+            "active",
+
+            i === index
+
+        );
+
+    });
 
 }
 
 
 
-/* =================================================
-   NEXT / PREVIOUS
-================================================= */
+/* =====================================
+   ARROW
+===================================== */
 
 function changeSlide(
     category,
@@ -1683,11 +2772,12 @@ function changeSlide(
 
 
 
-/* =================================================
+/* =====================================
    AUTOMATIC SLIDE
-================================================= */
+===================================== */
 
-setInterval(()=>{
+setInterval(
+function(){
 
     Object.keys(folders)
     .forEach(category=>{
@@ -1699,13 +2789,15 @@ setInterval(()=>{
 
     });
 
-},5000);
+},
+5000
+);
 
 
 
-/* =================================================
-   LOAD ALL FOUR FOLDERS
-================================================= */
+/* =====================================
+   LOAD ALL CATEGORIES ONCE
+===================================== */
 
 loadFolder("model");
 
@@ -1717,103 +2809,14 @@ loadFolder("wedding");
 
 
 
-/* =================================================
-   RECENT WORK
-
-   এখানে প্রত্যেক folder থেকে
-   2টি করে ছবি নেওয়া হবে।
-
-   তাই Model section-এর ছবি
-   Baby section-এ যাবে না।
-================================================= */
-
-function createRecent(){
-
-    const recent =
-    document.getElementById("recent");
-
-
-    recent.innerHTML = "";
-
-
-    const all = [
-
-        ...data.model.slice(0,2),
-
-        ...data.prewedding.slice(0,2),
-
-        ...data.baby.slice(0,2),
-
-        ...data.wedding.slice(0,2)
-
-    ];
-
-
-    all.forEach(photo=>{
-
-        const button =
-        document.createElement("button");
-
-
-        const img =
-        document.createElement("img");
-
-
-        img.src =
-        photo.url;
-
-
-        button.appendChild(img);
-
-
-        button.onclick = ()=>{
-
-            openViewer(
-                photo.url
-            );
-
-        };
-
-
-        recent.appendChild(
-            button
-        );
-
-    });
-
-}
-
-
-
-/*
-   সব folder load হওয়ার পরে
-   Recent Work বানানো হবে।
-*/
-
-Promise.all([
-
-    loadFolder("model"),
-
-    loadFolder("prewedding"),
-
-    loadFolder("baby"),
-
-    loadFolder("wedding")
-
-]).then(()=>{
-
-    createRecent();
-
-});
-
-
-
-/* =================================================
+/* =====================================
    PHOTO VIEWER
-================================================= */
+===================================== */
 
 const viewer =
-document.getElementById("viewer");
+document.getElementById(
+    "viewer"
+);
 
 
 const viewerImage =
@@ -1822,23 +2825,38 @@ document.getElementById(
 );
 
 
+const shareButton =
+document.getElementById(
+    "shareButton"
+);
+
+
+
 function openViewer(url){
 
-    viewerImage.src = url;
+    viewerImage.src =
+    url;
 
-    viewer.classList.add("open");
+
+    viewer.classList.add(
+        "open"
+    );
+
 
     document.body.style.overflow =
     "hidden";
 
 
-    document
-    .getElementById("shareButton")
-    .onclick = async function(){
+    shareButton.onclick =
+    async function(){
+
 
         try{
 
-            if(navigator.share){
+
+            if(
+                navigator.share
+            ){
 
                 await navigator.share({
 
@@ -1853,11 +2871,13 @@ function openViewer(url){
                 });
 
             }
+
             else{
 
                 await navigator
                 .clipboard
                 .writeText(url);
+
 
                 alert(
                     "Photo link copied."
@@ -1865,7 +2885,9 @@ function openViewer(url){
 
             }
 
+
         }
+
         catch(error){
 
             console.log(
@@ -1880,15 +2902,20 @@ function openViewer(url){
 
 
 
-/* =================================================
+/* =====================================
    CLOSE VIEWER
-================================================= */
+===================================== */
 
 function closeViewer(){
 
-    viewer.classList.remove("open");
+    viewer.classList.remove(
+        "open"
+    );
 
-    viewerImage.src = "";
+
+    viewerImage.src =
+    "";
+
 
     document.body.style.overflow =
     "";
@@ -1896,28 +2923,16 @@ function closeViewer(){
 }
 
 
-document.addEventListener(
-    "keydown",
-    function(event){
 
-        if(event.key === "Escape"){
-
-            closeViewer();
-
-        }
-
-    }
-);
-
-
-
-/* =================================================
+/* =====================================
    MOBILE MENU
-================================================= */
+===================================== */
 
 document
 .getElementById("menu")
-.onclick = function(){
+.onclick =
+function(){
+
 
     const nav =
     document.querySelector(
@@ -1925,45 +2940,63 @@ document
     );
 
 
-    if(nav.style.display === "flex"){
+    if(
+        nav.style.display ===
+        "flex"
+    ){
 
-        nav.style.display = "";
+        nav.style.display =
+        "";
 
-    }
-    else{
-
-        nav.style.display = "flex";
-
-        nav.style.position =
-        "absolute";
-
-        nav.style.top =
-        "68px";
-
-        nav.style.left = "0";
-
-        nav.style.right = "0";
-
-        nav.style.flexDirection =
-        "column";
-
-        nav.style.background =
-        "#050505";
-
-        nav.style.padding =
-        "20px";
-
-        nav.style.gap =
-        "18px";
-
-        nav.style.borderBottom =
-        "1px solid rgba(212,175,55,.3)";
+        return;
 
     }
+
+
+    nav.style.display =
+    "flex";
+
+
+    nav.style.position =
+    "absolute";
+
+
+    nav.style.top =
+    "68px";
+
+
+    nav.style.left =
+    "0";
+
+
+    nav.style.right =
+    "0";
+
+
+    nav.style.flexDirection =
+    "column";
+
+
+    nav.style.background =
+    "#050505";
+
+
+    nav.style.padding =
+    "20px";
+
+
+    nav.style.gap =
+    "18px";
+
+
+    nav.style.borderBottom =
+    "1px solid rgba(212,175,55,.3)";
 
 };
 
 </script>
 
+
 </body>
+
 </html>
