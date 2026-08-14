@@ -2011,22 +2011,50 @@ MODEL
 </h3>
 
 <div class="price">
-  <span id="oldPrice">₹1,500</span>
-  <span id="newPrice">₹1,000</span>
+  <span id="oldPrice"></span>
+  <span id="newPrice"></span>
   <span id="discount"></span>
 </div>
 
 <script>
-  const oldPrice = 1500;
-  const newPrice = 1000;
+  let oldPrice = 1500;
+  let newPrice = 1000;
 
-  const discount = Math.round(
-    ((oldPrice - newPrice) / oldPrice) * 100
-  );
+  document.getElementById("oldPrice").innerHTML =
+    "₹" + oldPrice;
 
-  document.getElementById("discount").textContent =
+  document.getElementById("newPrice").innerHTML =
+    "₹" + newPrice;
+
+  let discount = Math.round(((oldPrice - newPrice) / oldPrice) * 100);
+
+  document.getElementById("discount").innerHTML =
     discount + "% OFF";
 </script>
+
+<style>
+  .price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #oldPrice {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 18px;
+  }
+
+  #newPrice {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  #discount {
+    font-size: 14px;
+    font-weight: bold;
+  }
+</style>
 
 <ul>
 
