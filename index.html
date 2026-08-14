@@ -2010,50 +2010,32 @@ CHOOSE YOUR STORY
 MODEL
 </h3>
 
-<div class="price">
-  <span id="oldPrice"></span>
-  <span id="newPrice"></span>
-  <span id="discount"></span>
-</div>
-
-<script>
-  let oldPrice = 1500;
-  let newPrice = 1000;
-
-  document.getElementById("oldPrice").innerHTML =
-    "₹" + oldPrice;
-
-  document.getElementById("newPrice").innerHTML =
-    "₹" + newPrice;
-
-  let discount = Math.round(((oldPrice - newPrice) / oldPrice) * 100);
-
-  document.getElementById("discount").innerHTML =
-    discount + "% OFF";
-</script>
-
 <style>
-  .price {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+.price {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: Arial, sans-serif;
+}
 
-  #oldPrice {
-    text-decoration: line-through;
-    color: #888;
-    font-size: 18px;
-  }
+#oldPrice {
+  font-size: 18px;
+  color: #888;
+  text-decoration: line-through;
+  font-weight: 400;
+}
 
-  #newPrice {
-    font-size: 30px;
-    font-weight: bold;
-  }
+#newPrice {
+  font-size: 28px;
+  color: #d4af37;
+  font-weight: 700;
+}
 
-  #discount {
-    font-size: 14px;
-    font-weight: bold;
-  }
+#discount {
+  font-size: 14px;
+  color: #d4af37;
+  font-weight: 600;
+}
 </style>
 
 <ul>
