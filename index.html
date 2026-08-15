@@ -1023,42 +1023,77 @@ header{
 /* =====================================
    CONTACT
 ===================================== */
+.social-buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+}
 
-.contact{
+.social-icon{
+    width:52px;
+    height:52px;
 
-    text-align:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-    border:1px solid var(--gold);
+    border-radius:12px;
 
-    padding:45px 18px;
+    text-decoration:none;
+
+    font-family:Arial,sans-serif;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+
+/* INSTAGRAM */
+
+.social-icon.instagram{
+
+    background:
+    linear-gradient(
+        135deg,
+        #feda75,
+        #fa7e1e,
+        #d62976,
+        #962fbf,
+        #4f5bd5
+    );
+
+    color:white;
+
+    font-size:34px;
 
 }
 
-.contact h2{
 
-    font-family:Cinzel,serif;
+/* FACEBOOK */
 
-    font-size:30px;
+.social-icon.facebook{
 
-    font-weight:400;
+    background:#1877F2;
 
-    color:var(--gold-light);
+    color:white;
+
+    font-size:36px;
+
+}
+
+
+/* HOVER */
+
+.social-icon:hover{
+
+    transform:translateY(-3px);
+
+    opacity:.9;
 
 }
 
-.contact p{
-
-    max-width:550px;
-
-    margin:12px auto 22px;
-
-    color:#fff;
-
-    font-size:11px;
-
-    line-height:1.8;
-
-}
 
 
 
