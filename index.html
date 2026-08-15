@@ -1866,14 +1866,14 @@ MODEL SHOOT
 </h3>
 
 <div class="price">
-  <span class="old-price">₹1,500</span>
-  <span class="new-price">₹1,000</span>
+  <span class="old-price">₹2,000</span>
+  <span class="new-price">₹1,500</span>
   <span class="discount"></span>
 </div>
 
 <script>
-  const oldPrice = 1500;
-  const newPrice = 1000;
+  const oldPrice = 2000;
+  const newPrice = 1500;
 
   const discount = Math.round(
     ((oldPrice - newPrice) / oldPrice) * 100
@@ -1945,8 +1945,50 @@ PRE-WEDDING
 </h3>
 
 <div class="price">
-₹____
+  <span class="old-price">₹11,500</span>
+  <span class="new-price">₹10,000</span>
+  <span class="discount"></span>
 </div>
+
+<script>
+  const oldPrice = 11500;
+  const newPrice = 10000;
+
+  const discount = Math.round(
+    ((oldPrice - newPrice) / oldPrice) * 100
+  );
+
+  document.querySelector(".discount").textContent =
+    discount + "% OFF";
+</script>
+
+<style>
+  .price {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .old-price {
+    color: #888;
+    font-size: 18px;
+    text-decoration: line-through;
+  }
+
+  .new-price {
+    color: #d4af37;
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  .discount {
+    color: #d4af37;
+    font-size: 15px;
+    font-weight: 600;
+  }
+</style>
 
 <ul>
 
@@ -1982,8 +2024,50 @@ BABY SHOOT
 </h3>
 
 <div class="price">
-₹____
+  <span class="old-price">₹6,500</span>
+  <span class="new-price">₹5,000</span>
+  <span class="discount"></span>
 </div>
+
+<script>
+  const oldPrice = 6500;
+  const newPrice = 5000;
+
+  const discount = Math.round(
+    ((oldPrice - newPrice) / oldPrice) * 100
+  );
+
+  document.querySelector(".discount").textContent =
+    discount + "% OFF";
+</script>
+
+<style>
+  .price {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .old-price {
+    color: #888;
+    font-size: 18px;
+    text-decoration: line-through;
+  }
+
+  .new-price {
+    color: #d4af37;
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  .discount {
+    color: #d4af37;
+    font-size: 15px;
+    font-weight: 600;
+  }
+</style>
 
 <ul>
 
@@ -2019,8 +2103,50 @@ WEDDING
 </h3>
 
 <div class="price">
-₹____
+  <span class="old-price">₹50,000</span>
+  <span class="new-price">₹45,000</span>
+  <span class="discount"></span>
 </div>
+
+<script>
+  const oldPrice = 50000;
+  const newPrice = 45000;
+
+  const discount = Math.round(
+    ((oldPrice - newPrice) / oldPrice) * 100
+  );
+
+  document.querySelector(".discount").textContent =
+    discount + "% OFF";
+</script>
+
+<style>
+  .price {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .old-price {
+    color: #888;
+    font-size: 18px;
+    text-decoration: line-through;
+  }
+
+  .new-price {
+    color: #d4af37;
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  .discount {
+    color: #d4af37;
+    font-size: 15px;
+    font-weight: 600;
+  }
+</style>
 
 <ul>
 
