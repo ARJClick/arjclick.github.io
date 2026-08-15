@@ -1038,7 +1038,14 @@ let allPhotos = [];
 let selectedCategory = "all";
 
 let currentPhoto = "";
+/* OPEN CATEGORY FROM URL */
 
+const urlParams = new URLSearchParams(window.location.search);
+const categoryFromURL = urlParams.get("category");
+
+if(categoryFromURL && folders[categoryFromURL]){
+    selectedCategory = categoryFromURL;
+}
 
 
 /* =========================================
