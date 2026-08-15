@@ -1443,21 +1443,59 @@ function closeViewer(){
    SHARE
 ========================================= */
 
+
 async function sharePhoto(){
 
     if(!currentPhoto){
-
         return;
-
     }
-
 
     try{
 
+        const response =
+        await fetch(currentPhoto);
+
+        const blob =
+        await response.blob();
+
+        const fileName =
+        currentPhoto
+        .split("/")
+        .pop()
+        .split("?")[0];
+
+        const file =
+        new File(
+            [blob],
+            fileName || "ARJClick-Photo.jpg",
+            {
+                type: blob.type || "image/jpeg"
+            }
+        );
 
         if(
-            navigator.share
+            navigator.canShare &&
+            navigator.canShare({
+                files:[file]
+            })
         ){
+
+            await navigator.share({
+
+                files:[file],
+
+                title:
+                "ARJClick Photography",
+
+                text:
+                "Photo captured by ARJClick Photography"
+
+            });
+
+            return;
+        }
+
+        if(navigator.share){
 
             await navigator.share({
 
@@ -1465,43 +1503,31 @@ async function sharePhoto(){
                 "ARJClick Photography",
 
                 text:
-                "ARJClick Photography",
+                "Photo captured by ARJClick Photography",
 
                 url:
                 currentPhoto
 
             });
 
+            return;
         }
 
-        else{
-
-            await navigator
-            .clipboard
-            .writeText(
-                currentPhoto
-            );
-
-
-            alert(
-                "Photo link copied."
-            );
-
-        }
-
+        alert(
+            "Sharing is not supported on this device."
+        );
 
     }
-
     catch(error){
 
         console.log(
-            "Share cancelled"
+            "Share error:",
+            error
         );
 
     }
 
 }
-
 
 
 /* =========================================
