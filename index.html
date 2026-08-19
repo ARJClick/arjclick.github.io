@@ -1794,16 +1794,16 @@ onclick="changeSlide('wedding',1)">
 
 </section>
 
-<!-- =================================
+<!-- =========================================
      FULLNESS OF LOVE
-================================= -->
+========================================= -->
 
 <section class="fullness-section">
 
     <div class="fullness-header">
 
         <div class="section-kicker">
-            WEDDING STORIES
+            FULLNESS OF LOVE
         </div>
 
         <h2>FULLNESS OF LOVE</h2>
@@ -1811,150 +1811,50 @@ onclick="changeSlide('wedding',1)">
         <div class="section-line"></div>
 
         <p>
-            Beautiful stories of love, emotion and togetherness,
-            captured with a cinematic touch.
+            Beautiful stories, unforgettable moments
+            and memories captured forever.
         </p>
 
     </div>
 
 
-    <div class="video-grid">
+    <div class="love-slider">
+
+        <button
+            class="love-arrow love-prev"
+            onclick="changeLoveVideo(-1)">
+            ‹
+        </button>
 
 
-        <!-- VIDEO 01 -->
-        <div class="project-video">
-            <div class="video-box">
+        <div class="love-video-box">
 
-                <iframe
-                    src="https://www.youtube.com/embed/VIDEO_ID_1"
-                    title="Fullness of Love - Project 01"
-                    allowfullscreen>
-                </iframe>
-
-            </div>
-
-            <h3>THE BEGINNING</h3>
-
-        </div>
-
-
-        <!-- VIDEO 02 -->
-        <div class="project-video">
-            <div class="video-box">
-
-                <iframe
-                    src="https://www.youtube.com/embed/VIDEO_ID_2"
-                    title="Fullness of Love - Project 02"
-                    allowfullscreen>
-                </iframe>
-
-            </div>
-
-            <h3>FOREVER TOGETHER</h3>
+            <iframe
+                id="loveVideo"
+                src=""
+                title="Fullness of Love"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
 
         </div>
 
 
-        <!-- VIDEO 03 -->
-        <div class="project-video">
-            <div class="video-box">
+        <button
+            class="love-arrow love-next"
+            onclick="changeLoveVideo(1)">
+            ›
+        </button>
 
-                <iframe
-                    src="https://www.youtube.com/embed/VIDEO_ID_3"
-                    title="Fullness of Love - Project 03"
-                    allowfullscreen>
-                </iframe>
-
-            </div>
-
-            <h3>A DAY TO REMEMBER</h3>
-
-        </div>
+    </div>
 
 
-        <!-- VIDEO 04 -->
-        <div class="project-video">
-            <div class="video-box">
+    <div
+        id="loveDots"
+        class="love-dots">
+    </div>
 
-                <iframe
-                    src="https://www.youtube.com/embed/VIDEO_ID_4"
-                    title="Fullness of Love - Project 04"
-                    allowfullscreen>
-                </iframe>
-
-            </div>
-
-            <h3>ETERNAL LOVE</h3>
-
-        </div>
-
-
-        <!-- VIDEO 05 -->
-        <div class="project-video">
-            <div class="video-box">
-
-                <iframe
-                    src="https://www.youtube.com/embed/VIDEO_ID_5"
-                    title="Fullness of Love - Project 05"
-                    allowfullscreen>
-                </iframe>
-
-            </div>
-
-            <h3>THE WEDDING STORY</h3>
-
-        </div>
-
-
-        <!-- VIDEO 06 -->
-        <div class="project-video">
-            <div class="video-box">
-
-                <iframe
-                    src="https://www.youtube.com/embed/VIDEO_ID_6"
-                    title="Fullness of Love - Project 06"
-                    allowfullscreen>
-                </iframe>
-
-            </div>
-
-            <h3>LOVE IN FRAMES</h3>
-
-        </div>
-
-
-        <!-- VIDEO 07 -->
-        <div class="project-video">
-            <div class="video-box">
-
-                <iframe
-                    src="https://www.youtube.com/embed/VIDEO_ID_7"
-                    title="Fullness of Love - Project 07"
-                    allowfullscreen>
-                </iframe>
-
-            </div>
-
-            <h3>ONE BEAUTIFUL JOURNEY</h3>
-
-        </div>
-
-
-        <!-- VIDEO 08 -->
-        <div class="project-video">
-            <div class="video-box">
-
-                <iframe
-                    src="https://www.youtube.com/embed/VIDEO_ID_8"
-                    title="Fullness of Love - Project 08"
-                    allowfullscreen>
-                </iframe>
-
-            </div>
-
-            <h3>FOREVER BEGINS</h3>
-
-        </div>
+</section>
 
 
     </div>
@@ -2973,7 +2873,90 @@ function changeSlide(
 }
 
 
+/* =========================================
+   FULLNESS OF LOVE VIDEO SLIDER
+========================================= */
 
+const loveVideos = [
+    "YOUTUBE_VIDEO_ID_1",
+    "YOUTUBE_VIDEO_ID_2",
+    "YOUTUBE_VIDEO_ID_3",
+    "YOUTUBE_VIDEO_ID_4",
+    "YOUTUBE_VIDEO_ID_5",
+    "YOUTUBE_VIDEO_ID_6",
+    "YOUTUBE_VIDEO_ID_7",
+    "YOUTUBE_VIDEO_ID_8"
+];
+
+let lovePosition = 0;
+
+function showLoveVideo(index){
+
+    const video = document.getElementById("loveVideo");
+
+    if(!video) return;
+
+    lovePosition =
+        (index + loveVideos.length) % loveVideos.length;
+
+    video.src =
+        "https://www.youtube.com/embed/" +
+        loveVideos[lovePosition] +
+        "?rel=0";
+
+    const dots =
+        document.querySelectorAll(".love-dot");
+
+    dots.forEach((dot,i)=>{
+        dot.classList.toggle(
+            "active",
+            i === lovePosition
+        );
+    });
+}
+
+function changeLoveVideo(direction){
+
+    showLoveVideo(
+        lovePosition + direction
+    );
+}
+
+function createLoveDots(){
+
+    const container =
+        document.getElementById("loveDots");
+
+    if(!container) return;
+
+    container.innerHTML = "";
+
+    loveVideos.forEach((video,i)=>{
+
+        const dot =
+            document.createElement("span");
+
+        dot.className = "love-dot";
+
+        dot.onclick = function(){
+            showLoveVideo(i);
+        };
+
+        container.appendChild(dot);
+    });
+
+    showLoveVideo(0);
+}
+
+createLoveDots();
+
+/* AUTOMATIC SLIDE */
+
+setInterval(function(){
+
+    changeLoveVideo(1);
+
+},5000);
 /* =====================================
    AUTOMATIC SLIDE
 ===================================== */
