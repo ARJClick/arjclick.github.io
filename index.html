@@ -1312,17 +1312,130 @@ footer p{
     }
 
 }
+
 /* =========================================
    FULLNESS OF LOVE VIDEO SLIDER
 ========================================= */
 
 .fullness-section{
-    ...
+    padding:90px 20px;
+    background:#000;
 }
 
-/* বাকি নতুন CSS */
-</style>
+.fullness-header{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 45px;
+}
 
+.fullness-header .section-kicker{
+    color:#e5c968;
+    font-size:10px;
+    letter-spacing:5px;
+    margin-bottom:15px;
+}
+
+.fullness-header h2{
+    margin:0;
+    color:#d4af37;
+    font-family:Georgia,serif;
+    font-size:42px;
+    font-weight:400;
+}
+
+.fullness-header .section-line{
+    width:55px;
+    height:1px;
+    background:#d4af37;
+    margin:20px auto;
+}
+
+.fullness-header p{
+    color:#eee;
+    font-family:Arial,sans-serif;
+    font-size:15px;
+    line-height:1.7;
+    margin:0 auto;
+}
+
+.love-slider{
+    max-width:1000px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+}
+
+.love-video-box{
+    width:100%;
+    aspect-ratio:16/9;
+    border:1px solid #3b321c;
+    overflow:hidden;
+    background:#000;
+}
+
+.love-video-box iframe{
+    width:100%;
+    height:100%;
+    border:0;
+    display:block;
+}
+
+.love-arrow{
+    flex-shrink:0;
+    width:45px;
+    height:45px;
+    border:1px solid #d4af37;
+    border-radius:50%;
+    background:#000;
+    color:#d4af37;
+    font-size:30px;
+    cursor:pointer;
+}
+
+.love-dots{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin-top:25px;
+}
+
+.love-dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#555;
+    cursor:pointer;
+}
+
+.love-dot.active{
+    background:#d4af37;
+    transform:scale(1.3);
+}
+
+@media(max-width:600px){
+
+    .fullness-section{
+        padding:70px 12px;
+    }
+
+    .fullness-header h2{
+        font-size:32px;
+    }
+
+    .love-slider{
+        gap:8px;
+    }
+
+    .love-arrow{
+        width:35px;
+        height:35px;
+        font-size:24px;
+    }
+
+}
+</style>
 </head>
 
 
