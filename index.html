@@ -1416,7 +1416,72 @@ CLIENT REVIEWS
     margin-left:auto;
     margin-right:auto;
 }
+/* =========================
+   FOOTER LOGO
+========================= */
 
+.footer-logo{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    line-height:1;
+}
+
+.footer-camera{
+    width:34px;
+    height:25px;
+    border:3px solid var(--gold);
+    border-radius:5px;
+    position:relative;
+    margin-bottom:7px;
+    box-sizing:border-box;
+}
+
+.footer-camera::before{
+    content:"";
+    position:absolute;
+    width:12px;
+    height:7px;
+    left:7px;
+    top:-10px;
+    border:3px solid var(--gold);
+    border-bottom:0;
+    border-radius:4px 4px 0 0;
+    box-sizing:border-box;
+}
+
+.footer-camera::after{
+    content:"";
+    position:absolute;
+    width:11px;
+    height:11px;
+    left:9px;
+    top:5px;
+    border:3px solid var(--gold);
+    border-radius:50%;
+    box-sizing:border-box;
+}
+
+.footer-logo-name{
+    font-family:Cinzel,serif;
+    font-size:23px;
+    font-weight:700;
+    letter-spacing:1px;
+    color:#fff;
+}
+
+.footer-logo-name span{
+    color:var(--red);
+}
+
+.footer-logo-sub{
+    margin-top:6px;
+    font-size:6px;
+    letter-spacing:2px;
+    color:var(--gold);
+   }
 </style>
 </head>
 
@@ -1454,23 +1519,6 @@ PHOTOGRAPHY & FILMS
 </a>
 
 
-
-<div class="nav-links">
-
-<a href="#home">HOME</a>
-
-<a href="#services">SERVICES</a>
-
-<a href="#packages">PACKAGES</a>
-
-<a href="#about">ABOUT</a>
-
-<a href="#contact">CONTACT</a>
-
-</div>
-
-
-
 <a href="#contact"
 class="book-top">
 
@@ -1483,7 +1531,7 @@ CONNECT WITH US
 class="menu"
 id="menu">
 
-☰
+
 
 </button>
 
@@ -2290,9 +2338,19 @@ Your moments happen once. We make them last forever.
 
 <footer>
 
-<strong>
-ARJClick
-</strong>
+<div class="footer-logo">
+
+    <div class="footer-camera"></div>
+
+    <div class="footer-logo-name">
+        <span>ARJ</span>Click
+    </div>
+
+    <div class="footer-logo-sub">
+        PHOTOGRAPHY & FILMS
+    </div>
+
+</div>
 
 
 <p>
