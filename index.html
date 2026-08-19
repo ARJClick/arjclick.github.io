@@ -1018,56 +1018,13 @@ CLIENT REVIEWS
     object-fit:contain;
     display:block;
 }
-/* =========================
-   ABOUT — FORCE CENTER
-========================= */
-
-.about{
-    display:grid;
-    text-align:center !important;
-}
-
-.about > div{
-    text-align:center !important;
-}
-
-.about h2,
-.about p{
-    text-align:center !important;
-}
-
 .about h2{
-    width:100%;
+    text-align:center;
 }
 
 .about p{
-    width:100%;
-    max-width:700px;
-    margin-left:auto !important;
-    margin-right:auto !important;
+    text-align:center;
 }
-
-@media(max-width:700px){
-
-    .about{
-        grid-template-columns:1fr !important;
-        text-align:center !important;
-    }
-
-    .about > div{
-        width:100%;
-        text-align:center !important;
-    }
-
-    .about h2,
-    .about p{
-        text-align:center !important;
-        margin-left:auto !important;
-        margin-right:auto !important;
-    }
-}
-
-
 
 /* =====================================
    PHOTO VIEWER
