@@ -1018,109 +1018,53 @@ CLIENT REVIEWS
     object-fit:contain;
     display:block;
 }
-/* =====================================
-   ABOUT
-===================================== */
+/* =========================
+   ABOUT — FORCE CENTER
+========================= */
 
 .about{
-
     display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:25px;
-
-    align-items:center;
-
+    text-align:center !important;
 }
 
-.about img{
+.about > div{
+    text-align:center !important;
+}
 
+.about h2,
+.about p{
+    text-align:center !important;
+}
+
+.about h2{
     width:100%;
-
-    aspect-ratio:4/3;
-
-    object-fit:cover;
-
-    border:1px solid var(--line);
-
-}
-
-.about h2{
-
-    font-family:Cinzel,serif;
-
-    font-size:35px;
-
-    font-weight:400;
-
-    color:var(--gold-light);
-
-    margin:10px 0 16px;
-
 }
 
 .about p{
-
-    color:#fff;
-
-    font-size:11px;
-
-    line-height:1.9;
-
-    margin-bottom:10px;
-
-}
-/* ABOUT CENTER */
-
-.about{
-    text-align:center;
+    width:100%;
+    max-width:700px;
+    margin-left:auto !important;
+    margin-right:auto !important;
 }
 
-.about h2{
-    text-align:center;
-}
+@media(max-width:700px){
 
-.about p{
-    text-align:center;
-    margin-left:auto;
-    margin-right:auto;
-}
-/* =====================================
-   FOOTER
-===================================== */
+    .about{
+        grid-template-columns:1fr !important;
+        text-align:center !important;
+    }
 
-footer{
+    .about > div{
+        width:100%;
+        text-align:center !important;
+    }
 
-    text-align:center;
-
-    padding:32px 10px;
-
-    border-top:1px solid var(--line);
-
-}
-
-footer strong{
-
-    font-family:Cinzel,serif;
-
-    font-size:22px;
-
-    color:var(--gold-light);
-
-}
-
-footer p{
-
-    margin-top:7px;
-
-    color:#fff;
-
-    font-size:7px;
-
-    letter-spacing:2px;
-
+    .about h2,
+    .about p{
+        text-align:center !important;
+        margin-left:auto !important;
+        margin-right:auto !important;
+    }
 }
 
 
