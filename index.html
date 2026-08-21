@@ -1895,13 +1895,14 @@ onclick="changeSlide('wedding',1)">
 
         <div class="love-video-box">
 
-            <iframe
-                id="loveVideo"
-                src=""
-                title="Fullness of Love"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+            <video
+    id="loveVideo"
+    controls
+    autoplay
+    muted
+    playsinline
+    preload="auto">
+            </video>
 
         </div>
 
@@ -2880,10 +2881,9 @@ function showLoveVideo(index){
     lovePosition =
         (index + loveVideos.length) % loveVideos.length;
 
-    video.src =
-        "https://www.youtube.com/embed/" +
-        loveVideos[lovePosition] +
-        "?rel=0";
+    video.src = loveVideos[lovePosition];
+video.load();
+video.play().catch(() => {});
 
     const dots =
         document.querySelectorAll(".love-dot");
@@ -3159,7 +3159,7 @@ function(){
     // ================================
 
     const clientReviewVideos = [
-        "CLIENT_REVIEW_ID_1",
+        "videos/client/client.mp4",
         "CLIENT_REVIEW_ID_2",
         "CLIENT_REVIEW_ID_3",
         "CLIENT_REVIEW_ID_4",
@@ -3182,10 +3182,9 @@ function(){
             (index + clientReviewVideos.length)
             % clientReviewVideos.length;
 
-        video.src =
-            "https://www.youtube.com/embed/" +
-            clientReviewVideos[clientReviewPosition] +
-            "?rel=0";
+        video.src = clientReviewVideos[clientReviewPosition];
+video.load();
+video.play().catch(() => {});
 
         const dots =
             document.querySelectorAll(".client-review-dot");
