@@ -1301,98 +1301,260 @@ CLIENT REVIEWS
     }
 
 }
-/* ================================
-   FULLNESS OF LOVE VIDEO
-================================ */
+/* =========================================
+   FULLNESS OF LOVE
+========================================= */
 
-.love-slider{
+.fullness{
     width:100%;
-    max-width:1000px;
+    padding:80px 20px;
+    background:#000;
+    box-sizing:border-box;
+    overflow:hidden;
+}
+
+/* ---------- HEADER ---------- */
+
+.fullness-header{
+    width:100%;
+    max-width:800px;
+    margin:0 auto 45px;
+    text-align:center;
+    box-sizing:border-box;
+}
+
+.fullness-kicker{
+    color:#d4af37;
+    font-family:Arial,sans-serif;
+    font-size:10px;
+    letter-spacing:5px;
+    margin-bottom:15px;
+    text-align:center;
+}
+
+.fullness-header h2{
+    margin:0;
+    color:#d4af37;
+    font-family:Georgia,serif;
+    font-size:42px;
+    font-weight:400;
+    line-height:1.2;
+    text-align:center;
+}
+
+.fullness-line{
+    width:55px;
+    height:1px;
+    background:#d4af37;
+    margin:20px auto;
+}
+
+.fullness-header p{
+    margin:0 auto;
+    max-width:700px;
+    color:#eee;
+    font-family:Arial,sans-serif;
+    font-size:15px;
+    line-height:1.7;
+    text-align:center;
+}
+
+
+/* ---------- VIDEO SLIDER ---------- */
+
+.fullness-slider{
+    width:100%;
+    max-width:1100px;
     margin:0 auto;
     display:flex;
     align-items:center;
     justify-content:center;
     gap:20px;
+    box-sizing:border-box;
 }
 
-.love-video-box{
+
+/* ---------- VIDEO BOX ---------- */
+
+.fullness-video{
     width:100%;
-    max-width:900px;
+    max-width:950px;
     aspect-ratio:16 / 9;
     background:#000;
-    border:1px solid #3b321c;
+    border:1px solid rgba(212,175,55,.35);
     overflow:hidden;
     position:relative;
+    box-sizing:border-box;
 }
 
-.love-video-box iframe{
+.fullness-video iframe{
     width:100%;
     height:100%;
-    border:0;
     display:block;
+    border:0;
 }
 
-/* ARROWS */
+.fullness-video video{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:contain;
+    background:#000;
+}
 
-.love-arrow{
-    flex-shrink:0;
+
+/* ---------- ARROWS ---------- */
+
+.fullness-arrow{
+    flex:0 0 45px;
     width:45px;
     height:45px;
+    padding:0;
     border:1px solid #d4af37;
     border-radius:50%;
     background:#000;
     color:#d4af37;
     font-size:30px;
+    line-height:42px;
+    text-align:center;
     cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-sizing:border-box;
 }
 
-.love-arrow:hover{
+.fullness-arrow:hover{
     background:#d4af37;
     color:#000;
 }
 
-/* DOTS */
 
-.love-dots{
+/* ---------- DOTS ---------- */
+
+.fullness-dots{
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
     gap:8px;
     margin-top:25px;
 }
 
-.love-dot{
+.fullness-dot{
     width:7px;
     height:7px;
+    padding:0;
+    border:0;
     border-radius:50%;
     background:#555;
     cursor:pointer;
 }
 
-.love-dot.active{
+.fullness-dot.active{
     background:#d4af37;
     transform:scale(1.3);
 }
 
-/* MOBILE */
 
-@media(max-width:600px){
+/* =========================================
+   MOBILE
+========================================= */
 
-    .love-slider{
+@media (max-width:760px){
+
+    .fullness{
+        padding:55px 12px;
+    }
+
+    .fullness-header{
+        margin-bottom:30px;
+    }
+
+    .fullness-kicker{
+        font-size:9px;
+        letter-spacing:4px;
+        margin-bottom:12px;
+    }
+
+    .fullness-header h2{
+        font-size:32px;
+        line-height:1.2;
+    }
+
+    .fullness-line{
+        margin:16px auto;
+    }
+
+    .fullness-header p{
+        font-size:14px;
+        line-height:1.6;
+        max-width:600px;
+    }
+
+    .fullness-slider{
         gap:8px;
     }
 
-    .love-video-box{
-        width:100%;
+    .fullness-video{
+        width:calc(100% - 70px);
+        max-width:none;
         aspect-ratio:16 / 9;
     }
 
-    .love-arrow{
-        width:38px;
-        height:38px;
-        font-size:24px;
+    .fullness-arrow{
+        flex:0 0 35px;
+        width:35px;
+        height:35px;
+        font-size:23px;
+        line-height:32px;
     }
-   }
+
+    .fullness-dots{
+        margin-top:20px;
+        gap:7px;
+    }
+
+    .fullness-dot{
+        width:7px;
+        height:7px;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width:400px){
+
+    .fullness{
+        padding:45px 8px;
+    }
+
+    .fullness-header h2{
+        font-size:28px;
+    }
+
+    .fullness-header p{
+        font-size:13px;
+    }
+
+    .fullness-slider{
+        gap:5px;
+    }
+
+    .fullness-video{
+        width:calc(100% - 60px);
+    }
+
+    .fullness-arrow{
+        flex:0 0 30px;
+        width:30px;
+        height:30px;
+        font-size:20px;
+    }
+       }
+
  /* ================================
    STREET PHOTO SHOOT
 ================================ */
