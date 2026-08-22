@@ -1306,26 +1306,67 @@ CLIENT REVIEWS
    FULLNESS OF LOVE VIDEO
 ================================ */
 
-.love-slider{
+.fullness{
+    width:100%;
+    padding:80px 20px;
+    background:#000;
+}
+
+.fullness-header{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 45px;
+}
+
+.fullness-kicker{
+    color:#e5c968;
+    font-size:10px;
+    letter-spacing:5px;
+    margin-bottom:15px;
+}
+
+.fullness-header h2{
+    margin:0;
+    color:#d4af37;
+    font-family:Georgia,serif;
+    font-size:42px;
+    font-weight:400;
+}
+
+.fullness-line{
+    width:55px;
+    height:1px;
+    background:#d4af37;
+    margin:20px auto;
+}
+
+.fullness-header p{
+    color:#eee;
+    font-family:Arial,sans-serif;
+    font-size:15px;
+    line-height:1.7;
+    margin:0 auto;
+}
+
+.fullness-slider{
     width:100%;
     max-width:1000px;
-    margin:0 auto;
+    margin:auto;
     display:flex;
     align-items:center;
     justify-content:center;
     gap:20px;
 }
-
+.fullness-video,
 .love-video-box{
     width:100%;
-    max-width:900px;
     aspect-ratio:16 / 9;
     background:#000;
-    border:1px solid #3b321c;
     overflow:hidden;
-    position:relative;
+    border:1px solid rgba(212,175,55,.35);
 }
 
+.fullness-video iframe,
 .love-video-box iframe{
     width:100%;
     height:100%;
@@ -1333,9 +1374,7 @@ CLIENT REVIEWS
     display:block;
 }
 
-/* ARROWS */
-
-.love-arrow{
+.fullness-arrow{
     flex-shrink:0;
     width:45px;
     height:45px;
@@ -1347,22 +1386,14 @@ CLIENT REVIEWS
     cursor:pointer;
 }
 
-.love-arrow:hover{
-    background:#d4af37;
-    color:#000;
-}
-
-/* DOTS */
-
-.love-dots{
+.fullness-dots{
     display:flex;
     justify-content:center;
-    align-items:center;
     gap:8px;
     margin-top:25px;
 }
 
-.love-dot{
+.fullness-dot{
     width:7px;
     height:7px;
     border-radius:50%;
@@ -1370,31 +1401,21 @@ CLIENT REVIEWS
     cursor:pointer;
 }
 
-.love-dot.active{
+.fullness-dot.active{
     background:#d4af37;
     transform:scale(1.3);
 }
 
-/* MOBILE */
-
 @media(max-width:600px){
-
-    .love-slider{
-        gap:8px;
-    }
-
-    .love-video-box{
-        width:100%;
-        aspect-ratio:16 / 9;
-    }
-
-    .love-arrow{
-        width:38px;
-        height:38px;
+    .fullness{padding:70px 12px;}
+    .fullness-header h2{font-size:32px;}
+    .fullness-slider{gap:8px;}
+    . fullness-arrow{
+        width:35px;
+        height:35px;
         font-size:24px;
     }
 }
-
  /* ================================
    STREET PHOTO SHOOT
 ================================ */
