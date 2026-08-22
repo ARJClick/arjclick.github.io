@@ -1989,16 +1989,14 @@ onclick="changeSlide('wedding',1)">
 
 
         <div class="love-video-box">
-
-            <video
-    id="loveVideo"
-    controls
-    autoplay
-    muted
-    playsinline
-    preload="auto">
-            </video>
-
+    <iframe
+        id="loveVideo"
+        src="https://www.youtube.com/embed/BW4MxB-7DL8?autoplay=1&mute=1&playsinline=1&rel=0"
+        title="Fullness of Love"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+</div>
         </div>
 
 
@@ -2223,23 +2221,19 @@ EVENTS <br> SHOOT
 
 
         <div class="client-review-video">
-
-            <video
-    id="clientReviewVideo"
-    controls
-    playsinline
-    muted
-    preload="metadata">
-</video>
-
+    <iframe
+        id="clientReviewVideo"
+        src="https://www.youtube.com/embed/oUpORvVu0tc?autoplay=1&mute=1&playsinline=1&rel=0"
+        title="Client Review"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        allowfullscreen>
+    </iframe>
         </div>
-
-
-        <button
-            class="client-review-arrow"
-            onclick="changeClientReview(1)">
+ <button
+ class="client-review-arrow"
+ onclick="changeClientReview(1)">
             ›
-        </button>
+  </button>
 
     </div>
 
@@ -3014,16 +3008,22 @@ let lovePosition = 0;
 
 function showLoveVideo(index){
 
-    const video = document.getElementById("loveVideo");
+    const video =
+        document.getElementById("loveVideo");
 
     if(!video) return;
 
     lovePosition =
-        (index + loveVideos.length) % loveVideos.length;
+        (index + loveVideos.length)
+        % loveVideos.length;
 
-    video.src = loveVideos[lovePosition];
-video.load();
-video.play().catch(() => {});
+    const videoID =
+        loveVideos[lovePosition];
+
+    video.src =
+        "https://www.youtube.com/embed/" +
+        videoID +
+        "?autoplay=1&mute=1&playsinline=1&rel=0";
 
     const dots =
         document.querySelectorAll(".love-dot");
@@ -3042,36 +3042,6 @@ function changeLoveVideo(direction){
         lovePosition + direction
     );
 }
-
-function createLoveDots(){
-
-    const container =
-        document.getElementById("loveDots");
-
-    if(!container) return;
-
-    container.innerHTML = "";
-
-    loveVideos.forEach((video,i)=>{
-
-        const dot =
-            document.createElement("span");
-
-        dot.className = "love-dot";
-
-        dot.onclick = function(){
-            showLoveVideo(i);
-        };
-
-        container.appendChild(dot);
-    });
-
-    showLoveVideo(0);
-}
-
-createLoveDots();
-
-
 /* =====================================
    AUTOMATIC SLIDE
 ===================================== */
@@ -3311,62 +3281,42 @@ function(){
 
     let clientReviewPosition = 0;
 
-    function showClientReview(index){
+function showClientReview(index){
 
-        const video =
-            document.getElementById("clientReviewVideo");
+    const video =
+        document.getElementById("clientReviewVideo");
 
-        if(!video) return;
+    if(!video) return;
 
-        clientReviewPosition =
-            (index + clientReviewVideos.length)
-            % clientReviewVideos.length;
+    clientReviewPosition =
+        (index + clientReviewVideos.length)
+        % clientReviewVideos.length;
 
-        video.src = clientReviewVideos[clientReviewPosition];
-video.load();
-video.play().catch(() => {});
+    const videoID =
+        clientReviewVideos[clientReviewPosition];
 
-        const dots =
-            document.querySelectorAll(".client-review-dot");
+    video.src =
+        "https://www.youtube.com/embed/" +
+        videoID +
+        "?autoplay=1&mute=1&playsinline=1&rel=0";
 
-        dots.forEach((dot,i)=>{
-            dot.classList.toggle(
-                "active",
-                i === clientReviewPosition
-            );
-        });
-    }
+    const dots =
+        document.querySelectorAll(".client-review-dot");
 
-    function changeClientReview(direction){
-        showClientReview(clientReviewPosition + direction);
-    }
+    dots.forEach((dot,i)=>{
+        dot.classList.toggle(
+            "active",
+            i === clientReviewPosition
+        );
+    });
+}
 
-    function createClientReviewDots(){
+function changeClientReview(direction){
 
-        const container =
-            document.getElementById("clientReviewDots");
-
-        if(!container) return;
-
-        container.innerHTML = "";
-
-        clientReviewVideos.forEach((video,i)=>{
-
-            const dot = document.createElement("span");
-
-            dot.className = "client-review-dot";
-
-            dot.onclick = function(){
-                showClientReview(i);
-            };
-
-            container.appendChild(dot);
-        });
-
-        showClientReview(0);
-    }
-
-    createClientReviewDots();
+    showClientReview(
+        clientReviewPosition + direction
+    );
+}
 
 </script>
 
