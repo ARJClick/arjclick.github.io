@@ -1302,54 +1302,14 @@ CLIENT REVIEWS
 
 }
 
-/* =========================================
-   FULLNESS OF LOVE VIDEO SLIDER
-========================================= */
-
-.fullness-section{
-    padding:90px 20px;
-    background:#000;
-}
-
-.fullness-header{
-    text-align:center;
-    max-width:700px;
-    margin:0 auto 45px;
-}
-
-.fullness-header .section-kicker{
-    color:#e5c968;
-    font-size:10px;
-    letter-spacing:5px;
-    margin-bottom:15px;
-}
-
-.fullness-header h2{
-    margin:0;
-    color:#d4af37;
-    font-family:Georgia,serif;
-    font-size:42px;
-    font-weight:400;
-}
-
-.fullness-header .section-line{
-    width:55px;
-    height:1px;
-    background:#d4af37;
-    margin:20px auto;
-}
-
-.fullness-header p{
-    color:#eee;
-    font-family:Arial,sans-serif;
-    font-size:15px;
-    line-height:1.7;
-    margin:0 auto;
-}
+/* ================================
+   FULLNESS OF LOVE VIDEO
+================================ */
 
 .love-slider{
+    width:100%;
     max-width:1000px;
-    margin:auto;
+    margin:0 auto;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -1373,6 +1333,7 @@ CLIENT REVIEWS
     display:block;
 }
 
+/* ARROWS */
 
 .love-arrow{
     flex-shrink:0;
@@ -1386,9 +1347,17 @@ CLIENT REVIEWS
     cursor:pointer;
 }
 
+.love-arrow:hover{
+    background:#d4af37;
+    color:#000;
+}
+
+/* DOTS */
+
 .love-dots{
     display:flex;
     justify-content:center;
+    align-items:center;
     gap:8px;
     margin-top:25px;
 }
@@ -1406,41 +1375,24 @@ CLIENT REVIEWS
     transform:scale(1.3);
 }
 
+/* MOBILE */
+
 @media(max-width:600px){
-
-    .fullness-section{
-        padding:70px 12px;
-    }
-
-    .fullness-header h2{
-        font-size:32px;
-    }
 
     .love-slider{
         gap:8px;
     }
 
-    .love-arrow{
-        width:35px;
-        height:35px;
-        font-size:24px;
+    .love-video-box{
+        width:100%;
+        aspect-ratio:16 / 9;
     }
 
-}
-
-/* ABOUT TEXT CENTER */
-#about .about > div{
-    text-align:center;
-}
-
-#about .about h2,
-#about .about p{
-    text-align:center;
-}
-
-#about .about p{
-    margin-left:auto;
-    margin-right:auto;
+    .love-arrow{
+        width:38px;
+        height:38px;
+        font-size:24px;
+    }
 }
 document.addEventListener("DOMContentLoaded", function(){
 
