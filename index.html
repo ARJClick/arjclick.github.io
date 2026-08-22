@@ -2195,8 +2195,7 @@ onclick="changeSlide('wedding',1)">
 
 
         <div class="love-video-box">
-    <iframe
-        id="loveVideo"
+    <iframe id="loveVideo"
         src="https://www.youtube.com/embed/BW4MxB-7DL8?autoplay=1&mute=1&playsinline=1&rel=0"
         title="Fullness of Love"
         allow="autoplay; encrypted-media; picture-in-picture"
@@ -3214,17 +3213,15 @@ let lovePosition = 0;
 
 function showLoveVideo(index){
 
-    const video =
-        document.getElementById("loveVideo");
+    const video = document.getElementById("loveVideo");
 
     if(!video) return;
 
     lovePosition =
-        (index + loveVideos.length)
-        % loveVideos.length;
+        (index + loveVideos.length) %
+        loveVideos.length;
 
-    const videoID =
-        loveVideos[lovePosition];
+    const videoID = loveVideos[lovePosition];
 
     video.src =
         "https://www.youtube.com/embed/" +
