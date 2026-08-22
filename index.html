@@ -1305,7 +1305,8 @@ CLIENT REVIEWS
    FULLNESS OF LOVE
 ========================================= */
 
-.fullness{
+.fullness,
+.fullness-section{
     width:100%;
     padding:80px 20px;
     background:#000;
@@ -1313,19 +1314,17 @@ CLIENT REVIEWS
     overflow:hidden;
 }
 
-/* ---------- HEADER ---------- */
+/* HEADER */
 
 .fullness-header{
     width:100%;
     max-width:800px;
     margin:0 auto 45px;
     text-align:center;
-    box-sizing:border-box;
 }
 
 .fullness-kicker{
     color:#d4af37;
-    font-family:Arial,sans-serif;
     font-size:10px;
     letter-spacing:5px;
     margin-bottom:15px;
@@ -1350,8 +1349,8 @@ CLIENT REVIEWS
 }
 
 .fullness-header p{
-    margin:0 auto;
     max-width:700px;
+    margin:0 auto;
     color:#eee;
     font-family:Arial,sans-serif;
     font-size:15px;
@@ -1360,7 +1359,7 @@ CLIENT REVIEWS
 }
 
 
-/* ---------- VIDEO SLIDER ---------- */
+/* VIDEO AREA */
 
 .fullness-slider{
     width:100%;
@@ -1373,10 +1372,8 @@ CLIENT REVIEWS
     box-sizing:border-box;
 }
 
-
-/* ---------- VIDEO BOX ---------- */
-
-.fullness-video{
+.fullness-video,
+.love-video-box{
     width:100%;
     max-width:950px;
     aspect-ratio:16 / 9;
@@ -1387,14 +1384,19 @@ CLIENT REVIEWS
     box-sizing:border-box;
 }
 
-.fullness-video iframe{
+.fullness-video iframe,
+.love-video-box iframe{
     width:100%;
     height:100%;
-    display:block;
     border:0;
+    display:block;
 }
 
-.fullness-video video{
+
+/* VIDEO TAG */
+
+.fullness-video video,
+.love-video-box video{
     width:100%;
     height:100%;
     display:block;
@@ -1403,25 +1405,29 @@ CLIENT REVIEWS
 }
 
 
-/* ---------- ARROWS ---------- */
+/* ARROWS */
 
 .fullness-arrow{
     flex:0 0 45px;
     width:45px;
     height:45px;
     padding:0;
+
     border:1px solid #d4af37;
     border-radius:50%;
+
     background:#000;
     color:#d4af37;
-    font-size:30px;
-    line-height:42px;
-    text-align:center;
-    cursor:pointer;
+
+    font-size:28px;
+    line-height:1;
+
     display:flex;
     align-items:center;
     justify-content:center;
-    box-sizing:border-box;
+
+    cursor:pointer;
+    z-index:10;
 }
 
 .fullness-arrow:hover{
@@ -1430,7 +1436,7 @@ CLIENT REVIEWS
 }
 
 
-/* ---------- DOTS ---------- */
+/* DOTS */
 
 .fullness-dots{
     display:flex;
@@ -1454,6 +1460,90 @@ CLIENT REVIEWS
     background:#d4af37;
     transform:scale(1.3);
 }
+
+
+/* MOBILE */
+
+@media (max-width:760px){
+
+    .fullness,
+    .fullness-section{
+        padding:55px 12px;
+    }
+
+    .fullness-header{
+        margin-bottom:30px;
+    }
+
+    .fullness-kicker{
+        font-size:9px;
+        letter-spacing:4px;
+    }
+
+    .fullness-header h2{
+        font-size:32px;
+    }
+
+    .fullness-header p{
+        font-size:14px;
+    }
+
+    .fullness-slider{
+        gap:8px;
+    }
+
+    .fullness-video,
+    .love-video-box{
+        width:calc(100% - 70px);
+        max-width:none;
+    }
+
+    .fullness-arrow{
+        flex:0 0 35px;
+        width:35px;
+        height:35px;
+        font-size:23px;
+    }
+
+    .fullness-dots{
+        margin-top:20px;
+    }
+}
+
+
+/* SMALL MOBILE */
+
+@media (max-width:400px){
+
+    .fullness,
+    .fullness-section{
+        padding:45px 8px;
+    }
+
+    .fullness-header h2{
+        font-size:28px;
+    }
+
+    .fullness-header p{
+        font-size:13px;
+    }
+
+    .fullness-slider{
+        gap:5px;
+    }
+
+    .fullness-video,
+    .love-video-box{
+        width:calc(100% - 60px);
+    }
+
+    .fullness-arrow{
+        flex:0 0 30px;
+        width:30px;
+        height:30px;
+        font-size:20px;
+    }
+        }
 
 
 /* =========================================
