@@ -2183,10 +2183,7 @@ onclick="changeSlide('wedding',1)">
 </div>
 
 </section>
-
-<!-- =================================
-     FULLNESS OF LOVE
-================================= -->
+<!-- FULLNESS OF LOVE -->
 
 <section class="fullness-section">
 
@@ -2213,7 +2210,7 @@ onclick="changeSlide('wedding',1)">
         <!-- PREVIOUS -->
         <button
             class="fullness-arrow"
-            onclick="changeLoveVideo(-1)">
+            id="lovePrev">
             ‹
         </button>
 
@@ -2223,7 +2220,7 @@ onclick="changeSlide('wedding',1)">
 
             <iframe
                 id="loveVideo"
-                src="https://www.youtube.com/embed/BW4MxB-7DL8?autoplay=1&mute=1&playsinline=1&rel=0"
+                src=""
                 title="Fullness of Love"
                 allow="autoplay; encrypted-media; picture-in-picture"
                 allowfullscreen>
@@ -2235,20 +2232,20 @@ onclick="changeSlide('wedding',1)">
         <!-- NEXT -->
         <button
             class="fullness-arrow"
-            onclick="changeLoveVideo(1)">
+            id="loveNext">
             ›
         </button>
 
     </div>
 
 
-    <!-- DOTS -->
     <div
         id="loveDots"
         class="fullness-dots">
     </div>
 
 </section>
+
 <!-- ================================
      STREET PHOTO SHOOT
 ================================ -->
@@ -3222,120 +3219,9 @@ function changeSlide(
 }
 
 
-/* =================================
-   FULLNESS OF LOVE VIDEO SLIDER
-================================= */
-
-const loveVideos = [
-
-    // "m1jET9m38V8",];
-
-    // ""
-    // "VIDEO_ID_2",
-    // "VIDEO_ID_3",
-    // "VIDEO_ID_4",
-    // "VIDEO_ID_5"
-     //"",
 
 
 
-let lovePosition = 0;
-
-
-/* SHOW VIDEO */
-
-function showLoveVideo(index){
-
-    const video =
-        document.getElementById("loveVideo");
-
-    if(!video) return;
-
-
-    lovePosition =
-        (index + loveVideos.length)
-        % loveVideos.length;
-
-
-    const videoID =
-        loveVideos[lovePosition];
-
-
-    video.src =
-        "https://www.youtube.com/embed/" +
-        videoID +
-        "?autoplay=1&mute=1&playsinline=1&rel=0";
-
-
-    updateLoveDots();
-}
-
-
-/* CHANGE VIDEO */
-
-function changeLoveVideo(direction){
-
-    showLoveVideo(
-        lovePosition + direction
-    );
-
-}
-
-
-/* DOTS */
-
-function updateLoveDots(){
-
-    const dotsContainer =
-        document.getElementById("loveDots");
-
-    if(!dotsContainer) return;
-
-
-    dotsContainer.innerHTML = "";
-
-
-    loveVideos.forEach((video,index)=>{
-
-        const dot =
-            document.createElement("div");
-
-
-        dot.className =
-            "fullness-dot";
-
-
-        if(index === lovePosition){
-
-            dot.classList.add("active");
-
-        }
-
-
-        dot.onclick = function(){
-
-            showLoveVideo(index);
-
-        };
-
-
-        dotsContainer.appendChild(dot);
-
-    });
-
-}
-
-
-/* START */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function(){
-
-        updateLoveDots();
-
-    }
-);
 /* =====================================
    AUTOMATIC SLIDE
 ===================================== */
@@ -3357,7 +3243,197 @@ function(){
 5000
 );
 
+/* =========================================
+   FULLNESS OF LOVE
+   TEST VIDEO
+========================================= */
 
+const loveVideos = [
+    "BW4MxB-7DL8"
+];
+
+let lovePosition = 0;
+
+
+/* =========================================
+   SHOW VIDEO
+========================================= */
+
+function showLoveVideo(index) {
+
+    const video =
+        document.getElementById("loveVideo");
+
+    if (!video) return;
+
+    lovePosition =
+        (index + loveVideos.length)
+        % loveVideos.length;
+
+    const videoID =
+        loveVideos[lovePosition];
+
+
+    video.src =
+        "https://www.youtube.com/embed/"
+        + videoID
+        + "?autoplay=1"
+        + "&mute=1"
+        + "&playsinline=1"
+        + "&rel=0";
+
+
+    updateLoveDots();
+}
+
+
+/* =========================================
+   PREVIOUS
+========================================= */
+
+document
+    .getElementById("lovePrev")
+    .addEventListener("click", function () {
+
+        showLoveVideo(lovePosition - 1);
+
+    });
+
+
+/* =========================================
+   NEXT
+========================================= */
+
+document
+    .getElementById("loveNext")
+    .addEventListener("click", function () {
+
+        showLoveVideo(lovePosition + 1);
+
+    });
+
+
+/* =========================================
+   DOTS
+========================================= */
+
+function updateLoveDots() {
+
+    const dots =
+        document.getElementById("loveDots");
+
+    if (!dots) return;
+
+    dots.innerHTML = "";
+
+
+    loveVideos.forEach(function (video, index) {
+
+        const dot =
+            document.createElement("div");
+
+        dot.className = "fullness-dot";
+
+
+        if (index === lovePosition) {
+            dot.classList.add("active");
+        }
+
+
+        dot.addEventListener(
+            "click",
+            function () {
+
+                showLoveVideo(index);
+
+            }
+        );
+
+
+        dots.appendChild(dot);
+
+    });
+
+}
+
+
+/* =========================================
+   MOBILE SWIPE
+========================================= */
+
+const loveVideoBox =
+    document.querySelector(".fullness-video");
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+
+if (loveVideoBox) {
+
+    loveVideoBox.addEventListener(
+        "touchstart",
+        function (event) {
+
+            touchStartX =
+                event.changedTouches[0].screenX;
+
+        },
+        { passive: true }
+    );
+
+
+    loveVideoBox.addEventListener(
+        "touchend",
+        function (event) {
+
+            touchEndX =
+                event.changedTouches[0].screenX;
+
+
+            const distance =
+                touchEndX - touchStartX;
+
+
+            if (Math.abs(distance) < 50) {
+                return;
+            }
+
+
+            if (distance < 0) {
+
+                // Swipe Left → Next
+                showLoveVideo(
+                    lovePosition + 1
+                );
+
+            } else {
+
+                // Swipe Right → Previous
+                showLoveVideo(
+                    lovePosition - 1
+                );
+
+            }
+
+        },
+        { passive: true }
+    );
+
+}
+
+
+/* =========================================
+   START VIDEO
+========================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        showLoveVideo(0);
+
+    }
+);
 
 /* =====================================
    LOAD ALL CATEGORIES ONCE
@@ -3563,15 +3639,7 @@ function(){
     // ================================
 
     const clientReviewVideos = [
-        "/m1jET9m38V8",
-        "/Videos/client/test.mp4",
-        "CLIENT_REVIEW_ID_3",
-        "CLIENT_REVIEW_ID_4",
-        "CLIENT_REVIEW_ID_5",
-        "CLIENT_REVIEW_ID_6",
-        "CLIENT_REVIEW_ID_7",
-        "CLIENT_REVIEW_ID_8"
-    ];
+        "/m1jET9m38V8",];
 
     let clientReviewPosition = 0;
 
