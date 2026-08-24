@@ -1303,272 +1303,139 @@ CLIENT REVIEWS
 }
 
 
-/* =================================
-   FULLNESS OF LOVE
-================================= */
+/* ================================
+   FULLNESS OF LOVE VIDEO SLIDER
+================================ */
 
 .fullness-section{
-
     width:100%;
-
-    padding:80px 20px;
-
-    background:#000;
-
+    padding:90px 20px;
     box-sizing:border-box;
+    text-align:center;
 }
-
 
 .fullness-header{
-
-    text-align:center;
-
-    max-width:700px;
-
-    margin:0 auto 45px;
+    max-width:800px;
+    margin:0 auto 55px;
 }
-
 
 .fullness-kicker{
-
-    color:#e5c968;
-
-    font-size:10px;
-
-    letter-spacing:5px;
-
-    margin-bottom:15px;
+    font-size:14px;
+    letter-spacing:7px;
+    margin-bottom:20px;
+    color:var(--gold);
 }
-
 
 .fullness-header h2{
-
+    font-size:48px;
     margin:0;
-
-    color:#d4af37;
-
-    font-family:Georgia,serif;
-
-    font-size:42px;
-
-    font-weight:400;
+    color:var(--gold);
 }
-
 
 .fullness-line{
-
-    width:55px;
-
-    height:1px;
-
-    background:#d4af37;
-
-    margin:20px auto;
+    width:105px;
+    height:3px;
+    background:var(--gold);
+    margin:35px auto;
 }
 
-
 .fullness-header p{
-
-    color:#eee;
-
-    font-family:Arial,sans-serif;
-
-    font-size:15px;
-
-    line-height:1.7;
-
+    font-size:20px;
+    line-height:1.6;
+    color:#fff;
     margin:0 auto;
 }
 
-
-/* VIDEO SLIDER */
-
 .fullness-slider{
-
     width:100%;
-
-    max-width:1000px;
-
+    max-width:900px;
     margin:auto;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     gap:20px;
 }
 
-
-/* VIDEO BOX */
-
 .fullness-video{
-
     width:100%;
-
-    aspect-ratio:16 / 9;
-
-    background:#000;
-
+    max-width:720px;
+    aspect-ratio:16/9;
+    border:1px solid var(--gold);
     overflow:hidden;
-
-    border:1px solid rgba(212,175,55,.35);
+    background:#111;
 }
 
-
 .fullness-video iframe{
-
     width:100%;
-
     height:100%;
-
     border:0;
-
     display:block;
 }
 
-
-/* ARROWS */
-
 .fullness-arrow{
-
-    flex-shrink:0;
-
-    width:45px;
-
-    height:45px;
-
-    border:1px solid #d4af37;
-
+    width:58px;
+    height:58px;
+    min-width:58px;
     border-radius:50%;
-
-    background:#000;
-
-    color:#d4af37;
-
+    border:1px solid var(--gold);
+    background:transparent;
+    color:var(--gold);
     font-size:30px;
-
-    line-height:1;
-
     cursor:pointer;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
-    padding:0;
 }
 
-
-.fullness-arrow:hover{
-
-    background:#d4af37;
-
-    color:#000;
+.fullness-arrow:active{
+    transform:scale(.94);
 }
-
-
-/* DOTS */
 
 .fullness-dots{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:8px;
-
     margin-top:25px;
+    display:flex;
+    justify-content:center;
+    gap:8px;
 }
-
 
 .fullness-dot{
-
-    width:7px;
-
-    height:7px;
-
+    width:9px;
+    height:9px;
     border-radius:50%;
-
-    background:#555;
-
+    background:#777;
     cursor:pointer;
-
 }
-
 
 .fullness-dot.active{
-
-    background:#d4af37;
-
-    transform:scale(1.3);
+    background:var(--gold);
+    transform:scale(1.25);
 }
-
-
-/* MOBILE */
 
 @media(max-width:600px){
 
     .fullness-section{
-
-        padding:70px 12px;
+        padding:70px 15px;
     }
-
-
-    .fullness-header{
-
-        margin-bottom:25px;
-    }
-
 
     .fullness-header h2{
-
-        font-size:32px;
+        font-size:38px;
     }
-
 
     .fullness-header p{
-
-        font-size:13px;
-
-        line-height:1.6;
+        font-size:17px;
     }
 
-
     .fullness-slider{
-
         gap:8px;
     }
 
-
     .fullness-arrow{
-
-        width:35px;
-
-        height:35px;
-
+        width:48px;
+        height:48px;
+        min-width:48px;
         font-size:24px;
     }
-
-
-    .fullness-video{
-
-        width:100%;
-    }
-
-
-    .fullness-dots{
-
-        margin-top:20px;
-    }
-
-}
-
+   }
 
 /* =========================================
    MOBILE
@@ -2183,26 +2050,69 @@ onclick="changeSlide('wedding',1)">
 </div>
 
 </section>
-<div class="fullness-slider">
+<!-- =================================
+     FULLNESS OF LOVE
+================================= -->
 
-    <button class="fullness-arrow" onclick="changeLoveVideo(-1)">‹</button>
+<section class="fullness-section" id="fullness">
 
-    <div class="fullness-video">
-        <iframe
-            id="loveVideo"
-            title="Fullness of Love"
-            allow="autoplay; encrypted-media; picture-in-picture"
-            allowfullscreen>
-        </iframe>
+    <div class="fullness-header">
+
+        <div class="fullness-kicker">
+            FULLNESS OF LOVE
+        </div>
+
+        <h2>FULLNESS OF LOVE</h2>
+
+        <div class="fullness-line"></div>
+
+        <p>
+            Beautiful stories, unforgettable moments and memories
+            captured forever.
+        </p>
+
     </div>
 
-    <button class="fullness-arrow" onclick="changeLoveVideo(1)">›</button>
 
-</div>
+    <div class="fullness-slider">
 
-<div id="loveDots" class="fullness-dots"></div>
+        <button
+            class="fullness-arrow"
+            id="fullnessPrev"
+            type="button">
+            ‹
+        </button>
+
+
+        <div class="fullness-video">
+
+            <iframe
+                id="loveVideo"
+                src=""
+                title="Fullness of Love"
+                allow="autoplay; encrypted-media; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+
+        <button
+            class="fullness-arrow"
+            id="fullnessNext"
+            type="button">
+            ›
+        </button>
+
+    </div>
+
+
+    <div
+        class="fullness-dots"
+        id="loveDots">
+    </div>
+
 </section>
-
 <!-- ================================
      STREET PHOTO SHOOT
 ================================ -->
@@ -3199,9 +3109,11 @@ function(){
 },
 5000
 );</section>
-/* =========================================
-   FULLNESS OF LOVE 
-========================================= */
+
+/* =================================
+   FULLNESS OF LOVE
+   YOUTUBE VIDEO SLIDER
+================================= */
 
 const loveVideos = [
 
@@ -3221,88 +3133,216 @@ const loveVideos = [
 
 ];
 
+
 let lovePosition = 0;
 
 
-/* =========================================
-   YOUTUBE VIDEO LOAD
-========================================= */
+const loveVideo =
+    document.getElementById("loveVideo");
 
-function showLoveVideo(index) {
+const loveDots =
+    document.getElementById("loveDots");
 
-    const video = document.getElementById("loveVideo");
+const lovePrev =
+    document.getElementById("fullnessPrev");
 
-    if (!video || loveVideos.length === 0) return;
+const loveNext =
+    document.getElementById("fullnessNext");
+
+
+/* ================================
+   SHOW VIDEO
+================================ */
+
+function showLoveVideo(index){
+
+    if(!loveVideo) return;
 
     lovePosition =
-        (index + loveVideos.length) % loveVideos.length;
+        (index + loveVideos.length)
+        % loveVideos.length;
 
-    const videoID = loveVideos[lovePosition];
 
-    video.src =
-        "https://www.youtube.com/embed/" +
-        videoID +
-        "?autoplay=1&mute=1&playsinline=1&rel=0";
+    const videoID =
+        loveVideos[lovePosition];
+
+
+    loveVideo.src =
+        "https://www.youtube.com/embed/"
+        + videoID
+        + "?autoplay=1"
+        + "&mute=1"
+        + "&playsinline=1"
+        + "&rel=0";
+
 
     updateLoveDots();
 }
 
 
-/* =========================================
-   LEFT / RIGHT
-========================================= */
-
-function changeLoveVideo(direction) {
-
-    showLoveVideo(lovePosition + direction);
-
-}
-
-
-/* =========================================
+/* ================================
    DOTS
-========================================= */
+================================ */
 
-function updateLoveDots() {
+function updateLoveDots(){
 
-    const dotsContainer =
-        document.getElementById("loveDots");
+    if(!loveDots) return;
 
-    if (!dotsContainer) return;
+    loveDots.innerHTML = "";
 
-    dotsContainer.innerHTML = "";
 
-    loveVideos.forEach((video, index) => {
+    loveVideos.forEach(function(video,index){
 
-        const dot = document.createElement("div");
+        const dot =
+            document.createElement("div");
 
-        dot.className = "fullness-dot";
+        dot.className =
+            "fullness-dot";
 
-        if (index === lovePosition) {
+
+        if(index === lovePosition){
+
             dot.classList.add("active");
+
         }
 
-        dot.onclick = function () {
-            showLoveVideo(index);
-        };
 
-        dotsContainer.appendChild(dot);
+        dot.addEventListener(
+            "click",
+            function(){
+
+                showLoveVideo(index);
+
+            }
+        );
+
+
+        loveDots.appendChild(dot);
 
     });
 
 }
 
 
-/* =========================================
+/* ================================
+   NEXT
+================================ */
+
+function nextLoveVideo(){
+
+    showLoveVideo(
+        lovePosition + 1
+    );
+
+}
+
+
+/* ================================
+   PREVIOUS
+================================ */
+
+function previousLoveVideo(){
+
+    showLoveVideo(
+        lovePosition - 1
+    );
+
+}
+
+
+/* ================================
+   BUTTONS
+================================ */
+
+if(loveNext){
+
+    loveNext.addEventListener(
+        "click",
+        nextLoveVideo
+    );
+
+}
+
+
+if(lovePrev){
+
+    lovePrev.addEventListener(
+        "click",
+        previousLoveVideo
+    );
+
+}
+
+
+/* ================================
+   SWIPE
+================================ */
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+
+if(loveVideo){
+
+    loveVideo.addEventListener(
+        "touchstart",
+        function(e){
+
+            touchStartX =
+                e.changedTouches[0].screenX;
+
+        },
+        {passive:true}
+    );
+
+
+    loveVideo.addEventListener(
+        "touchend",
+        function(e){
+
+            touchEndX =
+                e.changedTouches[0].screenX;
+
+            const difference =
+                touchEndX - touchStartX;
+
+
+            if(Math.abs(difference) < 50){
+
+                return;
+
+            }
+
+
+            if(difference < 0){
+
+                nextLoveVideo();
+
+            }else{
+
+                previousLoveVideo();
+
+            }
+
+        },
+        {passive:true}
+    );
+
+}
+
+
+/* ================================
    START
-========================================= */
+================================ */
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
 
-    showLoveVideo(0);
+        showLoveVideo(0);
 
-});
-
+    }
+);
 /* =========================================
    MOBILE SWIPE
 ========================================= */
