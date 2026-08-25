@@ -1302,70 +1302,59 @@ CLIENT REVIEWS
 
 }
 
-
-/* ================================
-   FULLNESS OF LOVE VIDEO SLIDER
-================================ */
+/* =====================================
+   FULLNESS OF LOVE
+===================================== */
 
 .fullness-section{
-    width:100%;
-    padding:90px 20px;
-    box-sizing:border-box;
-    text-align:center;
-}
-
-.fullness-header{
-    max-width:800px;
-    margin:0 auto 55px;
-}
-
-.fullness-kicker{
-    font-size:14px;
-    letter-spacing:7px;
-    margin-bottom:20px;
-    color:var(--gold);
-}
-
-.fullness-header h2{
-    font-size:48px;
-    margin:0;
-    color:var(--gold);
-}
-
-.fullness-line{
-    width:105px;
-    height:3px;
-    background:var(--gold);
-    margin:35px auto;
-}
-
-.fullness-header p{
-    font-size:20px;
-    line-height:1.6;
-    color:#fff;
-    margin:0 auto;
-}
-
-.fullness-slider{
-    width:100%;
-    max-width:900px;
+    max-width:1200px;
     margin:auto;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:20px;
+    padding:60px 14px;
 }
 
-.fullness-video{
-    width:100%;
-    max-width:720px;
+.fullness-section .kicker{
+    font-size:9px;
+    letter-spacing:4px;
+    color:var(--gold-light);
+}
+
+.fullness-title{
+    text-align:center;
+    font-family:Cinzel,serif;
+    font-size:clamp(28px,5vw,45px);
+    font-weight:400;
+    color:var(--gold-light);
+    margin-top:8px;
+}
+
+.fullness-gold-line{
+    width:80px;
+    height:1px;
+    background:var(--gold);
+    margin:16px auto 30px;
+}
+
+.fullness-description{
+    max-width:600px;
+    margin:0 auto 25px;
+    text-align:center;
+    font-family:"Cormorant Garamond",serif;
+    font-size:21px;
+    line-height:1.35;
+    color:#fff;
+}
+
+.fullness-video-box{
+    position:relative;
+    max-width:900px;
     aspect-ratio:16/9;
-    border:1px solid var(--gold);
+    margin:auto;
     overflow:hidden;
-    background:#111;
+    border:1px solid var(--line);
+    background:#050505;
 }
 
-.fullness-video iframe{
+.fullness-video-box iframe{
     width:100%;
     height:100%;
     border:0;
@@ -1373,69 +1362,50 @@ CLIENT REVIEWS
 }
 
 .fullness-arrow{
-    width:58px;
-    height:58px;
-    min-width:58px;
-    border-radius:50%;
+    position:absolute;
+    z-index:5;
+    top:50%;
+    transform:translateY(-50%);
+    width:43px;
+    height:43px;
     border:1px solid var(--gold);
-    background:transparent;
-    color:var(--gold);
-    font-size:30px;
+    border-radius:50%;
+    background:rgba(0,0,0,.45);
+    color:var(--gold-light);
+    font-size:26px;
     cursor:pointer;
-    display:flex;
-    align-items:center;
-    justify-content:center;
 }
 
-.fullness-arrow:active{
-    transform:scale(.94);
+.fullness-prev{
+    left:14px;
+}
+
+.fullness-next{
+    right:14px;
 }
 
 .fullness-dots{
-    margin-top:25px;
     display:flex;
     justify-content:center;
-    gap:8px;
+    gap:7px;
+    margin-top:17px;
 }
 
 .fullness-dot{
-    width:9px;
-    height:9px;
+    width:8px;
+    height:8px;
+    padding:0;
     border-radius:50%;
-    background:#777;
+    border:1px solid var(--gold);
+    background:transparent;
     cursor:pointer;
 }
 
 .fullness-dot.active{
     background:var(--gold);
-    transform:scale(1.25);
 }
 
-@media(max-width:600px){
-
-    .fullness-section{
-        padding:70px 15px;
-    }
-
-    .fullness-header h2{
-        font-size:38px;
-    }
-
-    .fullness-header p{
-        font-size:17px;
-    }
-
-    .fullness-slider{
-        gap:8px;
-    }
-
-    .fullness-arrow{
-        width:48px;
-        height:48px;
-        min-width:48px;
-        font-size:24px;
-    }
-   }
+    
 
 /* =========================================
    MOBILE
@@ -3110,26 +3080,14 @@ function(){
 5000
 );</section>
 
-/* =================================
+/* =====================================
    FULLNESS OF LOVE
    YOUTUBE VIDEO SLIDER
-================================= */
+===================================== */
 
 const loveVideos = [
 
-    "m1jET9m38V8",
-
-    "VIDEO_ID_2",
-
-    "VIDEO_ID_3",
-
-    "VIDEO_ID_4",
-
-    "VIDEO_ID_5",
-
-    "VIDEO_ID_6",
-
-    "VIDEO_ID_7"
+    "m1jET9m38V8"
 
 ];
 
@@ -3137,26 +3095,22 @@ const loveVideos = [
 let lovePosition = 0;
 
 
-const loveVideo =
-    document.getElementById("loveVideo");
-
-const loveDots =
-    document.getElementById("loveDots");
-
-const lovePrev =
-    document.getElementById("fullnessPrev");
-
-const loveNext =
-    document.getElementById("fullnessNext");
-
-
-/* ================================
+/* =====================================
    SHOW VIDEO
-================================ */
+===================================== */
 
 function showLoveVideo(index){
 
-    if(!loveVideo) return;
+    const video =
+        document.getElementById("loveVideo");
+
+
+    if(!video || loveVideos.length === 0){
+
+        return;
+
+    }
+
 
     lovePosition =
         (index + loveVideos.length)
@@ -3167,173 +3121,112 @@ function showLoveVideo(index){
         loveVideos[lovePosition];
 
 
-    loveVideo.src =
-        "https://www.youtube.com/embed/"
-        + videoID
-        + "?autoplay=1"
-        + "&mute=1"
-        + "&playsinline=1"
-        + "&rel=0";
+    video.src =
+        "https://www.youtube.com/embed/" +
+        videoID +
+        "?autoplay=1&mute=1&playsinline=1&rel=0";
 
 
     updateLoveDots();
+
 }
 
 
-/* ================================
+/* =====================================
+   NEXT
+===================================== */
+
+document
+    .getElementById("loveNext")
+    .addEventListener(
+        "click",
+        function(){
+
+            showLoveVideo(
+                lovePosition + 1
+            );
+
+        }
+    );
+
+
+/* =====================================
+   PREVIOUS
+===================================== */
+
+document
+    .getElementById("lovePrev")
+    .addEventListener(
+        "click",
+        function(){
+
+            showLoveVideo(
+                lovePosition - 1
+            );
+
+        }
+    );
+
+
+/* =====================================
    DOTS
-================================ */
+===================================== */
 
 function updateLoveDots(){
 
-    if(!loveDots) return;
-
-    loveDots.innerHTML = "";
-
-
-    loveVideos.forEach(function(video,index){
-
-        const dot =
-            document.createElement("div");
-
-        dot.className =
-            "fullness-dot";
+    const dots =
+        document.getElementById("loveDots");
 
 
-        if(index === lovePosition){
+    if(!dots){
 
-            dot.classList.add("active");
+        return;
+
+    }
+
+
+    dots.innerHTML = "";
+
+
+    loveVideos.forEach(
+        function(video,index){
+
+            const dot =
+                document.createElement("button");
+
+
+            dot.className =
+                "fullness-dot";
+
+
+            if(index === lovePosition){
+
+                dot.classList.add(
+                    "active"
+                );
+
+            }
+
+
+            dot.onclick =
+                function(){
+
+                    showLoveVideo(index);
+
+                };
+
+
+            dots.appendChild(dot);
 
         }
-
-
-        dot.addEventListener(
-            "click",
-            function(){
-
-                showLoveVideo(index);
-
-            }
-        );
-
-
-        loveDots.appendChild(dot);
-
-    });
-
-}
-
-
-/* ================================
-   NEXT
-================================ */
-
-function nextLoveVideo(){
-
-    showLoveVideo(
-        lovePosition + 1
     );
 
 }
 
 
-/* ================================
-   PREVIOUS
-================================ */
-
-function previousLoveVideo(){
-
-    showLoveVideo(
-        lovePosition - 1
-    );
-
-}
-
-
-/* ================================
-   BUTTONS
-================================ */
-
-if(loveNext){
-
-    loveNext.addEventListener(
-        "click",
-        nextLoveVideo
-    );
-
-}
-
-
-if(lovePrev){
-
-    lovePrev.addEventListener(
-        "click",
-        previousLoveVideo
-    );
-
-}
-
-
-/* ================================
-   SWIPE
-================================ */
-
-let touchStartX = 0;
-let touchEndX = 0;
-
-
-if(loveVideo){
-
-    loveVideo.addEventListener(
-        "touchstart",
-        function(e){
-
-            touchStartX =
-                e.changedTouches[0].screenX;
-
-        },
-        {passive:true}
-    );
-
-
-    loveVideo.addEventListener(
-        "touchend",
-        function(e){
-
-            touchEndX =
-                e.changedTouches[0].screenX;
-
-            const difference =
-                touchEndX - touchStartX;
-
-
-            if(Math.abs(difference) < 50){
-
-                return;
-
-            }
-
-
-            if(difference < 0){
-
-                nextLoveVideo();
-
-            }else{
-
-                previousLoveVideo();
-
-            }
-
-        },
-        {passive:true}
-    );
-
-}
-
-
-/* ================================
+/* =====================================
    START
-================================ */
+===================================== */
 
 document.addEventListener(
     "DOMContentLoaded",
